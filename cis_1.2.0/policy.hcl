@@ -382,7 +382,9 @@ policy "cis-v1.20" {
         /* Find Security groups that give access to ipv4 addresses */
         SELECT t.arn
             FROM
-              (SELECT 'arn:aws:ec2:' || region || ':' || account_id || ':security-group/sg-' || id AS arn,          
+              (SELECT 
+                  /* create arn for sg */
+                  'arn:aws:ec2:' || region || ':' || account_id || ':security-group/sg-' || id AS arn,          
                   /* Calculate total number of IPs a SG rule gives access to */
                   (split_part(host(broadcast(cidr_ip::CIDR)), '.', 1)::bigint*16777216 + split_part(host(broadcast(cidr_ip::CIDR)), '.', 2)::bigint*65536 + split_part(host(broadcast(cidr_ip::CIDR)), '.', 3)::bigint*256 + split_part(host(broadcast(cidr_ip::CIDR)), '.', 4)::bigint)- 
                   (split_part(host(cidr_ip::CIDR), '.', 1)::bigint*16777216 + split_part(host(cidr_ip::CIDR), '.', 2)::bigint*65536 + split_part(host(cidr_ip::CIDR), '.', 3)::bigint*256 + split_part(host(cidr_ip::CIDR), '.', 4)::bigint) AS totalIps
@@ -399,9 +401,10 @@ policy "cis-v1.20" {
         SELECT t.arn
             FROM
               (SELECT 
-                'arn:aws:ec2:' || region || ':' || account_id || ':security-group/sg-' || id AS arn, 
-                /* Calculate total number of IPs a SG rule gives access to */
-                round(2 ^ (128 - masklen(aws_ec2_security_group_ip_permission_ipv6_ranges.cidr_ipv6::cidr))::numeric) AS totalIps
+                  /* create arn for sg */
+                  'arn:aws:ec2:' || region || ':' || account_id || ':security-group/sg-' || id AS arn, 
+                  /* Calculate total number of IPs a SG rule gives access to */
+                  round(2 ^ (128 - masklen(aws_ec2_security_group_ip_permission_ipv6_ranges.cidr_ipv6::cidr))::numeric) AS totalIps
                 FROM aws_ec2_security_groups
                 JOIN aws_ec2_security_group_ip_permissions ON aws_ec2_security_groups.cq_id = aws_ec2_security_group_ip_permissions.security_group_cq_id
                 JOIN aws_ec2_security_group_ip_permission_ipv6_ranges ON aws_ec2_security_group_ip_permissions.cq_id = aws_ec2_security_group_ip_permission_ipv6_ranges.security_group_ip_permission_cq_id
