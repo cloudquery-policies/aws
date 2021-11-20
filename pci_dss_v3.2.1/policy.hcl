@@ -9,7 +9,6 @@ policy "pci-dss-v3.2.1" {
     policy "autoscaling" {
         description = "checks for autoscaling"
         query "1" {
-            // aws_ec2_autoscaling_group is not implemented yet
             description = "Auto Scaling groups associated with a load balancer should use health checks"            
         }
     }
@@ -45,7 +44,7 @@ policy "pci-dss-v3.2.1" {
         }
     }
 
-    policy "cloudbuild" {
+    policy "codebuild" {
         query "1" {
             description = "CodeBuild GitHub or Bitbucket source repository URLs should use OAuth"
             query =<<EOF
@@ -149,7 +148,7 @@ policy "pci-dss-v3.2.1" {
         }
     }
 
-    policy "guard_duty" {
+    policy "guardduty" {
         query "1" {
             description = "GuardDuty should be enabled"
             query =<<EOF
