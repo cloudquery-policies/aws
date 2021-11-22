@@ -119,12 +119,12 @@ policy "pci-dss-v3.2.1" {
     policy "es" {
         query "1" {
             description = "Elasticsearch domains should be in a VPC"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domains_should_be_in_vpc.sql")
         }
 
         query "2" {
             description = "Elasticsearch domains should have encryption at rest enabled"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domains_should_have_encryption_at_rest_enabled.sql")
         }
     }
 
