@@ -211,7 +211,7 @@ policy "pci-dss-v3.2.1" {
     policy "redshift" {
         query "1" {
             description = "Amazon Redshift clusters should prohibit public access"
-            query = "select 1;"
+            query = file("queries/redshift/cluster_publicly_accessible.sql")
         }
     }
 
