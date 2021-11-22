@@ -100,7 +100,7 @@ policy "pci-dss-v3.2.1" {
 
         query "5" {
             description = "Security groups should not allow ingress from 0.0.0.0/0 to port 22"
-            query = "select 1;"
+            query = file("queries/ec2/public_ingress_on_port_22.sql")
         }
 
         query "6" {
