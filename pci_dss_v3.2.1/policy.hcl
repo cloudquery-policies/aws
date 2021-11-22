@@ -204,7 +204,7 @@ policy "pci-dss-v3.2.1" {
 
         query "2" {
             description = "RDS DB Instances should prohibit public access"
-            query = file("queries/lambda/lambda_function_in_vpc.sql")
+            query = file("queries/rds/rds_db_instances_should_prohibit_public_access.sql")
         }
     }
 
