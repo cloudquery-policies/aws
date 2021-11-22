@@ -180,7 +180,7 @@ policy "pci-dss-v3.2.1" {
     policy "kms" {
         query "1" {
             description = "KMS key rotation should be enabled"
-            query = "select 1;"
+            query = file("queries/kms/rotation_enabled_for_customer_key.sql")
         }
     }
 
