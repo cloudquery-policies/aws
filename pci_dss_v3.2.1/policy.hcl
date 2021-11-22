@@ -173,7 +173,7 @@ policy "pci-dss-v3.2.1" {
 
         query "8" {
             description = "Password policies for IAM users should have strong configurations"
-            query = "select 1;"
+            query = file("queries/iam/password_policy_strong.sql")
         }
     }
 
