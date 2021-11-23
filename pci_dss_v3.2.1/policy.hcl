@@ -17,7 +17,7 @@ policy "pci-dss-v3.2.1" {
         description = "checks for autoscaling"
         query "autoscaling_groups_elb_check" {
             description = "Auto Scaling groups associated with a load balancer should use health checks"
-            query = file("queries/cloudtrail/autoscaling_groups_elb_check.sql")
+            query = file("queries/autoscaling/autoscaling_groups_elb_check.sql")
         }
     }
 
