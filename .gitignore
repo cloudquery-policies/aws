@@ -2,3 +2,6 @@
 cloudquery.log
 config.hcl
 cloudquery
+
+#JetBrains
+.idea
