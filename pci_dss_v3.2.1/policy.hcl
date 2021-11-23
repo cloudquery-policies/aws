@@ -199,7 +199,7 @@ policy "pci-dss-v3.2.1" {
     policy "rds" {
         query "1" {
             description = "RDS snapshots should prohibit public access"
-            query = file("queries/lambda/lambda_function_prohibit_public_access.sql")
+            query = file("queries/rds/snapshots_should_prohibit_public_access.sql")
         }
 
         query "2" {
