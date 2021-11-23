@@ -73,7 +73,7 @@ policy "pci-dss-v3.2.1" {
     policy "dms" {
         query "1" {
             description = "AWS Database Migration Service replication instances should not be public"
-            query = "select 1;"
+            query = file("queries/dms/replication_not_public.sql")
         }
     }
 
