@@ -5,7 +5,6 @@ SELECT account_id as resource_identifier FROM aws_iam_password_policies
         require_numbers = FALSE OR
         minimum_password_length < 14 OR
         password_reuse_prevention is NULL OR
-        max_password_age is NULL
+        max_password_age is NULL OR
+        policy_exists is NULL
     )
-UNION 
-    SELECT aws_accounts.account_id FROM aws_accounts LEFT JOIN aws_iam_password_policies ON aws_iam_password_policies.account_id = aws_accounts.account_id where aws_iam_password_policies.account_id is NULL
