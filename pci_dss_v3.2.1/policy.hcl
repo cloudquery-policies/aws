@@ -218,32 +218,32 @@ policy "pci-dss-v3.2.1" {
     policy "s3" {
         query "1" {
             description = "S3 buckets should prohibit public write access"
-            query = "select 1;"
+            query = file("queries/s3/publicly_writable_buckets.sql")
         }
 
         query "2" {
             description = "S3 buckets should prohibit public read access"
-            query = "select 1;"
+            query = file("queries/s3/publicly_readable_buckets.sql")
         }
 
         query "3" {
             description = "S3 buckets should have cross-region replication enabled"
-            query = "select 1;"
+            query = file("queries/s3/s3_cross_region_replication.sql")
         }
 
         query "4" {
             description = "S3 buckets should have server-side encryption enabled"
-            query = "select 1;"
+            query = file("queries/s3/s3_server_side_encryption_enabled.sql")
         }
 
         query "5" {
             description = "S3 buckets should require requests to use Secure Socket Layer"
-            query = "select 1;"
+            query = file("queries/s3/deny_http_requests.sql")
         }
 
         query "6" {
             description = "S3 Block Public Access setting should be enabled"
-            query = "select 1;"
+            query = file("queries/s3/account_level_public_access_blocks.sql")
         }
     }
 
