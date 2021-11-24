@@ -1,5 +1,6 @@
 SELECT account_id,
        region,
-       arn
+       arn,
+       name
 FROM aws_sagemaker_notebook_instance
-WHERE direct_internet_access = true;
+WHERE direct_internet_access is true;
