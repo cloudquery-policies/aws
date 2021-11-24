@@ -1,9 +1,14 @@
 WITH enabled_detector_regions AS (
     SELECT region
     FROM aws_guardduty_detectors
-    WHERE status = 'ENABLED' OR data_sources_s3_logs_status = 'ENABLED')
-select region, 'GuardDuty not enabled in region' as status
+    WHERE status = 'ENABLED')
+select account_id, region, 'GuardDuty not enabled in region' as id
 from aws_regions
 WHERE enabled = true
-  AND region != any (ARRAY [' af-south-1', 'eu-south-1', 'cn-north-1', 'cn-northwest-1', 'me-south-1', 'us-gov-east-1'])
-AND region NOT IN (SELECT region FROM enabled_detector_regions)
+  AND region NOT IN (SELECT region FROM enabled_detector_regions)
+UNION
+-- Add any detector that is enabled but all data sources are disabled
+SELECT account_id, region, id from aws_guardduty_detectors
+    WHERE status = 'ENABLED'  AND (
+        data_sources_s3_logs_status != 'ENABLED' AND data_sources_cloud_trail_status != 'ENABLED'
+            AND data_sources_dns_logs_status != 'ENABLED' AND data_sources_flow_logs_status != 'ENABLED')
