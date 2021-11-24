@@ -3,5 +3,5 @@ SELECT
 FROM
     aws_iam_password_policies
 WHERE
-    require_uppercase_characters IS DISTINCT FROM TRUE
-    or policy_exists IS DISTINCT FROM TRUE
+    require_uppercase_characters IS NOT TRUE
+    or policy_exists IS NOT FROM TRUE
