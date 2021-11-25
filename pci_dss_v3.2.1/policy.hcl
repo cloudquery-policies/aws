@@ -187,12 +187,12 @@ policy "pci-dss-v3.2.1" {
     policy "lambda" {
         query "1" {
             description = "Lambda functions should prohibit public access"
-            query = "select 1;"
+            query = file("queries/lambda/lambda_function_prohibit_public_access.sql")
         }
 
         query "2" {
             description = "Lambda functions should be in a VPC"
-            query = "select 1;"
+            query = file("queries/lambda/lambda_function_in_vpc.sql")
         }
     }
 
