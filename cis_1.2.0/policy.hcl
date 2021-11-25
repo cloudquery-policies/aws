@@ -224,12 +224,12 @@ policy "cis-v1.20" {
 
     query "4.1" {
       description = "AWS CIS 4.1 Ensure no security groups allow ingress from 0.0.0.0/0 to port 22 (Scored)"
-      query = file("../queries/ec2/no_broad_public_ingress_on_port_22.sql")
+      query = file("queries/ec2/no_broad_public_ingress_on_port_22.sql")
     }
 
     query "4.2" {
       description = "AWS CIS 4.2 Ensure no security groups allow ingress from 0.0.0.0/0 to port 3389 (Scored)"
-      query = file("../queries/ec2/no_broad_public_ingress_on_port_3389.sql")
+      query = file("queries/ec2/no_broad_public_ingress_on_port_3389.sql")
     }
 
     query "4.3" {

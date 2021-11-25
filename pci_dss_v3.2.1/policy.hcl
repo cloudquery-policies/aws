@@ -116,7 +116,7 @@ policy "pci-dss-v3.2.1" {
         }
     }
 
-    policy "es" {
+    policy "elasticsearch" {
         query "1" {
             description = "Elasticsearch domains should be in a VPC"
             query = file("queries/elasticsearch/elasticsearch_domains_should_be_in_vpc.sql")
@@ -247,7 +247,7 @@ policy "pci-dss-v3.2.1" {
         }
     }
 
-    policy "sage_maker" {
+    policy "sagemaker" {
         query "1" {
             description = "Amazon SageMaker notebook instances should not have direct internet access"
             query = file("queries/sagemaker/sagemaker_notebook_instance_direct_internet_access_disabled.sql")

@@ -92,17 +92,17 @@ policy "pci-dss-v3.2.1" {
 
         query "2" {
             description = "CloudTrail should have encryption at rest enabled"
-            query = "select 1;"
+            query = file("queries/cloudtrail/logs_encrypted.sql")
         }
 
         query "4" {
             description = "Ensure CloudTrail log file validation is enabled"
-            query = "select 1;"
+            query = file("queries/cloudtrail/log_file_validation_enabled.sql")
         }
 
         query "5" {
             description = "Ensure CloudTrail trails are integrated with Amazon CloudWatch Logs"
-            query = "select 1;"
+            query = file("queries/cloudtrail/integrated_with_cloudwatch_logs.sql")
         }
     }
 
@@ -110,12 +110,12 @@ policy "pci-dss-v3.2.1" {
         description = "codebuild controls"
         query "1" {
             description = "CodeBuild GitHub or Bitbucket source repository URLs should use OAuth"
-            query = "select 1;"
+            query = file("queries/codebuild/check_oauth_usage_for_sources.sql")
         }
 
         query "2" {
             description = "CodeBuild project environment variables should not contain clear text credentials"
-            query = "select 1;"
+            query = file("queries/codebuild/check_environment_variables.sql")
         }
     }
 
@@ -131,7 +131,7 @@ policy "pci-dss-v3.2.1" {
         description = "AWS config controls"
         query "1" {
             description = "AWS Config should be enabled"
-            query = "select 1;"
+            query = file("queries/dms/replication_not_public.sql")
         }
     }
 
@@ -178,7 +178,7 @@ policy "pci-dss-v3.2.1" {
 
         query "6" {
             description = "VPC flow logging should be enabled in all VPCs"
-            query = "select 1;"
+            query = file("queries/ec2/flow_logs_enabled_in_all_vpcs.sql")
         }
 
         query "7" {
@@ -308,7 +308,7 @@ policy "pci-dss-v3.2.1" {
         description = "ELBv2 controls"
         query "1" {
             description = "Application Load Balancer should be configured to redirect all HTTP requests to HTTPS"
-            query = "select 1;"
+            query = file("queries/elbv2/redirect_http_to_https.sql")
         }
     }
 
@@ -324,12 +324,12 @@ policy "pci-dss-v3.2.1" {
         description = "Elasticsearch controls"
         query "1" {
             description = "Elasticsearch domains should have encryption at rest enabled"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domains_should_have_encryption_at_rest_enabled.sql")
         }
 
         query "2" {
             description = "Elasticsearch domains should be in a VPC"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domains_should_be_in_vpc.sql")
         }
 
         query "3" {
@@ -363,11 +363,11 @@ policy "pci-dss-v3.2.1" {
         }
     }
 
-    policy "guard_duty" {
+    policy "guardduty" {
         description = "GuardDuty controls"
         query "1" {
             description = "GuardDuty should be enabled"
-            query = "select 1;"
+            query = file("queries/guardduty/detector_enabled.sql")
         }
     }
 
@@ -380,7 +380,7 @@ policy "pci-dss-v3.2.1" {
 
         query "2" {
             description = "IAM users should not have IAM policies attached"
-            query = "select 1;"
+            query = file("queries/iam/policies_attached_to_groups_roles.sql")
         }
 
         query "3" {
@@ -390,22 +390,22 @@ policy "pci-dss-v3.2.1" {
 
         query "4" {
             description = "IAM root user access key should not exist"
-            query = "select 1;"
+            query = file("queries/iam/root_user_no_access_keys.sql")
         }
 
         query "5" {
             description = "MFA should be enabled for all IAM users that have a console password"
-            query = "select 1;"
+            query = file("queries/iam/mfa_enabled_for_console_access.sql")
         }
 
         query "6" {
             description = "Hardware MFA should be enabled for the root user"
-            query = "select 1;"
+            query = file("queries/iam/hardware_mfa_enabled_for_root.sql")
         }
 
         query "7" {
             description = "Password policies for IAM users should have strong configurations"
-            query = "select 1;"
+            query = file("queries/iam/password_policy_strong.sql")
         }
 
         query "8" {
@@ -441,7 +441,7 @@ policy "pci-dss-v3.2.1" {
         description = "Lambda controls"
         query "1" {
             description = "Lambda function policies should prohibit public access"
-            query = "select 1;"
+            query = file("queries/lambda/lambda_function_prohibit_public_access.sql")
         }
 
         query "2" {
@@ -459,12 +459,12 @@ policy "pci-dss-v3.2.1" {
         description = "RDS controls"
         query "1" {
             description = "RDS snapshots should be private"
-            query = "select 1;"
+            query = file("queries/rds/snapshots_should_prohibit_public_access.sql")
         }
 
         query "2" {
             description = "RDS DB instances should prohibit public access, determined by the PubliclyAccessible configuration"
-            query = "select 1;"
+            query = file("queries/rds/rds_db_instances_should_prohibit_public_access.sql")
         }
 
         query "3" {
@@ -574,7 +574,7 @@ policy "pci-dss-v3.2.1" {
 
         query "1" {
             description = "Amazon Redshift clusters should prohibit public access"
-            query = "select 1;"
+            query = file("queries/redshift/cluster_publicly_accessible.sql")
         }
 
         query "2" {
@@ -608,27 +608,27 @@ policy "pci-dss-v3.2.1" {
 
         query "1" {
             description = "S3 Block Public Access setting should be enabled"
-            query = "select 1;"
+            query = file("queries/s3/account_level_public_access_blocks.sql")
         }
 
         query "2" {
             description = "S3 buckets should prohibit public read access"
-            query = "select 1;"
+            query = file("queries/s3/publicly_readable_buckets.sql")
         }
 
         query "3" {
             description = "S3 buckets should prohibit public write access"
-            query = "select 1;"
+            query = file("queries/s3/publicly_writable_buckets.sql")
         }
 
         query "4" {
             description = "S3 buckets should have server-side encryption enabled"
-            query = "select 1;"
+            query = file("queries/s3/s3_server_side_encryption_enabled.sql")
         }
 
         query "5" {
             description = "S3 buckets should require requests to use Secure Socket Layer"
-            query = "select 1;"
+            query = file("queries/s3/deny_http_requests.sql")
         }
 
         query "6" {
