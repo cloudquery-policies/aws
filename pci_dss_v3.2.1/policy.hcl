@@ -80,22 +80,23 @@ policy "pci-dss-v3.2.1" {
     policy "ec2" {
         query "1" {
             description = "Amazon EBS snapshots should not be publicly restorable"
-            query = "select 1;"
+            query = file("queries/ec2/ebs_snapshot_permissions_check.sql")
         }
 
         query "2" {
             description = "VPC default security group should prohibit inbound and outbound traffic"
-            query = "select 1;"
+            query = file("queries/ec2/check_default_sg_rules.sql")
         }
 
         query "3" {
             description = "Unused EC2 security groups should be removed (Retired)"
-            query = "select 1;"
+            // This control is retired.
+            // query = "select 1;" 
         }
 
         query "4" {
             description = "Unused EC2 EIPs should be removed"
-            query = "select 1;"
+            query = file("queries/ec2/get_unused_public_ips.sql")
         }
 
         query "5" {
