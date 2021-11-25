@@ -690,15 +690,15 @@ policy "pci-dss-v3.2.1" {
         description = "SSM controls"
         query "1" {
             description = "EC2 instances should be managed by AWS Systems Manager"
-            query = "select 1;"
+            query = file("queries/ssm/ec2_instances_should_be_managed_by_ssm.sql")
         }
         query "2" {
             description = "All EC2 instances managed by Systems Manager should be compliant with patching requirements"
-            query = "select 1;"
+            query = file("queries/ssm/instances_should_have_patch_compliance_status_of_compliant.sql")
         }
         query "3" {
             description = "Instances managed by Systems Manager should have an association compliance status of COMPLIANT"
-            query = "select 1;"
+            query = file("queries/ssm/instances_should_have_association_compliance_status_of_compliant.sql")
         }
         query "4" {
             description = "SSM documents should not be public"
