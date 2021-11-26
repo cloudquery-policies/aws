@@ -88,11 +88,10 @@ policy "pci-dss-v3.2.1" {
             query = file("queries/ec2/check_default_sg_rules.sql")
         }
 
-        query "3" {
-            description = "Unused EC2 security groups should be removed (Retired)"
-            // This control is retired.
-            // query = "select 1;" 
-        }
+        // This control is retired.
+        // query "3" {
+        //     description = "Unused EC2 security groups should be removed (Retired)"
+        // }
 
         query "4" {
             description = "Unused EC2 EIPs should be removed"
