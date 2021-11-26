@@ -157,17 +157,19 @@ policy "pci-dss-v3.2.1" {
         description = "EC2 controls"
         query "1" {
             description = "Amazon EBS snapshots should not be public, determined by the ability to be restorable by anyone"
-            query = "select 1;"
+            query = "select 1;" 
+            // todo use check from pci dss
         }
 
         query "2" {
             description = "The VPC default security group should not allow inbound and outbound traffic"
-            query = "select 1;"
+            query = "select 1;"            
+            // todo use check from pci dss
         }
 
         query "3" {
             description = "Attached EBS volumes should be encrypted at rest"
-            query = "select 1;"
+            query = file("queries/ec2/unencypted_ebs_volumes.sql")
         }
 
         query "4" {
