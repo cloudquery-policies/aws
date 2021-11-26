@@ -174,8 +174,8 @@ policy "pci-dss-v3.2.1" {
 
         query "4" {
             description = "Stopped EC2 instances should be removed after a specified time period"
-            query = "select 1;"
-        }
+            query = file("queries/ec2/stopped_more_thant_30_days_ago_instances.sql")
+        }        
 
 
         query "6" {
