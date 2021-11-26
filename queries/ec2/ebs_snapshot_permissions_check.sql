@@ -4,4 +4,4 @@ FROM aws_ec2_ebs_snapshots) SELECT DISTINCT *
 FROM snapshot_access_groups
 WHERE "group" = 'all'
 --this is under question because trusted accounts(user_id) do not violate this control
-OR user_id != '';
+OR user_id IS DISTINCT FROM '';
