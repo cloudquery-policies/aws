@@ -85,7 +85,7 @@ policy "pci-dss-v3.2.1" {
 
         query "2" {
             description = "VPC default security group should prohibit inbound and outbound traffic"
-            query = file("queries/ec2/check_default_sg_rules.sql")
+            query = file("queries/ec2/default_sg_no_access.sql")
         }
 
         // This control is retired.
