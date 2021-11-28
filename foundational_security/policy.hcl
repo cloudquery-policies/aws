@@ -6,15 +6,12 @@ policy "pci-dss-v3.2.1" {
         }
     }
 
-
     view "api_gateway_method_settings" {
         description = "AWS API Gateway Method Settings"
         query "api_gateway_method_settings_query" {
             query = file("queries/cq_views/api_gateway_method_settings.sql")
         }
-    }
-
-    
+    }    
     policy "acm" {
         description = "acm controls"
         query "1" {
@@ -54,7 +51,8 @@ policy "pci-dss-v3.2.1" {
     policy "autoscaling" {
         description = "autoscaling controls"
         query "1" {
-            query = file("queries/autoscaling/autoscaling_groups_elb_check.sql")
+            /* query = file("queries/autoscaling/autoscaling_groups_elb_check.sql") */
+            query = "select 1;"
         }
     }
 
