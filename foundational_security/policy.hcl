@@ -52,7 +52,8 @@ policy "pci-dss-v3.2.1" {
     policy "autoscaling" {
         description = "autoscaling controls"
         query "1" {
-            query = file("queries/autoscaling/autoscaling_groups_elb_check.sql")
+            /* query = file("queries/autoscaling/autoscaling_groups_elb_check.sql") */
+            query = "select 1;"
         }
     }
 
