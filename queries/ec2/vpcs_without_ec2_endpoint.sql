@@ -8,4 +8,4 @@ SELECT account_id,
 FROM aws_ec2_vpcs v
          LEFT JOIN endpoints e
                    ON v.id = e.vpc_id
-WHERE e.vpc_id = NULL;
+WHERE e.vpc_id IS NULL;
