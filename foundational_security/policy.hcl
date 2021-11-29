@@ -880,14 +880,12 @@ policy "pci-dss-v3.2.1" {
 
     query "1" {
       description = "Amazon EBS snapshots should not be public, determined by the ability to be restorable by anyone"
-      query       = "select 1;"
-      // todo use control from pci dss
+      query = file("queries/ec2/ebs_snapshot_permissions_check.sql")
     }
 
     query "2" {
       description = "The VPC default security group should not allow inbound and outbound traffic"
-      query       = "select 1;"
-      // todo use control from pci dss
+      query = file("queries/ec2/default_sg_no_access.sql")
     }
 
     query "3" {
