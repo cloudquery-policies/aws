@@ -710,7 +710,7 @@ policy "pci-dss-v3.2.1" {
         }
         query "4" {
             description = "SSM documents should not be public"
-            query = "select 1;"
+            query = file("queries/ssm/documents_should_not_be_public.sql")
         }
     }
 
