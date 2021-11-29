@@ -1,8 +1,8 @@
-policy "pci-dss-v3.2.1" {
+policy "foundational_security" {
     description = "PCI DSS V3.2.1"
     configuration {
         provider "aws" {
-            version = ">= v0.5.0"
+            version = ">= v0.7.0"
         }
     }
 
@@ -51,8 +51,7 @@ policy "pci-dss-v3.2.1" {
     policy "autoscaling" {
         description = "autoscaling controls"
         query "1" {
-            /* query = file("queries/autoscaling/autoscaling_groups_elb_check.sql") */
-            query = "select 1;"
+            query = file("queries/autoscaling/autoscaling_groups_elb_check.sql")
         }
     }
 
