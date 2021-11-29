@@ -8,8 +8,6 @@ policy "public-ips" {
   }
 
   policy "public-ips" {
-    description = "AWS CIS Section 1"
-
     query "API-Gateways" {
       description = "Find all API Gateway instances that are publically accessible"
       type        = "manual"
@@ -29,25 +27,23 @@ policy "public-ips" {
     }
 
     query "CloudFront-Distributions" {
-      description = "Find all "
+      description = "Find all Cloudfront distributions"
       type        = "manual"
-
       query = <<EOF
         SELECT distinct domain_name,  account_id, arn FROM aws_cloudfront_distributions
     EOF
     }
 
     query "EC2-Public-Ips" {
-      description = ""
+      description = "Find all instances with a public IP address"
       type        = "manual"
-
       query = <<EOF
         SELECT DISTINCT id, public_dns_name, public_ip_address, account_id, region FROM aws_ec2_instances WHERE public_ip_address IS NOT NULL
     EOF
     }
 
     query "ELB-Classic" {
-      description = ""
+      description = "Find all Classic ELBs that are Internet Facing"
       type        = "manual"
 
       query = <<EOF
@@ -56,7 +52,7 @@ policy "public-ips" {
     }
 
     query "ELB-V2" {
-      description = ""
+      description = "Find all ELB V2s that are Internet Facing"
       type        = "manual"
 
       query = <<EOF
@@ -65,7 +61,7 @@ policy "public-ips" {
     }
 
     query "Redshift" {
-      description = ""
+      description = "Find all Redshift Clusters are publically accessible"
       type        = "manual"
 
       query = <<EOF
@@ -74,7 +70,7 @@ policy "public-ips" {
     }
 
     query "RDS" {
-      description = ""
+      description = "Find all RDS Instances are publically accessible"
       type        = "manual"
 
       query = <<EOF
