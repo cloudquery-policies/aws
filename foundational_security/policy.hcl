@@ -2,7 +2,7 @@ policy "pci-dss-v3.2.1" {
   description = "PCI DSS V3.2.1"
   configuration {
     provider "aws" {
-      version = ">= v0.5.0"
+      version = ">= v0.4.0"
     }
   }
 
@@ -155,6 +155,14 @@ policy "pci-dss-v3.2.1" {
 
   policy "ec2" {
     description = "EC2 controls"
+
+    view "aws_security_group_ingress_rules" {
+      description = "Aggregates rules of security groups with ports and IPs including ipv6"
+      query "aws_security_group_ingress_rules" {
+        query = file("queries/ec2/aws_security_group_ingress_rules.sql")
+      }
+    }
+
     query "1" {
       description = "Amazon EBS snapshots should not be public, determined by the ability to be restorable by anyone"
       query       = "select 1;"
@@ -220,12 +228,12 @@ policy "pci-dss-v3.2.1" {
 
     query "18" {
       description = "Security groups should only allow unrestricted incoming traffic for authorized ports"
-      query       = "select 1;"
+      query       = file("queries/ec2/security_groups_with_access_to_unauthorized_ports.sql")
     }
 
     query "19" {
       description = "Security groups should not allow unrestricted access to ports with high risk"
-      query       = "select 1;"
+      query       = file("queries/ec2/security_groups_with_open_critical_ports.sql")
     }
   }
 
