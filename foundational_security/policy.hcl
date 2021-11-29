@@ -639,12 +639,12 @@ policy "pci-dss-v3.2.1" {
 
         query "6" {
             description = "Amazon S3 permissions granted to other AWS accounts in bucket policies should be restricted"
-            query = "select 1;"
+            query = file("queries/s3/restrict_cross_account_actions.sql")
         }
 
         query "8" {
-            description = "Amazon S3 permissions granted to other AWS accounts in bucket policies should be restricted"
-            query = "select 1;"
+            description = "S3 Block Public Access setting should be enabled at the bucket level"
+            query = file("queries/s3/account_level_public_access_blocks.sql")
         }
     }
 
