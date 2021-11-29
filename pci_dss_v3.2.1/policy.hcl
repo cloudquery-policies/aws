@@ -80,22 +80,22 @@ policy "pci-dss-v3.2.1" {
     policy "ec2" {
         query "1" {
             description = "Amazon EBS snapshots should not be publicly restorable"
-            query = "select 1;"
+            query = file("queries/ec2/ebs_snapshot_permissions_check.sql")
         }
 
         query "2" {
             description = "VPC default security group should prohibit inbound and outbound traffic"
-            query = "select 1;"
+            query = file("queries/ec2/default_sg_no_access.sql")
         }
 
-        query "3" {
-            description = "Unused EC2 security groups should be removed (Retired)"
-            query = "select 1;"
-        }
+        // This control is retired.
+        // query "3" {
+        //     description = "Unused EC2 security groups should be removed (Retired)"
+        // }
 
         query "4" {
             description = "Unused EC2 EIPs should be removed"
-            query = "select 1;"
+            query = file("queries/ec2/get_unused_public_ips.sql")
         }
 
         query "5" {
@@ -116,7 +116,7 @@ policy "pci-dss-v3.2.1" {
         }
     }
 
-    policy "es" {
+    policy "elasticsearch" {
         query "1" {
             description = "Elasticsearch domains should be in a VPC"
             query = file("queries/elasticsearch/elasticsearch_domains_should_be_in_vpc.sql")
@@ -247,7 +247,7 @@ policy "pci-dss-v3.2.1" {
         }
     }
 
-    policy "sage_maker" {
+    policy "sagemaker" {
         query "1" {
             description = "Amazon SageMaker notebook instances should not have direct internet access"
             query = file("queries/sagemaker/sagemaker_notebook_instance_direct_internet_access_disabled.sql")
@@ -257,17 +257,17 @@ policy "pci-dss-v3.2.1" {
     policy "ssm" {
         query "1" {
             description = "Amazon EC2 instances managed by Systems Manager should have a patch compliance status of COMPLIANT after a patch installation"
-            query = "select 1;"
+            query = file("queries/ssm/instances_should_have_patch_compliance_status_of_compliant.sql")
         }
 
         query "2" {
             description = "Instances managed by Systems Manager should have an association compliance status of COMPLIANT"
-            query = "select 1;"
+            query = file("queries/ssm/instances_should_have_association_compliance_status_of_compliant.sql")
         }
 
         query "3" {
             description = "EC2 instances should be managed by AWS Systems Manager"
-            query = "select 1;"
+            query = file("queries/ssm/ec2_instances_should_be_managed_by_ssm.sql")
         }
     }
 }
