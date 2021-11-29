@@ -6,7 +6,6 @@ policy "pci-dss-v3.2.1" {
         }
     }
 
-
     view "api_gateway_method_settings" {
         description = "AWS API Gateway Method Settings"
         query "api_gateway_method_settings_query" {
@@ -14,7 +13,6 @@ policy "pci-dss-v3.2.1" {
         }
     }
 
-    
     policy "acm" {
         description = "acm controls"
         query "1" {
@@ -651,10 +649,10 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "sagemaker" {
-        description = "SageMaker controls"
+        description = "SageMaker"
         query "1" {
-            description = "S3 Block Public Access setting should be enabled"
-            query = "select 1;"
+            description = "Amazon SageMaker notebook instances should not have direct internet access"
+            query = file("queries/sagemaker/sagemaker_notebook_instance_direct_internet_access_disabled.sql")
         }
     }
 
@@ -679,10 +677,10 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "sns" {
-        description = "SNS controls"
+        description = "SNS"
         query "1" {
             description = "SNS topics should be encrypted at rest using AWS KMS"
-            query = "select 1;"
+            query = file("queries/sns/sns_topics_should_be_encrypted_at_rest_using_aws_kms.sql")
         }
     }
 
