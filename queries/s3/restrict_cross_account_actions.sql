@@ -7,14 +7,14 @@ FROM
 			ACCOUNT_ID,
             -- For each Statement return an array containing the prinicipals
 			CASE
-							WHEN JSONB_TYPEOF(STATEMENTS -> 'Principal') = 'string' THEN JSONB_BUILD_ARRAY(STATEMENTS -> 'Principal')
-							WHEN JSONB_TYPEOF(STATEMENTS -> 'Principal' -> 'AWS') = 'string' THEN JSONB_BUILD_ARRAY(STATEMENTS -> 'Principal' -> 'AWS')
-							WHEN JSONB_TYPEOF(STATEMENTS -> 'Principal' -> 'AWS') = 'array' THEN STATEMENTS -> 'Principal' -> 'AWS'
+				WHEN JSONB_TYPEOF(STATEMENTS -> 'Principal') = 'string' THEN JSONB_BUILD_ARRAY(STATEMENTS -> 'Principal')
+				WHEN JSONB_TYPEOF(STATEMENTS -> 'Principal' -> 'AWS') = 'string' THEN JSONB_BUILD_ARRAY(STATEMENTS -> 'Principal' -> 'AWS')
+				WHEN JSONB_TYPEOF(STATEMENTS -> 'Principal' -> 'AWS') = 'array' THEN STATEMENTS -> 'Principal' -> 'AWS'
 			END AS PRINCIPALS,
             -- For each Statement return an array containing the Actions
 			CASE
-							WHEN JSONB_TYPEOF(STATEMENTS -> 'Action') = 'string' THEN JSONB_BUILD_ARRAY(STATEMENTS -> 'Action')
-							WHEN JSONB_TYPEOF(STATEMENTS -> 'Action') = 'array' THEN STATEMENTS -> 'Action'
+                WHEN JSONB_TYPEOF(STATEMENTS -> 'Action') = 'string' THEN JSONB_BUILD_ARRAY(STATEMENTS -> 'Action')
+				WHEN JSONB_TYPEOF(STATEMENTS -> 'Action') = 'array' THEN STATEMENTS -> 'Action'
 			END AS ACTIONS
 		FROM AWS_S3_BUCKETS,
 			JSONB_ARRAY_ELEMENTS(POLICY -> 'Statement') AS STATEMENTS
