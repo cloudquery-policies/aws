@@ -684,10 +684,10 @@ policy "foundational_security" {
     }
 
     policy "sqs" {
-        description = "SQS controls"
+        description = "SQS"
         query "1" {
             description = "SNS topics should be encrypted at rest using AWS KMS"
-            query = "select 1;"
+            query = file("queries/sns/sqs_queues_should_be_encrypted_at_rest_using_aws_kms.sql")
         }
     }
 
