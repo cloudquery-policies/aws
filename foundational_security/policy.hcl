@@ -339,32 +339,32 @@ policy "foundational_security" {
 
         query "3" {
             description = "Elasticsearch domains should encrypt data sent between nodes"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domains_should_encrypt_data_sent_between_nodes.sql")
         }
 
         query "4" {
             description = "Elasticsearch domain error logging to CloudWatch Logs should be enabled"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domain_error_logging_to_cloudwatch_logs_should_be_enabled.sql")
         }
 
         query "5" {
             description = "Elasticsearch domains should have audit logging enabled"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domains_should_have_audit_logging_enabled.sql")
         }
 
         query "6" {
             description = "Elasticsearch domains should have at least three data nodes"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domains_should_have_at_least_three_data_nodes.sql")
         }
 
         query "7" {
             description = "Elasticsearch domains should be configured with at least three dedicated master nodes"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domains_should_be_configured_with_at_least_three_dedicated_master_nodes.sql")
         }
 
         query "8" {
             description = "Connections to Elasticsearch domains should be encrypted using TLS 1.2"
-            query = "select 1;"
+            query = file("queries/elasticsearch/connections_to_elasticsearch_domains_should_be_encrypted_using_tls_1_2.sql")
         }
     }
 
