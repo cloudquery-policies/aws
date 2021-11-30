@@ -451,12 +451,7 @@ policy "foundational_security" {
 
         query "2" {
             description = "Lambda functions should use supported runtimes"
-            query = "select 1;"
-        }
-
-        query "4" {
-            description = "Lambda functions should have a dead-letter queue configured (Retired)"
-            query = "select 1;"
+            query = file("queries/lambda/lambda_functions_should_use_supported_runtimes.sql")
         }
     }
 
