@@ -275,37 +275,37 @@ policy "foundational_security" {
         description = "ELB controls"
         query "2" {
             description = "Classic Load Balancers with SSL/HTTPS listeners should use a certificate provided by AWS Certificate Manager"
-            query = "select 1;"
+            query = file("queries/elbv1/cert_provided_by_aws.sql")
         }
 
         query "3" {
             description = "Classic Load Balancer listeners should be configured with HTTPS or TLS termination"
-            query = "select 1;"
+            query = file("queries/elbv1/https_or_tls.sql")
         }
 
         query "4" {
             description = "Application load balancers should be configured to drop HTTP headers"
-            query = "select 1;"
+            query = file("queries/elbv2/alb_drop_http_headers.sql")
         }
 
         query "5" {
             description = "Application and Classic Load Balancers logging should be enabled"
-            query = "select 1;"
+            query = file("queries/elbv2/alb_logging_enabled.sql")
         }
 
         query "6" {
             description = "Application Load Balancer deletion protection should be enabled"
-            query = "select 1;"
+            query = file("queries/elbv2/alb_deletion_protection_enabled.sql")
         }
 
         query "7" {
             description = "Classic Load Balancers should have connection draining enabled"
-            query = "select 1;"
+            query = file("queries/elbv1/conn_draining_enabled.sql")
         }
 
         query "8" {
             description = "Classic Load Balancers with HTTPS/SSL listeners should use a predefined security policy that has strong configuration"
-            query = "select 1;"
+            query = file("queries/elbv1/https_predefined_policy.sql")
         }
     }
 
