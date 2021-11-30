@@ -712,10 +712,10 @@ policy "foundational_security" {
     }
 
     policy "waf" {
-        description = "WAF controls"
+        description = "WAF"
         query "1" {
             description = "AWS WAF Classic global web ACL logging should be enabled"
-            query = file("queries/waf/waf_web_acl_logging_should_be_enabled.sql")
+            query = file("queries/wafv2/wafv2_web_acl_logging_should_be_enabled.sql")
         }
     }
 }
