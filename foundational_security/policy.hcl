@@ -16,7 +16,7 @@ policy "foundational_security" {
         description = "acm controls"
         query "1" {
             description = "Imported ACM certificates should be renewed after a specified time period"
-            query = "select 1;"
+            query = file("queries/acm/certificates_should_be_renewed.sql")
         }
     }
 
