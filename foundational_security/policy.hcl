@@ -275,7 +275,7 @@ policy "foundational_security" {
         description = "ELB controls"
         query "2" {
             description = "Classic Load Balancers with SSL/HTTPS listeners should use a certificate provided by AWS Certificate Manager"
-            query = file("queries/elbv1/cert_provided_by_aws.sql")
+            query = file("queries/elbv1/cert_provided_by_acm.sql")
         }
 
         query "3" {
