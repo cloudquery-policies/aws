@@ -381,7 +381,7 @@ policy "foundational_security" {
         description = "IAM controls"
         query "1" {
             description = "IAM policies should not allow full '*' administrative privileges"
-            query = "select 1;"
+            query = file("queries/iam/policies_with_admin_rights.sql")
         }
 
         query "2" {
@@ -391,7 +391,7 @@ policy "foundational_security" {
 
         query "3" {
             description = "IAM users' access keys should be rotated every 90 days or less"
-            query = "select 1;"
+            query = file("queries/iam/iam_access_keys_rotated_more_than_90_days.sql")
         }
 
         query "4" {
@@ -416,12 +416,12 @@ policy "foundational_security" {
 
         query "8" {
             description = "Unused IAM user credentials should be removed"
-            query = "select 1;"
+            query = file("queries/iam/iam_access_keys_unused_more_than_90_days.sql")
         }
 
         query "21" {
             description = "IAM customer managed policies that you create should not allow wildcard actions for services"
-            query = "select 1;"
+            query = file("queries/iam/wildcard_access_policies.sql")
         }
     }
 
