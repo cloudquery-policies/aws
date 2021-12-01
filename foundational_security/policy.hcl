@@ -322,7 +322,7 @@ policy "foundational_security" {
         description = "EMR controls"
         query "1" {
             description = "Amazon EMR cluster master nodes should not have public IP addresses"
-            query = "select 1;"
+            query = file("queries/emr/emr_cluster_master_nodes_should_not_have_public_ip_addresses.sql")
         }
     }
 
