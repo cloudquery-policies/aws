@@ -576,7 +576,7 @@ policy "foundational_security" {
     }
 
     policy "redshift" {
-        description = "Redshift controls"
+        description = "Redshift"
 
         query "1" {
             description = "Amazon Redshift clusters should prohibit public access"
@@ -585,27 +585,27 @@ policy "foundational_security" {
 
         query "2" {
             description = "Connections to Amazon Redshift clusters should be encrypted in transit"
-            query = "select 1;"
+            query = file("queries/redshift/clusters_should_be_encrypted_in_transit.sql")
         }
 
         query "3" {
             description = "Amazon Redshift clusters should have automatic snapshots enabled"
-            query = "select 1;"
+            query = file("queries/redshift/clusters_should_have_automatic_snapshots_enabled.sql")
         }
 
         query "4" {
             description = "Amazon Redshift clusters should have audit logging enabled"
-            query = "select 1;"
+            query = file("queries/redshift/clusters_should_have_audit_logging_enabled.sql")
         }
 
         query "6" {
             description = "Amazon Redshift should have automatic upgrades to major versions enabled"
-            query = "select 1;"
+            query = file("queries/redshift/clusters_should_have_automatic_upgrades_to_major_versions_enabled.sql")
         }
 
         query "7" {
             description = "Amazon Redshift clusters should use enhanced VPC routing"
-            query = "select 1;"
+            query = file("queries/redshift/clusters_should_use_enhanced_vpc_routing.sql")
         }
     }
 
