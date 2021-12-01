@@ -1,8 +1,8 @@
-policy "pci-dss-v3.2.1" {
-    description = "PCI DSS V3.2.1"
+policy "foundational_security" {
+    description = "AWS Foundational Security Best Practices controls"
     configuration {
         provider "aws" {
-            version = ">= v0.5.0"
+            version = ">= v0.7.0"
         }
     }
 
@@ -11,7 +11,8 @@ policy "pci-dss-v3.2.1" {
         query "api_gateway_method_settings_query" {
             query = file("queries/cq_views/api_gateway_method_settings.sql")
         }
-    }    
+    }
+
     policy "acm" {
         description = "acm controls"
         query "1" {
@@ -51,8 +52,7 @@ policy "pci-dss-v3.2.1" {
     policy "autoscaling" {
         description = "autoscaling controls"
         query "1" {
-            /* query = file("queries/autoscaling/autoscaling_groups_elb_check.sql") */
-            query = "select 1;"
+            query = file("queries/autoscaling/autoscaling_groups_elb_check.sql")
         }
     }
 
@@ -639,20 +639,20 @@ policy "pci-dss-v3.2.1" {
 
         query "6" {
             description = "Amazon S3 permissions granted to other AWS accounts in bucket policies should be restricted"
-            query = "select 1;"
+            query = file("queries/s3/restrict_cross_account_actions.sql")
         }
 
         query "8" {
-            description = "Amazon S3 permissions granted to other AWS accounts in bucket policies should be restricted"
-            query = "select 1;"
+            description = "S3 Block Public Access setting should be enabled at the bucket level"
+            query = file("queries/s3/account_level_public_access_blocks.sql")
         }
     }
 
     policy "sagemaker" {
-        description = "SageMaker controls"
+        description = "SageMaker"
         query "1" {
-            description = "S3 Block Public Access setting should be enabled"
-            query = "select 1;"
+            description = "Amazon SageMaker notebook instances should not have direct internet access"
+            query = file("queries/sagemaker/sagemaker_notebook_instance_direct_internet_access_disabled.sql")
         }
     }
 
@@ -677,18 +677,18 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "sns" {
-        description = "SNS controls"
+        description = "SNS"
         query "1" {
             description = "SNS topics should be encrypted at rest using AWS KMS"
-            query = "select 1;"
+            query = file("queries/sns/sns_topics_should_be_encrypted_at_rest_using_aws_kms.sql")
         }
     }
 
     policy "sqs" {
-        description = "SQS controls"
+        description = "SQS"
         query "1" {
             description = "SNS topics should be encrypted at rest using AWS KMS"
-            query = "select 1;"
+            query = file("queries/sns/sqs_queues_should_be_encrypted_at_rest_using_aws_kms.sql")
         }
     }
 

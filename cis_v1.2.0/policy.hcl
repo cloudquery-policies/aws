@@ -13,7 +13,7 @@ policy "cis-v1.20" {
     }
   }
 
-  policy "aws-cis-section-1" {
+  policy "1" {
     description = "AWS CIS Section 1"
 
     query "1.1" {
@@ -92,7 +92,7 @@ policy "cis-v1.20" {
     }
   }
 
-  policy "aws-cis-section-2" {
+  policy "2" {
     description = "AWS CIS Section 2"
 
     query "2.1" {
@@ -131,7 +131,7 @@ policy "cis-v1.20" {
     }
   }
 
-  policy "aws-cis-section-3" {
+  policy "3" {
     description = "AWS CIS Section 3"
 
     query "3.1" {
@@ -219,7 +219,7 @@ policy "cis-v1.20" {
     }
   }
 
-  policy "aws-cis-section-4" {
+  policy "4" {
     description = "AWS CIS Section 4"
 
     view "aws_security_group_ingress_rules" {
