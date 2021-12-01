@@ -148,7 +148,7 @@ policy "pci-dss-v3.2.1" {
 
         query "3" {
             description = "IAM policies should not allow full '*' administrative privileges"
-            query = "select 1;"
+            query = file("queries/iam/no_star.sql")
         }
 
         query "4" {
