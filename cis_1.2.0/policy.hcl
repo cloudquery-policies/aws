@@ -222,6 +222,13 @@ policy "cis-v1.20" {
   policy "aws-cis-section-4" {
     description = "AWS CIS Section 4"
 
+    view "aws_security_group_ingress_rules" {
+      description = "Aggregates rules of security groups with ports and IPs including ipv6"
+      query "aws_security_group_ingress_rules" {
+        query = file("queries/ec2/aws_security_group_ingress_rules.sql")
+      }
+    }
+
     query "4.1" {
       description = "AWS CIS 4.1 Ensure no security groups allow ingress from 0.0.0.0/0 to port 22 (Scored)"
       query = file("queries/ec2/no_broad_public_ingress_on_port_22.sql")
