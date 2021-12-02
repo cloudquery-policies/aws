@@ -129,7 +129,7 @@ policy "foundational_security" {
         description = "AWS config controls"
         query "1" {
             description = "AWS Config should be enabled"
-            query = "select 1;"
+            query = file("queries/config/enabled_all_regions.sql")
         }
     }
 
