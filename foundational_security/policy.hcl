@@ -263,12 +263,12 @@ policy "foundational_security" {
         description = "ElasticBeanstalk controls"
         query "1" {
             description = "Elastic Beanstalk environments should have enhanced health reporting enabled"
-            query = "select 1;"
+            query = file("queries/elasticbeanstalk/advanced_health_reporting_enabled.sql")
         }
 
         query "2" {
             description = "Elastic Beanstalk managed platform updates should be enabled"
-            query = "select 1;"
+            query = file("queries/elasticbeanstalk/elastic_beanstalk_managed_updates_enabled.sql")
         }
     }
 
