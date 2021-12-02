@@ -429,17 +429,17 @@ policy "foundational_security" {
         description = "KMS controls"
         query "1" {
             description = "IAM customer managed policies should not allow decryption and re-encryption actions on all KMS keys"
-            query = "select 1;"
+            query = file("queries/kms/customer_policy_blocked_kms-actions.sql")
         }
 
         query "2" {
             description = "IAM principals should not have IAM inline policies that allow decryption and re-encryption actions on all KMS keys"
-            query = "select 1;"
+            query = file("queries/kms/inline_policy_blocked_kms_actions.sql")
         }
 
         query "3" {
             description = "AWS KMS keys should not be unintentionally deleted"
-            query = "select 1;"
+            query = file("queries/kms/cmk_not_scheduled_for_deletion.sql")
         }
     }
 
