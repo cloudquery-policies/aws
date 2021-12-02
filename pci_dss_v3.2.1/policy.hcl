@@ -112,7 +112,7 @@ policy "pci-dss-v3.2.1" {
     policy "elbv2" {
         query "1" {
             description = "Application Load Balancer should be configured to redirect all HTTP requests to HTTPS"
-            query = file("queries/elbv2/redirect_http_to_https.sql")
+            query = file("queries/elb/elbv2_redirect_http_to_https.sql")
         }
     }
 
