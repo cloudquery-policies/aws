@@ -145,17 +145,17 @@ policy "foundational_security" {
         description = "DynamoDB controls"
         query "1" {
             description = "DynamoDB tables should automatically scale capacity with demand"
-            query = "select 1;"
+            query = "queries/dynamodb/autoscale_or_ondemand.sql"
         }
 
         query "2" {
             description = "DynamoDB tables should have point-in-time recovery enabled"
-            query = "select 1;"
+            query = "queries/dynamodb/point_in_time_recovery.sql"
         }
 
         query "3" {
             description = "DynamoDB Accelerator (DAX) clusters should be encrypted at rest"
-            query = "select 1;"
+            query = "queries/dynamodb/dax_encrypted_at_rest.sql"
         }
     }
 
