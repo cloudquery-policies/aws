@@ -17,7 +17,7 @@ policy "foundational_security" {
         description = "acm controls"
         query "1" {
             description = "Imported ACM certificates should be renewed after a specified time period"
-            query = "select 1;"
+            query = file("queries/acm/certificates_should_be_renewed.sql")
         }
     }
 
@@ -129,7 +129,7 @@ policy "foundational_security" {
         description = "AWS config controls"
         query "1" {
             description = "AWS Config should be enabled"
-            query = "select 1;"
+            query = file("queries/config/enabled_all_regions.sql")
         }
     }
 
@@ -237,12 +237,12 @@ policy "foundational_security" {
         description = "ECS controls"
         query "1" {
             description = "Amazon ECS task definitions should have secure networking modes and user definitions"
-            query = "select 1;"
+            query = file("queries/ecs/task_definitions_secure_networking.sql")
         }
 
         query "2" {
             description = "Amazon ECS services should not have public IP addresses assigned to them automatically"
-            query = "select 1;"
+            query = file("queries/ecs/ecs_services_with_public_ips.sql")
         }
     }
 
@@ -276,37 +276,37 @@ policy "foundational_security" {
         description = "ELB controls"
         query "2" {
             description = "Classic Load Balancers with SSL/HTTPS listeners should use a certificate provided by AWS Certificate Manager"
-            query = "select 1;"
+            query = file("queries/elb/elbv1_cert_provided_by_acm.sql")
         }
 
         query "3" {
             description = "Classic Load Balancer listeners should be configured with HTTPS or TLS termination"
-            query = "select 1;"
+            query = file("queries/elb/elbv1_https_or_tls.sql")
         }
 
         query "4" {
             description = "Application load balancers should be configured to drop HTTP headers"
-            query = "select 1;"
+            query = file("queries/elb/alb_drop_http_headers.sql")
         }
 
         query "5" {
             description = "Application and Classic Load Balancers logging should be enabled"
-            query = "select 1;"
+            query = file("queries/elb/alb_logging_enabled.sql")
         }
 
         query "6" {
             description = "Application Load Balancer deletion protection should be enabled"
-            query = "select 1;"
+            query = file("queries/elb/alb_deletion_protection_enabled.sql")
         }
 
         query "7" {
             description = "Classic Load Balancers should have connection draining enabled"
-            query = "select 1;"
+            query = file("queries/elb/elbv1_conn_draining_enabled.sql")
         }
 
         query "8" {
             description = "Classic Load Balancers with HTTPS/SSL listeners should use a predefined security policy that has strong configuration"
-            query = "select 1;"
+            query = file("queries/elb/elbv1_https_predefined_policy.sql")
         }
     }
 
@@ -314,7 +314,7 @@ policy "foundational_security" {
         description = "ELBv2 controls"
         query "1" {
             description = "Application Load Balancer should be configured to redirect all HTTP requests to HTTPS"
-            query = file("queries/elbv2/redirect_http_to_https.sql")
+            query = file("queries/elb/elbv2_redirect_http_to_https.sql")
         }
     }
 
@@ -322,7 +322,7 @@ policy "foundational_security" {
         description = "EMR controls"
         query "1" {
             description = "Amazon EMR cluster master nodes should not have public IP addresses"
-            query = "select 1;"
+            query = file("queries/emr/emr_cluster_master_nodes_should_not_have_public_ip_addresses.sql")
         }
     }
 
@@ -340,32 +340,32 @@ policy "foundational_security" {
 
         query "3" {
             description = "Elasticsearch domains should encrypt data sent between nodes"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domains_should_encrypt_data_sent_between_nodes.sql")
         }
 
         query "4" {
             description = "Elasticsearch domain error logging to CloudWatch Logs should be enabled"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domain_error_logging_to_cloudwatch_logs_should_be_enabled.sql")
         }
 
         query "5" {
             description = "Elasticsearch domains should have audit logging enabled"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domains_should_have_audit_logging_enabled.sql")
         }
 
         query "6" {
             description = "Elasticsearch domains should have at least three data nodes"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domains_should_have_at_least_three_data_nodes.sql")
         }
 
         query "7" {
             description = "Elasticsearch domains should be configured with at least three dedicated master nodes"
-            query = "select 1;"
+            query = file("queries/elasticsearch/elasticsearch_domains_should_be_configured_with_at_least_three_dedicated_master_nodes.sql")
         }
 
         query "8" {
             description = "Connections to Elasticsearch domains should be encrypted using TLS 1.2"
-            query = "select 1;"
+            query = file("queries/elasticsearch/connections_to_elasticsearch_domains_should_be_encrypted_using_tls_1_2.sql")
         }
     }
 
@@ -576,7 +576,7 @@ policy "foundational_security" {
     }
 
     policy "redshift" {
-        description = "Redshift controls"
+        description = "Redshift"
 
         query "1" {
             description = "Amazon Redshift clusters should prohibit public access"
@@ -585,27 +585,27 @@ policy "foundational_security" {
 
         query "2" {
             description = "Connections to Amazon Redshift clusters should be encrypted in transit"
-            query = "select 1;"
+            query = file("queries/redshift/clusters_should_be_encrypted_in_transit.sql")
         }
 
         query "3" {
             description = "Amazon Redshift clusters should have automatic snapshots enabled"
-            query = "select 1;"
+            query = file("queries/redshift/clusters_should_have_automatic_snapshots_enabled.sql")
         }
 
         query "4" {
             description = "Amazon Redshift clusters should have audit logging enabled"
-            query = "select 1;"
+            query = file("queries/redshift/clusters_should_have_audit_logging_enabled.sql")
         }
 
         query "6" {
             description = "Amazon Redshift should have automatic upgrades to major versions enabled"
-            query = "select 1;"
+            query = file("queries/redshift/clusters_should_have_automatic_upgrades_to_major_versions_enabled.sql")
         }
 
         query "7" {
             description = "Amazon Redshift clusters should use enhanced VPC routing"
-            query = "select 1;"
+            query = file("queries/redshift/clusters_should_use_enhanced_vpc_routing.sql")
         }
     }
 
