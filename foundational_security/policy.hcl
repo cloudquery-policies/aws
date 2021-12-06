@@ -657,22 +657,22 @@ policy "foundational_security" {
     }
 
     policy "secretmanager" {
-        description = "SecretManager controls"
+        description = "SecretManager"
         query "1" {
             description = "Secrets Manager secrets should have automatic rotation enabled"
-            query = "select 1;"
+            query = file("queries/secretsmanager/secrets_should_have_automatic_rotation_enabled.sql")
         }
         query "2" {
             description = "Secrets Manager secrets configured with automatic rotation should rotate successfully"
-            query = "select 1;"
+            query = file("queries/secretsmanager/secrets_configured_with_automatic_rotation_should_rotate_successfully.sql")
         }
         query "3" {
             description = "Remove unused Secrets Manager secrets"
-            query = "select 1;"
+            query = file("queries/secretsmanager/remove_unused_secrets_manager_secrets.sql")
         }
         query "4" {
             description = "Secrets Manager secrets should be rotated within a specified number of days"
-            query = "select 1;"
+            query = file("queries/secretsmanager/secrets_should_be_rotated_within_a_specified_number_of_days.sql")
         }
     }
 
