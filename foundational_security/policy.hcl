@@ -429,7 +429,7 @@ policy "foundational_security" {
         description = "KMS controls"
         query "1" {
             description = "IAM customer managed policies should not allow decryption and re-encryption actions on all KMS keys"
-            query = file("queries/kms/customer_policy_blocked_kms-actions.sql")
+            query = file("queries/kms/customer_policy_blocked_kms_actions.sql")
         }
 
         query "2" {

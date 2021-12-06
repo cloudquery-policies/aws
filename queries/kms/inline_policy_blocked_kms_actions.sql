@@ -67,7 +67,7 @@ select arn,
        account_id
 from aws_iam_roles
          join iam_role_violations on iam_role_violations.cq_id = aws_iam_roles.cq_id
-where arn not like '%service-role/%'
+where arn not like 'arn:aws:iam::%:role/aws-service-role/%'
 union
 select arn,
        account_id
