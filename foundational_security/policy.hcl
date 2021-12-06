@@ -60,32 +60,32 @@ policy "foundational_security" {
         description = "cloudfront controls"
         query "1" {
             description = "CloudFront distributions should have a default root object configured"
-            query = "select 1;"
+            query = file("queries/cloudfront/default_root_object_configured.sql")
         }
 
         query "2" {
             description = "CloudFront distributions should have origin access identity enabled"
-            query = "select 1;"
+            query = file("queries/cloudfront/origin_access_identity_enabled.sql")
         }
 
         query "3" {
             description = "CloudFront distributions should require encryption in transit"
-            query = "select 1;"
+            query = file("queries/cloudfront/viewer_policy_https.sql")
         }
 
         query "4" {
             description = "CloudFront distributions should have origin failover configured"
-            query = "select 1;"
+            query = file("queries/cloudfront/origin_failover_enabled.sql")
         }
 
         query "5" {
             description = "CloudFront distributions should have logging enabled"
-            query = "select 1;"
+            query = file("queries/cloudfront/accesslogs_enabled.sql")
         }
 
         query "6" {
             description = "CloudFront distributions should have AWS WAF enabled"
-            query = "select 1;"
+            query = file("queries/cloudfront/associated_with_waf.sql")
         }
     }
 
