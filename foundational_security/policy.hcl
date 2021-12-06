@@ -475,95 +475,94 @@ policy "foundational_security" {
 
         query "3" {
             description = "RDS DB instances should have encryption at rest enabled"
-            query = "select 1;"
+            query = file("queries/rds/rds_db_instances_should_have_encryption_at_rest_enabled.sql")
         }
 
         query "4" {
-            description = "RDS DB instances should have encryption at rest enabled"
-            query = "select 1;"
+            description = "RDS cluster snapshots and database snapshots should be encrypted at rest"
+            query = file("queries/rds/rds_cluster_snapshots_and_database_snapshots_should_be_encrypted_at_rest.sql")
         }
 
         query "5" {
             description = "RDS DB instances should be configured with multiple Availability Zones"
-            query = "select 1;"
+            query = file("queries/rds/rds_db_instances_should_be_configured_with_multiple_availability_zones.sql")
         }
 
         query "6" {
             description = "Enhanced monitoring should be configured for RDS DB instances and clusters"
-            query = "select 1;"
+            query = file("queries/rds/enhanced_monitoring_should_be_configured_for_rds_db_instances_and_clusters.sql")
         }
 
         query "7" {
             description = "RDS clusters should have deletion protection enabled"
-            query = "select 1;"
+            query = file("queries/rds/rds_clusters_should_have_deletion_protection_enabled.sql")
         }
 
         query "8" {
             description = "RDS DB instances should have deletion protection enabled"
-            query = "select 1;"
+            query = file("queries/rds/rds_db_instances_should_have_deletion_protection_enabled.sql")
         }
 
         query "9" {
             description = "Database logging should be enabled"
-            query = "select 1;"
+            query = file("queries/rds/database_logging_should_be_enabled.sql")
         }
-
 
         query "10" {
             description = "IAM authentication should be configured for RDS instances"
-            query = "select 1;"
+            query = file("queries/rds/iam_authentication_should_be_configured_for_rds_instances.sql")
         }
 
         query "12" {
             description = "IAM authentication should be configured for RDS clusters"
-            query = "select 1;"
+            query = file("queries/rds/iam_authentication_should_be_configured_for_rds_clusters.sql")
         }
         
         query "13" {
             description = "RDS automatic minor version upgrades should be enabled"
-            query = "select 1;"
+            query = file("queries/rds/rds_automatic_minor_version_upgrades_should_be_enabled.sql")
         }
 
         query "14" {
             description = "Amazon Aurora clusters should have backtracking enabled"
-            query = "select 1;"
+            query = file("queries/rds/amazon_aurora_clusters_should_have_backtracking_enabled.sql")
         }
         
         query "15" {
             description = "RDS DB clusters should be configured for multiple Availability Zones"
-            query = "select 1;"
+            query = file("queries/rds/rds_db_clusters_should_be_configured_for_multiple_availability_zones.sql")
         }
 
         query "16" {
             description = "RDS DB clusters should be configured to copy tags to snapshots"
-            query = "select 1;"
+            query = file("queries/rds/rds_db_clusters_should_be_configured_to_copy_tags_to_snapshots.sql")
         }
         
         query "17" {
             description = "RDS DB instances should be configured to copy tags to snapshots"
-            query = "select 1;"
+            query = file("queries/rds/rds_db_instances_should_be_configured_to_copy_tags_to_snapshots.sql")
         }
 
         query "18" {
             description = "RDS instances should be deployed in a VPC"
-            query = "select 1;"
+            query = file("queries/rds/rds_instances_should_be_deployed_in_a_vpc.sql")
         }
         
         query "19" {
             description = "An RDS event notifications subscription should be configured for critical cluster events"
-            query = "select 1;"
+            query = file("queries/rds/rds_event_notifications_subscription_should_be_configured_for_critical_cluster_events.sql")
         }
 
         query "20" {
             description = "An RDS event notifications subscription should be configured for critical database instance events"
-            query = "select 1;"
+            query = file("queries/rds/rds_event_notifications_subscription_should_be_configured_for_critical_database_instance_events.sql")
         }
 
         query "21" {
             description = "An RDS event notifications subscription should be configured for critical database parameter group events"
             query = "select 1;"
         }
-        
+
         query "22" {
             description = "An RDS event notifications subscription should be configured for critical database security group events"
             query = "select 1;"
@@ -571,7 +570,7 @@ policy "foundational_security" {
 
         query "23" {
             description = "RDS databases and clusters should not use a database engine default port"
-            query = "select 1;"
+            query = file("queries/rds/rds_databases_and_clusters_should_not_use_a_database_engine_default_port.sql")
         }
     }
 
