@@ -1,8 +1,12 @@
 name: cq_policy_run
 
 on:
-  schedule:
-    - cron: '0 1 * * *' # Run every night on 01:00am UTC
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
