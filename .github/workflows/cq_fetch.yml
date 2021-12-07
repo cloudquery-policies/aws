@@ -37,7 +37,7 @@ jobs:
           --health-retries 5
 
     steps:
-      - name: Check out code into the Go module directory
+      - name: Check out code into the policy directory
         uses: actions/checkout@v2
 
       - name: Cache CQ
@@ -67,7 +67,6 @@ jobs:
           ./cloudquery fetch --config ./test/policy_cq_config.hcl --enable-console-log --fail-on-error
           ./cloudquery policy run --config ./test/policy_cq_config.hcl --enable-console-log --fail-on-error --stop-on-failure
         env:
-          CQ_REATTACH_PROVIDERS: .cq_reattach
           CQ_NO_TELEMETRY: 1
 
       - name: Slack Notification
