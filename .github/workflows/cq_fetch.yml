@@ -62,10 +62,15 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Policy Run
+      - name: Cq fetch
         run: |
           ./cloudquery fetch --config ./test/policy_cq_config.hcl --enable-console-log --fail-on-error
-          ./cloudquery policy run --config ./test/policy_cq_config.hcl --enable-console-log --fail-on-error --stop-on-failure
+        env:
+          CQ_NO_TELEMETRY: 1
+
+      - name: Policy Run
+        run: |
+          ./cloudquery policy run --config ./test/policy_cq_config.hcl --enable-console-log --stop-on-failure
         env:
           CQ_NO_TELEMETRY: 1
 
