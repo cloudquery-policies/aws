@@ -560,12 +560,12 @@ policy "foundational_security" {
 
         query "21" {
             description = "An RDS event notifications subscription should be configured for critical database parameter group events"
-            query = "select 1;"
+            query = file("queries/rds/rds_event_notifications_subscription_should_be_configured_for_critical_database_parameter_group_events.sql")
         }
 
         query "22" {
             description = "An RDS event notifications subscription should be configured for critical database security group events"
-            query = "select 1;"
+            query = file("queries/rds/rds_event_notifications_subscription_should_be_configured_for_critical_database_security_group_events.sql")
         }
 
         query "23" {
