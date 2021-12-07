@@ -7,7 +7,7 @@ WITH policy_statements AS (SELECT p.cq_id AS cq_id, JSONB_ARRAY_ELEMENTS(v.docum
          FROM policy_statements
          WHERE statement ->> 'Action' = '*'
            AND statement ->> 'Effect' = 'Allow'
-           AND statement ->> 'Resource' = '*'
+           AND (statement ->> 'Resource' = '*' OR statement ->> 'Resource' = '*:*')
          GROUP BY cq_id
      )
 SELECT p.account_id, p.name, p.arn
