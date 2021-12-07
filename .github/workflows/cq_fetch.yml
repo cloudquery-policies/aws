@@ -1,6 +1,8 @@
 name: cq_policy_run
 
 on:
+  schedule:
+    - cron: '0 1 * * *' # Run every night on 01:00am UTC
   push:
     branches:
       - main
@@ -62,7 +64,7 @@ jobs:
 
       - name: Policy Run
         run: |
-          ./cloudquery policy fetch --config ./test/policy_cq_config.hcl --enable-console-log --fail-on-error
+          ./cloudquery fetch --config ./test/policy_cq_config.hcl --enable-console-log --fail-on-error
           ./cloudquery policy run --config ./test/policy_cq_config.hcl --enable-console-log --fail-on-error --stop-on-failure
         env:
           CQ_REATTACH_PROVIDERS: .cq_reattach
