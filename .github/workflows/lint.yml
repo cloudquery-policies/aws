@@ -11,7 +11,7 @@ jobs:
           go-version: ^1.16
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2
-      - run: go install github.com/hashicorp/hcl/v2/cmd/hclfmt
+      - run: go install github.com/hashicorp/hcl/v2/cmd/hclfmt@latest
       - name: Lint-Foundational Security
         run: $(go env GOPATH)/bin/hclfmt --require-no-change foundational_security/policy.hcl 
       - name: Lint-PCI DSS V3.2.1
