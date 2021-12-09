@@ -16,6 +16,6 @@ jobs:
         run: $(go env GOPATH)/bin/hclfmt --require-no-change foundational_security/policy.hcl 
       - name: Lint-PCI DSS V3.2.1
         run: $(go env GOPATH)/bin/hclfmt --require-no-change pci_dss_v3.2.1/policy.hcl
-      -name: Lint-Publicly Available Resources
+      - name: Lint-Publicly Available Resources
         run: $(go env GOPATH)/bin/hclfmt --require-no-change publicly_available/policy.hcl
         
