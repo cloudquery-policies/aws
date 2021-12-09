@@ -18,7 +18,7 @@ policy "public-ips" {
     }
 
     query "API-Gateway-V2" {
-      description   = "Find all API Gateway V2 instances (HTTP and Webhook) that are publically accessible"
+      description = "Find all API Gateway V2 instances (HTTP and Webhook) that are publically accessible"
       type        = "manual"
 
       query = <<EOF
