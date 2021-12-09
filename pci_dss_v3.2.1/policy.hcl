@@ -13,6 +13,14 @@ policy "pci-dss-v3.2.1" {
         }
     }
 
+    view "aws_security_group_ingress_rules" {
+      description = "Aggregates rules of security groups with ports and IPs including ipv6"
+      query "aws_security_group_ingress_rules" {
+        query = file("queries/ec2/aws_security_group_ingress_rules.sql")
+      }
+    }
+
+
     policy "autoscaling" {
         description = "checks for autoscaling"
         query "autoscaling_groups_elb_check" {
@@ -100,7 +108,7 @@ policy "pci-dss-v3.2.1" {
 
         query "5" {
             description = "Security groups should not allow ingress from 0.0.0.0/0 to port 22"
-            query = file("queries/ec2/public_ingress_on_port_22.sql")
+            query = file("queries/ec2/no_broad_public_ingress_on_port_22.sql")
         }
 
         query "6" {
