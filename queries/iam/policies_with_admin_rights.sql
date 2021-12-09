@@ -5,12 +5,13 @@ WITH policy_statements AS (SELECT p.cq_id AS cq_id, JSONB_ARRAY_ELEMENTS(v.docum
                            WHERE p.arn NOT LIKE 'arn:aws:iam::aws:policy%')
 
    , allow_all_statements AS (
-    SELECT cq_id, COUNT(STATEMENT) AS statements_count
+    SELECT cq_id, COUNT(statement) AS statements_count
     FROM policy_statements
-    WHERE STATEMENT ->> 'Action' = '*'
-      AND STATEMENT ->> 'Effect' = 'Allow'
-      AND (STATEMENT ->> 'Resource' = '*'
-        OR STATEMENT ->> 'Resource' LIKE '%"*"%')
+    WHERE (statement ->> 'Action' = '*'
+        OR statement ->> 'Action' LIKE '%"*"%')
+      AND statement ->> 'Effect' = 'Allow'
+      AND (statement ->> 'Resource' = '*'
+        OR statement ->> 'Resource' LIKE '%"*"%')
     GROUP BY cq_id
 )
 SELECT p.account_id, p.name, p.arn
