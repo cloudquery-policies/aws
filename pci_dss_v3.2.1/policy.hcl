@@ -22,7 +22,7 @@ policy "pci-dss-v3.2.1" {
 
 
     policy "autoscaling" {
-        description = "checks for autoscaling"
+        description = "Controls for AWS AutoScaling"
         query "autoscaling_groups_elb_check" {
             description = "Auto Scaling groups associated with a load balancer should use health checks"
             query = file("queries/autoscaling/autoscaling_groups_elb_check.sql")
@@ -30,7 +30,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "cloudtrail" {
-        description = "checks for cloudtrail"
+        description = "Controls for AWS Cloudtrail"
         query "1" {
             description = "CloudTrail logs should be encrypted at rest using AWS KMS keys"
             query = file("queries/cloudtrail/logs_encrypted.sql")
@@ -53,6 +53,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "codebuild" {
+        description = "Controls for AWS Codebuild"
         query "1" {
             description = "CodeBuild GitHub or Bitbucket source repository URLs should use OAuth"
             query = file("queries/codebuild/check_oauth_usage_for_sources.sql")
@@ -65,6 +66,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "config" {
+        description = "Controls for AWS Config"
         query "1" {
             description = "AWS Config should be enabled"
             query = file("queries/config/enabled_all_regions.sql")
@@ -72,6 +74,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "cloudwatch" {
+        description = "Controls for Amazon Cloudwatch"
         query "1" {
             description = "A log metric filter and alarm should exist for usage of the 'root' user"
             query = file("queries/cloudwatch/alarm_root_account.sql")
@@ -79,6 +82,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "dms" {
+        description = "Controls for AWS Database Migration Service"
         query "1" {
             description = "AWS Database Migration Service replication instances should not be public"
             query = file("queries/dms/replication_not_public.sql")
@@ -86,6 +90,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "ec2" {
+        description = "Controls for Amazon EC2"
         query "1" {
             description = "Amazon EBS snapshots should not be publicly restorable"
             query = file("queries/ec2/ebs_snapshot_permissions_check.sql")
@@ -118,6 +123,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "elbv2" {
+        description = "Controls for Elastic Load Balancing
         query "1" {
             description = "Application Load Balancer should be configured to redirect all HTTP requests to HTTPS"
             query = file("queries/elb/elbv2_redirect_http_to_https.sql")
@@ -125,6 +131,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "elasticsearch" {
+        description = "Controls for Amazon OpenSearch Service"
         query "1" {
             description = "Elasticsearch domains should be in a VPC"
             query = file("queries/elasticsearch/elasticsearch_domains_should_be_in_vpc.sql")
@@ -137,6 +144,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "guardduty" {
+        description = "Controls for Amazon GuardDuty"
         query "guardduty enabled in all enabled regions" {
             description = "GuardDuty should be enabled"
             query = file("queries/guardduty/detector_enabled.sql")
@@ -144,6 +152,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "iam" {
+        description = "Controls for AWS IAM"
         query "1" {
             description = "IAM root user access key should not exist"
             query = file("queries/iam/root_user_no_access_keys.sql")
@@ -186,6 +195,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "kms" {
+        description = "Controls for AWS KMS"
         query "1" {
             description = "KMS key rotation should be enabled"
             query = file("queries/kms/rotation_enabled_for_customer_key.sql")
@@ -193,6 +203,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "lambda" {
+        description = "Controls for AWS Lambda"
         query "1" {
             description = "Lambda functions should prohibit public access"
             query = file("queries/lambda/lambda_function_prohibit_public_access.sql")
@@ -205,6 +216,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "rds" {
+        description = "Controls for Amazon RDS"
         query "1" {
             description = "RDS snapshots should prohibit public access"
             query = file("queries/rds/snapshots_should_prohibit_public_access.sql")
@@ -217,6 +229,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "redshift" {
+        description = "Controls for Amazon Redshift"
         query "1" {
             description = "Amazon Redshift clusters should prohibit public access"
             query = file("queries/redshift/cluster_publicly_accessible.sql")
@@ -224,6 +237,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "s3" {
+        description = "Controls for Amazon S3"
         query "1" {
             description = "S3 buckets should prohibit public write access"
             query = file("queries/s3/publicly_writable_buckets.sql")
@@ -256,6 +270,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "sagemaker" {
+        description = "Controls for Amazon SageMaker"
         query "1" {
             description = "Amazon SageMaker notebook instances should not have direct internet access"
             query = file("queries/sagemaker/sagemaker_notebook_instance_direct_internet_access_disabled.sql")
@@ -263,6 +278,7 @@ policy "pci-dss-v3.2.1" {
     }
 
     policy "ssm" {
+        description = "Controls for AWS Systems Manager"
         query "1" {
             description = "Amazon EC2 instances managed by Systems Manager should have a patch compliance status of COMPLIANT after a patch installation"
             query = file("queries/ssm/instances_should_have_patch_compliance_status_of_compliant.sql")
