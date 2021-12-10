@@ -31,7 +31,7 @@ brew install cloudquery/tap/cloudquery
 # or download precompiled binaries from https://github.com/cloudquery/cloudquery/releases
 ```
 
-2. [Install AWS Provider](https://docs.cloudquery.io/docs/cli/fetch/overview)
+2. [Download and Configure AWS Provider](https://docs.cloudquery.io/docs/cli/fetch/overview)
 
 ```bash
 cloudquery init aws
@@ -41,9 +41,8 @@ cloudquery init aws
 
 ```bash
 # connect or run  a local PostgreSQL
-docker run -p 5432:5432 -e 
+docker run -p 5432:5432 -e POSTGRES_PASSWORD=pass -d postgres
 # extract your cloud infra configuration
-POSTGRES_PASSWORD=pass -d postgres
 cloudquery fetch
 ```
 
