@@ -1,6 +1,18 @@
 # AWS Security & Compliance CloudQuery policy pack
 
-Official AWS security &amp; compliance policy pack for CloudQuery.
+Official AWS security & compliance policy pack for CloudQuery.
+
+## What is CloudQuery
+
+The [open-source](https://github.com/cloudquery/cloudquery) cloud asset inventory powered by SQL.
+
+CloudQuery extracts, transforms, and loads your cloud assets into normalized PostgreSQL tables. CloudQuery enables you to assess, audit, and evaluate the configurations of your cloud assets.
+
+### Links
+* Homepage: https://cloudquery.io
+* Documentation: https://docs.cloudquery.io
+* CloudQuery Hub (providers & policies documentation): https://hub.cloudquery.io/
+* Discord: https://cloudquery.io/discord
 
 ## Included Policies
 
@@ -12,8 +24,28 @@ Official AWS security &amp; compliance policy pack for CloudQuery.
 ### Prerequisite
 
 1. [Install CloudQuery](https://docs.cloudquery.io/docs/getting-started)
+
+```bash 
+# install with brew
+brew install cloudquery/tap/cloudquery
+# or download precompiled binaries from https://github.com/cloudquery/cloudquery/releases
+```
+
 2. [Install AWS Provider](https://docs.cloudquery.io/docs/cli/fetch/overview)
+
+```bash
+cloudquery init aws
+```
+
 3. [Fetch](https://hub.cloudquery.io/providers/cloudquery/aws/latest)
+
+```bash
+# connect or run  a local PostgreSQL
+docker run -p 5432:5432 -e 
+# extract your cloud infra configuration
+POSTGRES_PASSWORD=pass -d postgres
+cloudquery fetch
+```
 
 ### Running
 
