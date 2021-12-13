@@ -6,9 +6,13 @@ policy "aws" {
     }
   }
 
-  policy "cis-v1.2.0" {
+  policy "cis_v1.2.0" {
     description = "AWS CIS V1.2.0 Policy"
     source      = file("cis_v1.2.0/policy.hcl")
   }
 
+  policy "pci_dss_v3.2.1" {
+    description = "AWS PCI DSS V3.2.1 Policy"
+    source      = file("pci_dss_v3.2.1/policy.hcl")
+  }
 }

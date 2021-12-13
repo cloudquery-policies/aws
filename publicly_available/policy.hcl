@@ -29,7 +29,7 @@ policy "public-ips" {
     query "CloudFront-Distributions" {
       description = "Find all Cloudfront distributions"
       type        = "manual"
-      query = <<EOF
+      query       = <<EOF
         SELECT distinct domain_name,  account_id, arn FROM aws_cloudfront_distributions
     EOF
     }
@@ -37,7 +37,7 @@ policy "public-ips" {
     query "EC2-Public-Ips" {
       description = "Find all instances with a public IP address"
       type        = "manual"
-      query = <<EOF
+      query       = <<EOF
         SELECT DISTINCT id, public_dns_name, public_ip_address, account_id, region FROM aws_ec2_instances WHERE public_ip_address IS NOT NULL
     EOF
     }

@@ -1,0 +1,23 @@
+name: lint
+on: [push, pull_request]
+
+jobs:
+  Lint-Policies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.16
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
+      - run: go install github.com/hashicorp/hcl/v2/cmd/hclfmt@latest
+      - name: Lint-Root Policy
+        run: $(go env GOPATH)/bin/hclfmt --require-no-change policy.hcl
+      - name: Lint-Foundational Security
+        run: $(go env GOPATH)/bin/hclfmt --require-no-change foundational_security/policy.hcl 
+      - name: Lint-PCI DSS V3.2.1
+        run: $(go env GOPATH)/bin/hclfmt --require-no-change pci_dss_v3.2.1/policy.hcl
+      - name: Lint-Publicly Available Resources
+        run: $(go env GOPATH)/bin/hclfmt --require-no-change publicly_available/policy.hcl
+        

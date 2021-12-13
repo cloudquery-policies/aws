@@ -1,0 +1,3 @@
+SELECT arn
+FROM aws_rds_instances
+WHERE enhanced_monitoring_resource_arn IS NULL
