@@ -31,3 +31,5 @@ SELECT DISTINCT arn,
 FROM aws_lambda_functions
 WHERE vpc_config_vpc_id IS NULL
 	OR vpc_config_vpc_id = ''
+
+-- Note: We do not restrict the search to specific Runtimes
