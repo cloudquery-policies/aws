@@ -13,9 +13,13 @@ policy "public-egress" {
     }
   }
 
-  query "ec-instances" {
-      description = "Amazon Redshift clusters should prohibit public access"
-      query       = file("queries/redshift/cluster_publicly_accessible.sql")
+  query "ec2-instances" {
+      description = "Find all ec2 instances that have unrestricted access to the internet"
+      query       = file("queries/ec2/public_egress_instances.sql")
+    }
+  query "lambda-functions" {
+      description = "Find all ec2 instances that have unrestricted access to the internet"
+      query       = file("queries/lambda/public_egress_functions.sql")
     }
 
 }
