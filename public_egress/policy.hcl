@@ -27,7 +27,7 @@ policy "public-egress" {
   query "lambda-functions" {
     type        = "manual"
     description = "Find all ec2 instances that have unrestricted access to the internet"
-    query       = file("queries/lambda/public_egress_instances.sql")
+    query       = file("queries/lambda/functions_with_public_egress.sql")
   }
 
 }

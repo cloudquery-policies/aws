@@ -225,7 +225,7 @@ policy "cis-v1.20" {
     view "aws_security_group_ingress_rules" {
       description = "Aggregates rules of security groups with ports and IPs including ipv6"
       query "aws_security_group_ingress_rules" {
-        query = file("queries/ec2/aws_security_group_ingress_rules.sql")
+        query = file("queries/cq_views/aws_security_group_ingress_rules.sql")
       }
     }
 
