@@ -80,7 +80,7 @@ policy "foundational_security" {
 
     query "5" {
       description = "CloudFront distributions should have logging enabled"
-      query       = file("queries/cloudfront/accesslogs_enabled.sql")
+      query       = file("queries/cloudfront/access_logs_enabled.sql")
     }
 
     query "6" {
@@ -181,7 +181,7 @@ policy "foundational_security" {
 
     query "3" {
       description = "Attached EBS volumes should be encrypted at rest"
-      query       = file("queries/ec2/unencypted_ebs_volumes.sql")
+      query       = file("queries/ec2/unencrypted_ebs_volumes.sql")
     }
 
     query "4" {
@@ -202,7 +202,7 @@ policy "foundational_security" {
 
     query "8" {
       description = "EC2 instances should use IMDSv2"
-      query       = file("queries/ec2/not_idsmv2_instances.sql")
+      query       = file("queries/ec2/not_imdsV2_instances.sql")
     }
 
     query "9" {

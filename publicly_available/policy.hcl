@@ -3,13 +3,13 @@ policy "public-ips" {
 
   configuration {
     provider "aws" {
-      version = ">= 0.5.0"
+      version = ">= 0.8.2."
     }
   }
 
   policy "public-ips" {
     query "API-Gateways" {
-      description = "Find all API Gateway instances that are publically accessible"
+      description = "Find all API Gateway instances that are publicly accessible"
       type        = "manual"
 
       query = <<EOF
@@ -18,7 +18,7 @@ policy "public-ips" {
     }
 
     query "API-Gateway-V2" {
-      description = "Find all API Gateway V2 instances (HTTP and Webhook) that are publically accessible"
+      description = "Find all API Gateway V2 instances (HTTP and Webhook) that are publicly accessible"
       type        = "manual"
 
       query = <<EOF
@@ -61,7 +61,7 @@ policy "public-ips" {
     }
 
     query "Redshift" {
-      description = "Find all Redshift Clusters are publically accessible"
+      description = "Find all Redshift Clusters are publicly accessible"
       type        = "manual"
 
       query = <<EOF
@@ -70,7 +70,7 @@ policy "public-ips" {
     }
 
     query "RDS" {
-      description = "Find all RDS Instances are publically accessible"
+      description = "Find all RDS Instances are publicly accessible"
       type        = "manual"
 
       query = <<EOF
