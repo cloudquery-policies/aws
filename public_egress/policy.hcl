@@ -3,7 +3,7 @@ policy "public-egress" {
 
   configuration {
     provider "aws" {
-      version = ">= 0.5.0"
+      version = ">= 0.8.2"
     }
   }
   view "aws_security_group_egress_rules" {
@@ -13,13 +13,21 @@ policy "public-egress" {
     }
   }
 
+  query "ec2-all-instances-with-routes-and-security-groups" {
+    type        = "manual"
+    description = "Find all ec2 instances that have unrestricted access to the internet with a wide open security group and routing"
+    query       = file("queries/ec2/public_egress_sg_and_routing_instances.sql")
+  }
+
   query "ec2-instances" {
-      description = "Find all ec2 instances that have unrestricted access to the internet"
-      query       = file("queries/ec2/public_egress_instances.sql")
-    }
+    type        = "manual"
+    description = "Find all ec2 instances that have unrestricted access to the internet via a security group"
+    query       = file("queries/ec2/public_egress_sg_instances.sql")
+  }
   query "lambda-functions" {
-      description = "Find all ec2 instances that have unrestricted access to the internet"
-      query       = file("queries/lambda/public_egress_functions.sql")
-    }
+    type        = "manual"
+    description = "Find all ec2 instances that have unrestricted access to the internet"
+    query       = file("queries/lambda/public_egress_instances.sql")
+  }
 
 }

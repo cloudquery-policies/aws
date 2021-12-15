@@ -1,6 +1,9 @@
 
 -- Find all AWS instances that are in a subnet that includes a catchall route
-SELECT *
+SELECT id,
+	region,
+	account_id,
+	vpc_id
 FROM aws_ec2_instances
 WHERE subnet_id in
 		--  Find all subnets that include a route table that inclues a catchall route
@@ -18,4 +21,4 @@ AND cq_id in
 	(SELECT instance_cq_id
 		FROM aws_ec2_instance_security_groups
 		JOIN aws_security_group_egress_rules ON group_id = id
-		WHERE ip IS NULL )
+		WHERE (ip = '0.0.0.0/0' OR ip = '::/0'))
