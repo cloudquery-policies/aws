@@ -202,7 +202,7 @@ policy "foundational_security" {
 
     query "8" {
       description = "EC2 instances should use IMDSv2"
-      query       = file("queries/ec2/not_imdsV2_instances.sql")
+      query         = file("queries/ec2/not_imdsV2_instances.sql")
     }
 
     query "9" {
