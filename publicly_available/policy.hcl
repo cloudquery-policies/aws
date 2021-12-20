@@ -3,13 +3,13 @@ policy "public-ips" {
 
   configuration {
     provider "aws" {
-      version = ">= 0.5.0"
+      version = ">= 0.8.2."
     }
   }
 
   policy "public-ips" {
     query "API-Gateways" {
-      description = "Find all API Gateway instances that are publically accessible"
+      description = "Find all API Gateway instances that are publicly accessible"
       type        = "manual"
 
       query = <<EOF
@@ -18,7 +18,7 @@ policy "public-ips" {
     }
 
     query "API-Gateway-V2" {
-      description = "Find all API Gateway V2 instances (HTTP and Webhook) that are publically accessible"
+      description = "Find all API Gateway V2 instances (HTTP and Webhook) that are publicly accessible"
       type        = "manual"
 
       query = <<EOF
@@ -29,7 +29,7 @@ policy "public-ips" {
     query "CloudFront-Distributions" {
       description = "Find all Cloudfront distributions"
       type        = "manual"
-      query = <<EOF
+      query       = <<EOF
         SELECT distinct domain_name,  account_id, arn FROM aws_cloudfront_distributions
     EOF
     }
@@ -37,7 +37,7 @@ policy "public-ips" {
     query "EC2-Public-Ips" {
       description = "Find all instances with a public IP address"
       type        = "manual"
-      query = <<EOF
+      query       = <<EOF
         SELECT DISTINCT id, public_dns_name, public_ip_address, account_id, region FROM aws_ec2_instances WHERE public_ip_address IS NOT NULL
     EOF
     }
@@ -61,7 +61,7 @@ policy "public-ips" {
     }
 
     query "Redshift" {
-      description = "Find all Redshift Clusters are publically accessible"
+      description = "Find all Redshift Clusters are publicly accessible"
       type        = "manual"
 
       query = <<EOF
@@ -70,7 +70,7 @@ policy "public-ips" {
     }
 
     query "RDS" {
-      description = "Find all RDS Instances are publically accessible"
+      description = "Find all RDS Instances are publicly accessible"
       type        = "manual"
 
       query = <<EOF
