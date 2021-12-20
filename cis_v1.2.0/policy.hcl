@@ -21,6 +21,7 @@ policy "cis-v1.20" {
 
   policy "2" {
     name = "Section 2: Logging"
+    // is taking the name, description from here? or from inside? 
     source      = file("cis_v1.2.0/section_2.hcl")
   }
 
@@ -30,7 +31,7 @@ policy "cis-v1.20" {
   }
 
   policy "4" {
-    description = "Section 4: Networking"
+    name = "Section 4: Networking"
     source      = file("cis_v1.2.0/section_4.hcl")
   }
 }
