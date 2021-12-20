@@ -2,7 +2,7 @@ policy "aws" {
   description = "AWS Security & Compliance"
   configuration {
     provider "aws" {
-      version = ">= 0.6.4"
+      version = "> 0.8.2"
     }
   }
 
