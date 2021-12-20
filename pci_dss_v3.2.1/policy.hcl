@@ -278,4 +278,12 @@ policy "pci-dss-v3.2.1" {
       query       = file("queries/ssm/ec2_instances_should_be_managed_by_ssm.sql")
     }
   }
+
+  policy "waf" {
+    description = "WAF"
+    query "1" {
+      description = "AWS WAF Classic global web ACL logging should be enabled"
+      query       = file("queries/wafv2/wafv2_web_acl_logging_should_be_enabled.sql")
+    }
+  }
 }
