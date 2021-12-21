@@ -1,6 +1,6 @@
 policy "cis-v1.20" {
-  name = "AWS CIS V1.20 Policy"
-  description = file("cis_v1.2.0/README.md")
+  description = "AWS CIS V1.20 Policy"
+  readme = file("cis_v1.2.0/README.md")
   configuration {
     provider "aws" {
       version = ">= 0.5.0"
@@ -8,30 +8,29 @@ policy "cis-v1.20" {
   }
 
   view "aws_log_metric_filter_and_alarm" {
-    name = "AWS Log Metric Filter and Alarm"
+    description = "AWS Log Metric Filter and Alarm"
     query "aws_log_metric_filter_and_alarm_query" {
       query = file("queries/cloudwatch/log_metric_filter_and_alarm_view.sql")
     }
   }
 
   policy "1" {
-    name = "Section 1: Identity and Access Management"
+    description = "Section 1: Identity and Access Management"
     source      = file("cis_v1.2.0/section_1.hcl")
   }
 
   policy "2" {
-    name = "Section 2: Logging"
-    // is taking the name, description from here? or from inside? 
+    description = "Section 2: Logging"
     source      = file("cis_v1.2.0/section_2.hcl")
   }
 
   policy "3" {
-    name = "Section 3: Monitoring"
+    description = "Section 3: Monitoring"
     source      = file("cis_v1.2.0/section_3.hcl")
   }
 
   policy "4" {
-    name = "Section 4: Networking"
+    description = "Section 4: Networking"
     source      = file("cis_v1.2.0/section_4.hcl")
   }
 }
