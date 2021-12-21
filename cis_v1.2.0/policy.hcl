@@ -6,7 +6,7 @@ policy "cis-v1.20" {
     }
   }
 
-  view "aws_log_metric_filter_and_alarm" {
+  view "aws_redshift_subnet_groups" {
     description = "AWS Log Metric Filter and Alarm"
     query "aws_log_metric_filter_and_alarm_query" {
       query = file("queries/cloudwatch/log_metric_filter_and_alarm_view.sql")
