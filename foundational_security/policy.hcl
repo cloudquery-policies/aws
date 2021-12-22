@@ -2,7 +2,7 @@ policy "foundational_security" {
   description = "AWS Foundational Security Best Practices controls"
   configuration {
     provider "aws" {
-      version = "> v0.8.2"
+      version = ">= 0.9.0"
     }
   }
 

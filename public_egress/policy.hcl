@@ -3,7 +3,7 @@ policy "public-egress" {
 
   configuration {
     provider "aws" {
-      version = ">= 0.8.2"
+      version = ">= 0.9.0"
     }
   }
   view "aws_security_group_egress_rules" {
