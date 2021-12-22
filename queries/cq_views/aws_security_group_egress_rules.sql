@@ -1,5 +1,4 @@
-WITH sg_rules_ports AS
-	(SELECT sg.account_id,
+WITH sg_rules_ports AS (SELECT sg.account_id,
 			sg.region,
 			sg.group_name,
 			sg.arn,
