@@ -4,11 +4,7 @@ policy "4" {
 
   view "aws_security_group_ingress_rules" {
     description = "Aggregates rules of security groups with ports and IPs including ipv6"
-
-    // why this double query maybe just query = ""
-    query "aws_security_group_ingress_rules" {
-      query = file("queries/cq_views/aws_security_group_ingress_rules.sql")
-    }
+    query = file("queries/cq_views/aws_security_group_ingress_rules.sql") 
   }
 
   check "4.1" {
