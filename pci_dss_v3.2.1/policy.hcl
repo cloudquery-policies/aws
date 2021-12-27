@@ -136,7 +136,7 @@ policy "pci-dss-v3.2.1" {
   }
 
   policy "guardduty" {
-    query "guardduty enabled in all enabled regions" {
+    query "1" {
       description = "GuardDuty should be enabled"
       query       = file("queries/guardduty/detector_enabled.sql")
     }
