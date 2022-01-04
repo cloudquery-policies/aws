@@ -1,9 +1,9 @@
 policy "cis-v1.20" {
   description = "AWS CIS V1.20 Policy"
-  readme      = file("cis_v1.2.0/README.md")
+  doc = file("cis_v1.2.0/README.md")
   configuration {
     provider "aws" {
-      version = ">= 0.5.0"
+      version = ">= 0.8.4"
     }
   }
 

@@ -1,5 +1,6 @@
 policy "aws" {
   description = "AWS Security & Compliance"
+  doc = file("README.md")
   configuration {
     provider "aws" {
       version = ">= 0.6.4"

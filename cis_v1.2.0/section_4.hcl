@@ -1,6 +1,6 @@
 policy "4" {
   description = "Section 4: Networking"
-  readme      = file("cis_v1.2.0/docs/4.md")
+  doc = file("cis_v1.2.0/docs/4.md")
 
   view "aws_security_group_ingress_rules" {
     description = "Aggregates rules of security groups with ports and IPs including ipv6"
@@ -9,19 +9,19 @@ policy "4" {
 
   check "4.1" {
     description = "AWS CIS 4.1 Ensure no security groups allow ingress from 0.0.0.0/0 to port 22 (Scored)"
-    readme      = file("cis_v1.2.0/docs/4.1.md")
+    doc = file("cis_v1.2.0/docs/4.1.md")
     query       = file("queries/ec2/no_broad_public_ingress_on_port_22.sql")
   }
 
   check "4.2" {
     description = "AWS CIS 4.2 Ensure no security groups allow ingress from 0.0.0.0/0 to port 3389 (Scored)"
-    readme      = file("cis_v1.2.0/docs/4.2.md")
+    doc = file("cis_v1.2.0/docs/4.2.md")
     query       = file("queries/ec2/no_broad_public_ingress_on_port_3389.sql")
   }
 
   check "4.3" {
     description = "AWS CIS 4.3  Ensure the default security group of every VPC restricts all traffic (Scored)"
-    readme      = file("cis_v1.2.0/docs/4.3.md")
+    doc = file("cis_v1.2.0/docs/4.3.md")
     query       = <<EOF
       select account_id, region, group_description, from_port, to_port, cidr_ip from aws_ec2_security_groups
         JOIN aws_ec2_security_group_ip_permissions on aws_ec2_security_groups.cq_id = aws_ec2_security_group_ip_permissions.security_group_cq_id
