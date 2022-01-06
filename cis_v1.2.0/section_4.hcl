@@ -8,19 +8,19 @@ policy "4" {
   }
 
   check "4.1" {
-    title = "AWS CIS 4.1 Ensure no security groups allow ingress from 0.0.0.0/0 to port 22 (Scored)"
+    title = "4.1 Ensure no security groups allow ingress from 0.0.0.0/0 to port 22 (Scored)"
     doc   = file("cis_v1.2.0/docs/4.1.md")
     query = file("queries/ec2/no_broad_public_ingress_on_port_22.sql")
   }
 
   check "4.2" {
-    title = "AWS CIS 4.2 Ensure no security groups allow ingress from 0.0.0.0/0 to port 3389 (Scored)"
+    title = "4.2 Ensure no security groups allow ingress from 0.0.0.0/0 to port 3389 (Scored)"
     doc   = file("cis_v1.2.0/docs/4.2.md")
     query = file("queries/ec2/no_broad_public_ingress_on_port_3389.sql")
   }
 
   check "4.3" {
-    title = "AWS CIS 4.3  Ensure the default security group of every VPC restricts all traffic (Scored)"
+    title = "4.3  Ensure the default security group of every VPC restricts all traffic (Scored)"
     doc   = file("cis_v1.2.0/docs/4.3.md")
     query = <<EOF
       select account_id, region, aws_ec2_security_groups.description, from_port, to_port, cidr_ip from aws_ec2_security_groups
