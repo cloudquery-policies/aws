@@ -2,7 +2,7 @@
 cloudquery {
 
   provider "aws" {
-    source = "cloudquery/cq-provider-aws"
+    source  = "cloudquery/cq-provider-aws"
     version = "latest"
   }
 
@@ -24,8 +24,8 @@ provider "aws" {
 }
 
 policy "aws-policy-pack" {
-  type = "inline"
-  source = file("./policy.hcl")
+  type     = "inline"
+  source   = file("./policy.hcl")
   sub_path = ""
-  version = ""
+  version  = ""
 }
