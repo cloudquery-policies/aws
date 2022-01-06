@@ -1,15 +1,15 @@
 policy "public-ips" {
-  description = "Find all resources with public IPs"
+  title = "Find all resources with public IPs"
 
   configuration {
     provider "aws" {
-      version = ">= 0.8.2."
+      version = ">= 0.8.2"
     }
   }
 
   policy "public-ips" {
-    query "API-Gateways" {
-      description = "Find all API Gateway instances that are publicly accessible"
+    check "API-Gateways" {
+      title = "Find all API Gateway instances that are publicly accessible"
       type        = "manual"
 
       query = <<EOF
@@ -17,8 +17,8 @@ policy "public-ips" {
     EOF
     }
 
-    query "API-Gateway-V2" {
-      description = "Find all API Gateway V2 instances (HTTP and Webhook) that are publicly accessible"
+    check "API-Gateway-V2" {
+      title = "Find all API Gateway V2 instances (HTTP and Webhook) that are publicly accessible"
       type        = "manual"
 
       query = <<EOF
@@ -26,24 +26,24 @@ policy "public-ips" {
     EOF
     }
 
-    query "CloudFront-Distributions" {
-      description = "Find all Cloudfront distributions"
+    check "CloudFront-Distributions" {
+      title = "Find all Cloudfront distributions"
       type        = "manual"
       query       = <<EOF
         SELECT distinct domain_name,  account_id, arn FROM aws_cloudfront_distributions
     EOF
     }
 
-    query "EC2-Public-Ips" {
-      description = "Find all instances with a public IP address"
+    check "EC2-Public-Ips" {
+      title = "Find all instances with a public IP address"
       type        = "manual"
       query       = <<EOF
         SELECT DISTINCT id, public_dns_name, public_ip_address, account_id, region FROM aws_ec2_instances WHERE public_ip_address IS NOT NULL
     EOF
     }
 
-    query "ELB-Classic" {
-      description = "Find all Classic ELBs that are Internet Facing"
+    check "ELB-Classic" {
+      title = "Find all Classic ELBs that are Internet Facing"
       type        = "manual"
 
       query = <<EOF
@@ -51,8 +51,8 @@ policy "public-ips" {
     EOF
     }
 
-    query "ELB-V2" {
-      description = "Find all ELB V2s that are Internet Facing"
+    check "ELB-V2" {
+      title = "Find all ELB V2s that are Internet Facing"
       type        = "manual"
 
       query = <<EOF
@@ -60,8 +60,8 @@ policy "public-ips" {
     EOF
     }
 
-    query "Redshift" {
-      description = "Find all Redshift Clusters are publicly accessible"
+    check "Redshift" {
+      title = "Find all Redshift Clusters are publicly accessible"
       type        = "manual"
 
       query = <<EOF
@@ -69,8 +69,8 @@ policy "public-ips" {
   EOF
     }
 
-    query "RDS" {
-      description = "Find all RDS Instances are publicly accessible"
+    check "RDS" {
+      title = "Find all RDS Instances are publicly accessible"
       type        = "manual"
 
       query = <<EOF

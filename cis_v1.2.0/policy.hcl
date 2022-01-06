@@ -1,5 +1,5 @@
 policy "cis-v1.20" {
-  description = "AWS CIS V1.20 Policy"
+  title = "AWS CIS V1.20 Policy"
   doc = file("cis_v1.2.0/README.md")
   configuration {
     provider "aws" {
@@ -8,7 +8,7 @@ policy "cis-v1.20" {
   }
 
   view "aws_log_metric_filter_and_alarm" {
-    description = "AWS Log Metric Filter and Alarm"
+    title = "AWS Log Metric Filter and Alarm"
     query = file("queries/cloudwatch/log_metric_filter_and_alarm_view.sql")
   }
 
