@@ -13,5 +13,5 @@ jobs:
         uses: actions/checkout@v2
       - run: go install github.com/hashicorp/hcl/v2/cmd/hclfmt@latest
       - name: Lint-Policies
-        run:   find . -name *.hcl  -print0 | xargs -0 $(go env GOPATH)/bin/hclfmt --require-no-change
+        run: find . -name "*.hcl"  -print0 | xargs -0 $(go env GOPATH)/bin/hclfmt --require-no-change
             
