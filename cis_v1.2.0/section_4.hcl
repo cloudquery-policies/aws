@@ -22,11 +22,6 @@ policy "4" {
   check "4.3" {
     title = "4.3  Ensure the default security group of every VPC restricts all traffic (Scored)"
     doc   = file("cis_v1.2.0/docs/4.3.md")
-    query = <<EOF
-      select account_id, region, aws_ec2_security_groups.description, from_port, to_port, cidr_ip from aws_ec2_security_groups
-        JOIN aws_ec2_security_group_ip_permissions on aws_ec2_security_groups.cq_id = aws_ec2_security_group_ip_permissions.security_group_cq_id
-        JOIN aws_ec2_security_group_ip_permission_ip_ranges on aws_ec2_security_group_ip_permissions.cq_id = aws_ec2_security_group_ip_permission_ip_ranges.security_group_ip_permission_cq_id
-      WHERE aws_ec2_security_groups.description='default' AND cidr_ip = '0.0.0.0/0'
-    EOF
+    query = file("queries/ec2/default_sg_no_access.sql")
   }
 }
