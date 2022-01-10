@@ -1,6 +1,6 @@
 SELECT
-    account_id as resource_identifier
+    account_id AS resource_identifier
 FROM
     aws_iam_password_policies
 WHERE
-    require_lowercase_characters = FALSE or policy_exists = FALSE
+    require_lowercase_characters = FALSE OR policy_exists = FALSE

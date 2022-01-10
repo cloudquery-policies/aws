@@ -1,32 +1,44 @@
-with violations as (
-    select
+WITH violations AS (
+    SELECT
         policy_cq_id,
-        count(*) as violations
-    from
+        count(*) AS violations
+    FROM
         aws_iam_policy_versions,
-        jsonb_array_elements(document -> 'Statement') as statement,
+        jsonb_array_elements(document -> 'Statement') AS statement,
         jsonb_array_elements_text(
-                case jsonb_typeof(statement -> 'Resource') when 'string' then jsonb_build_array(statement ->> 'Resource') when 'array' then statement -> 'Resource' end
-            ) as resource,
+            CASE jsonb_typeof(
+                statement -> 'Resource'
+            )
+                WHEN
+                    'string' THEN jsonb_build_array(statement ->> 'Resource')
+                WHEN 'array' THEN statement -> 'Resource'
+            END
+        ) AS resource,
         jsonb_array_elements_text(
-                case jsonb_typeof(statement -> 'Action') when 'string' then jsonb_build_array(statement ->> 'Action') when 'array' then statement -> 'Action' end
-            ) as action
-    where
-                statement ->> 'Effect' = 'Allow'
-      and resource = '*'
-      and (
-                action = '*'
-            or action = '*:*'
+            CASE jsonb_typeof(
+                statement -> 'Action'
+            )
+                WHEN
+                    'string' THEN jsonb_build_array(statement ->> 'Action')
+                WHEN 'array' THEN statement -> 'Action'
+            END
+        ) AS action
+    WHERE
+        statement ->> 'Effect' = 'Allow'
+        AND resource = '*'
+        AND (
+            action = '*'
+            OR action = '*:*'
         )
-    group by
+    GROUP BY
         policy_cq_id
 )
-select
+SELECT
     account_id,
     arn,
     id,
     name,
     violations
-from
+FROM
     aws_iam_policies
-        join violations on violations.policy_cq_id = aws_iam_policies.cq_id
+    JOIN violations ON violations.policy_cq_id = aws_iam_policies.cq_id

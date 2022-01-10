@@ -1,10 +1,10 @@
 SELECT
-    account_id as resource_identifier
+    account_id AS resource_identifier
 FROM
     aws_iam_password_policies
 WHERE
     (
-        password_reuse_prevention is NULL
-        or password_reuse_prevention > 24
+        password_reuse_prevention IS NULL
+        OR password_reuse_prevention > 24
     )
-    or policy_exists = FALSE
+    OR policy_exists = FALSE

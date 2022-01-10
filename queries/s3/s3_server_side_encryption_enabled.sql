@@ -1,13 +1,13 @@
-select
+SELECT
     aws_s3_buckets.arn
-from
+FROM
     aws_s3_buckets
-where
-    aws_s3_buckets.cq_id not in (
-        select
+WHERE
+    aws_s3_buckets.cq_id NOT IN (
+        SELECT
             bucket_cq_id
-        from
-            aws_s3_bucket_encryption_rules 
+        FROM
+            aws_s3_bucket_encryption_rules
     );
 
 -- Note: This query doesn't validate if a bucket policy requires encryption for `put-object` requests

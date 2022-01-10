@@ -1,18 +1,18 @@
-select
+SELECT
     account_id
-from
+FROM
     aws_accounts
-where
-    account_id not in (
+WHERE
+    account_id NOT IN (
         -- Find all accounts that do not have a s3 public block (either not configured or allows public access)
-        select
+        SELECT
             account_id
-        from
+        FROM
             aws_s3_account_config
-        where
-            config_exists = true
-            AND block_public_acls = true
-            AND block_public_policy = true
-            AND ignore_public_acls = true
-            AND restrict_public_buckets = true
+        WHERE
+            config_exists = TRUE
+            AND block_public_acls = TRUE
+            AND block_public_policy = TRUE
+            AND ignore_public_acls = TRUE
+            AND restrict_public_buckets = TRUE
     )

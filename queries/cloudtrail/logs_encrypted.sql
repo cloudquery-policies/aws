@@ -3,7 +3,7 @@ SELECT
     region,
     arn,
     kms_key_id
-from
+FROM
     aws_cloudtrail_trails
 WHERE
-    kms_key_id is NULL
+    kms_key_id IS NULL

@@ -10,7 +10,7 @@ SELECT account_id,
 FROM aws_security_group_ingress_rules
 WHERE (ip = '0.0.0.0/0' OR ip = '::/0')
     AND (from_port IS NULL AND to_port IS NULL) -- all prots
-  or from_port is distinct from 80
-    or to_port is distinct from 80
-  or from_port is distinct from 443
-    or to_port is distinct from 443;
+    OR from_port IS DISTINCT FROM 80
+    OR to_port IS DISTINCT FROM 80
+    OR from_port IS DISTINCT FROM 443
+    OR to_port IS DISTINCT FROM 443;

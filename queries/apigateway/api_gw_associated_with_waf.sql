@@ -1,6 +1,6 @@
-select
+SELECT
     *
-from
+FROM
     api_gateway_method_settings
-where
-    waf is NULL;
+WHERE
+    waf IS NULL;

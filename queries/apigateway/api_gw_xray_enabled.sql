@@ -1,7 +1,7 @@
-select
+SELECT
     *
-from
+FROM
     api_gateway_method_settings
-where
-    stage_data_trace_enabled is not TRUE
-    or caching_enabled is not TRUE
+WHERE
+    stage_data_trace_enabled IS NOT TRUE
+    OR caching_enabled IS NOT TRUE

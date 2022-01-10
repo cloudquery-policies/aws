@@ -1,4 +1,4 @@
-select arn,
+SELECT arn,
        account_id
-from aws_cloudfront_distributions
-where default_root_object = '';
+FROM aws_cloudfront_distributions
+WHERE default_root_object = '';

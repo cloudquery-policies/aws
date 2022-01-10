@@ -1,17 +1,19 @@
-select
+SELECT
     cq_id,
     stage_name,
     rest_api_cq_id,
-    tracing_enabled as stage_data_trace_enabled,
-    cache_cluster_enabled as stage_caching_enabled,
-    web_acl_arn as waf,
-    client_certificate_id as cert,
-    key as method,
-    (value :: json -> 'DataTraceEnabled')::TEXT::BOOLEAN as data_trace_enabled,
-    (value::json ->'CachingEnabled')::TEXT::BOOLEAN as caching_enabled,
-    (value::json -> 'CacheDataEncrypted')::TEXT::BOOLEAN as cache_data_encrypted,
-    (value::json -> 'LoggingLevel')::TEXT as logging_level
-    
-from
+    tracing_enabled AS stage_data_trace_enabled,
+    cache_cluster_enabled AS stage_caching_enabled,
+    web_acl_arn AS waf,
+    client_certificate_id AS cert,
+    key AS method,
+    (value :: JSON -> 'DataTraceEnabled')::TEXT::BOOLEAN AS data_trace_enabled,
+    (value::JSON -> 'CachingEnabled')::TEXT::BOOLEAN AS caching_enabled,
+    (
+        value::JSON -> 'CacheDataEncrypted'
+    )::TEXT::BOOLEAN AS cache_data_encrypted,
+    (value::JSON -> 'LoggingLevel')::TEXT AS logging_level
+
+FROM
     aws_apigateway_rest_api_stages,
     jsonb_each_text(aws_apigateway_rest_api_stages.method_settings)

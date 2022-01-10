@@ -3,4 +3,4 @@ SELECT account_id,
        arn,
        name
 FROM aws_sagemaker_notebook_instances
-WHERE direct_internet_access is true;
+WHERE direct_internet_access IS TRUE;

@@ -1,35 +1,35 @@
-select
+SELECT
     arn
-from
+FROM
     aws_s3_buckets
-where
-    arn not in (
+WHERE
+    arn NOT IN (
         -- Find all buckets that have a bucket policy that denies non SSL requests
-        select
+        SELECT
             arn
-        from
+        FROM
             (
-                select
+                SELECT
                     aws_s3_buckets.arn,
-                    statements -> 'Principal' as principals,
+                    statements -> 'Principal' AS principals,
                     statements
-                from
+                FROM
                     aws_s3_buckets,
-                    jsonb_array_elements(policy -> 'Statement') as statements
-                where
+                    jsonb_array_elements(policy -> 'Statement') AS statements
+                WHERE
                     statements -> 'Effect' = '"Deny"'
-            ) as foo,
+            ) AS foo,
             jsonb_array_elements_text(
                 statements -> 'Condition' -> 'Bool' -> 'aws:securetransport'
-            ) as ssl
-        where
+            ) AS ssl
+        WHERE
             principals = '"*"'
-            or (
-                principals :: jsonb ? 'AWS'
-                and (
+            OR (
+                principals :: JSONB ? 'AWS'
+                AND (
                     principals -> 'AWS' = '"*"'
-                    or principals -> 'AWS' @> '"*"'
+                    OR principals -> 'AWS' @> '"*"'
                 )
             )
-            and ssl :: bool = false
+            AND ssl :: BOOL = FALSE
     );

@@ -1,4 +1,6 @@
-select lb.account_id, lb.region, lb.name from aws_elbv1_load_balancers lb
-join aws_elbv1_load_balancer_listeners ls on ls.load_balancer_cq_id=lb.cq_id
-left join aws_acm_certificates c on c.arn = ls.listener_ssl_certificate_id
-where ls.listener_protocol='HTTPS' and c.arn IS NULL;
+SELECT lb.account_id, lb.region, lb.name FROM aws_elbv1_load_balancers lb
+    JOIN
+        aws_elbv1_load_balancer_listeners ls ON
+            ls.load_balancer_cq_id = lb.cq_id
+    LEFT JOIN aws_acm_certificates c ON c.arn = ls.listener_ssl_certificate_id
+WHERE ls.listener_protocol = 'HTTPS' AND c.arn IS NULL;

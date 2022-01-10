@@ -1,10 +1,10 @@
-select
+SELECT
     *
-from
+FROM
     api_gateway_method_settings
-where
-    stage_caching_enabled is TRUE
-    or (
-        caching_enabled is TRUE
-        and cache_data_encrypted is not TRUE
+WHERE
+    stage_caching_enabled IS TRUE
+    OR (
+        caching_enabled IS TRUE
+        AND cache_data_encrypted IS NOT TRUE
     );

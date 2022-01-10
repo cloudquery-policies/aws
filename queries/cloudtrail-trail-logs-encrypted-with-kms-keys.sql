@@ -1,1 +1,3 @@
-select account_id, region, arn from aws_cloudtrail_trails where kms_key_id is null
+SELECT
+    account_id, region, arn
+FROM aws_cloudtrail_trails WHERE kms_key_id IS NULL

@@ -1,7 +1,7 @@
-select
-    cq_id::text,
+SELECT
+    cq_id::TEXT,
     stage_name,
-    rest_api_cq_id::text,
+    rest_api_cq_id::TEXT,
     stage_data_trace_enabled,
     stage_caching_enabled,
     waf,
@@ -11,7 +11,7 @@ select
     caching_enabled,
     cache_data_encrypted,
     logging_level
-from
+FROM
     api_gateway_method_settings
-where
-    stage_data_trace_enabled is not NULL
+WHERE
+    stage_data_trace_enabled IS NOT NULL

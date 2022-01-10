@@ -1,6 +1,6 @@
-select account_id,
+SELECT account_id,
        region,
        arn
-from aws_kms_keys
-where rotation_enabled is false
-  and manager = 'CUSTOMER';
+FROM aws_kms_keys
+WHERE rotation_enabled IS FALSE
+      AND manager = 'CUSTOMER';

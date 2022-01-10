@@ -4,4 +4,4 @@ SELECT account_id,
        name
 FROM aws_secretsmanager_secrets
 WHERE rotation_enabled IS FALSE
-AND rotation_enabled IS NULL;
+    AND rotation_enabled IS NULL;

@@ -1,6 +1,6 @@
-select arn,
+SELECT arn,
        region,
        account_id
-from aws_kms_keys
-where key_state = 'PendingDeletion'
-  and manager = 'CUSTOMER';
+FROM aws_kms_keys
+WHERE key_state = 'PendingDeletion'
+      AND manager = 'CUSTOMER';

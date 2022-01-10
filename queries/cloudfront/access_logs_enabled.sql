@@ -1,4 +1,4 @@
-select arn,
+SELECT arn,
        account_id
-from aws_cloudfront_distributions
-where logging_enabled = true;
+FROM aws_cloudfront_distributions
+WHERE logging_enabled = TRUE;
