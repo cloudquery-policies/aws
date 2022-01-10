@@ -24,8 +24,5 @@ provider "aws" {
 }
 
 policy "aws-policy-pack" {
-  type     = "inline"
-  source   = file("./policy.hcl")
-  sub_path = ""
-  version  = ""
+  source   = "./policy.hcl"
 }
