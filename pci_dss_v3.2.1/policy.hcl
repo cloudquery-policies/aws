@@ -2,7 +2,7 @@ policy "pci-dss-v3.2.1" {
   title = "PCI DSS V3.2.1"
   configuration {
     provider "aws" {
-      version = ">= v0.5.0"
+      version = ">= v0.9.0"
     }
   }
 
