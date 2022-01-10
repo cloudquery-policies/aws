@@ -3,7 +3,7 @@ policy "aws" {
   doc   = file("README.md")
   configuration {
     provider "aws" {
-      version = ">= 0.6.4"
+      version = ">= 0.8.5"
     }
   }
 
