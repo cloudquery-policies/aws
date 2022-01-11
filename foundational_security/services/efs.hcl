@@ -5,7 +5,7 @@ policy "efs" {
     query = "select 1;"
   }
 
-  check "efs.2" {
+  check "EFS.2" {
     title = "Amazon EFS volumes should be in backup plans"
     query = "select 1;"
   }
