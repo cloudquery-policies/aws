@@ -129,3 +129,4 @@ policy "foundational_security" {
   policy "waf" {
     source = file("foundational_security/services/waf.hcl")
   }
+}
