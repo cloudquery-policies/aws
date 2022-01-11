@@ -110,7 +110,7 @@ policy "foundational_security" {
     source = file("foundational_security/services/sagemaker.hcl")
   }
 
-  policy "secretmanager" {
+  policy "secretsmanager" {
     source = file("foundational_security/services/secretmanager.hcl")
   }
 
