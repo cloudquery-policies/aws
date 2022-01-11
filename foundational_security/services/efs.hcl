@@ -1,6 +1,6 @@
 policy "efs" {
   title = "EFS controls"
-  check "efs.1" {
+  check "EFS.1" {
     title = "Amazon EFS should be configured to encrypt file data at rest using AWS KMS"
     query = "select 1;"
   }
