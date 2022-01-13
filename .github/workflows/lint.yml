@@ -29,12 +29,3 @@ jobs:
       - name: Fail if queries are changed
         run: |
           test "$(git status -s ./queries | wc -l)" -eq 0
-      - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
-        if: ${{ failure() }}
-        env:
-          SLACK_CHANNEL: oss-tests
-          SLACK_COLOR: ${{ job.status }}
-          SLACK_MESSAGE: 'AWS Policies - queries lint failed'
-          SLACK_TITLE: AWS Policies - queries lint failed
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
