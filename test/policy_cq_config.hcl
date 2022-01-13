@@ -24,5 +24,5 @@ provider "aws" {
 }
 
 policy "aws-policy-pack" {
-  source = "./policy.hcl"
+  source = "./"
 }
