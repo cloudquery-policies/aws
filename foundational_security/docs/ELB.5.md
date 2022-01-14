@@ -10,7 +10,7 @@
 
 **Parameters:** None
 
-This control checks whether the Application Load Balancer and the Classic Load Balancerhave logging enabled\. The control fails if `access_logs.s3.enabled` is `false`\.
+This control checks whether the Application Load Balancer and the Classic Load Balancer have logging enabled\. The control fails if `access_logs.s3.enabled` is `false`\.
 
 Elastic Load Balancing provides access logs that capture detailed information about requests sent to your load balancer\. Each log contains information such as the time the request was received, the client's IP address, latencies, request paths, and server responses\. You can use these access logs to analyze traffic patterns and to troubleshoot issues\. 
 
