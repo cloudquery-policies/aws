@@ -35,6 +35,7 @@ def as_complex(dct):
         if type(v) is not str:
             returnDict[k] = v
             if type(v) is dict and 'query' in v:
+                print(k)
                 create_md(k)
         else:
             returnDict[k] = load_file(v)
