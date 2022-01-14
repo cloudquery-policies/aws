@@ -21,6 +21,7 @@ def load_file(val):
 
 
 def create_md(key):
+    print(key)
     svc = key.split('.')[0]
     open('../foundational_security/docs/'+svc+".md", 'w').close()
     open('../foundational_security/docs/'+key+".md", 'w').close()
@@ -35,8 +36,9 @@ def as_complex(dct):
         if type(v) is not str:
             returnDict[k] = v
             if type(v) is dict and 'query' in v:
-                print(k)
                 create_md(k)
+        elif k == 'doc':
+            returnDict[k] = v
         else:
             returnDict[k] = load_file(v)
 
