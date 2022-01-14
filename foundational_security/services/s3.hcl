@@ -1,6 +1,6 @@
 policy "s3" {
   title = "S3 controls"
-doc   = file("foundational_security/docs/S3.md")
+  doc   = file("foundational_security/docs/S3.md")
   check "S3.1" {
     title = "S3 Block Public Access setting should be enabled"
     query = file("queries/s3/account_level_public_access_blocks.sql")
