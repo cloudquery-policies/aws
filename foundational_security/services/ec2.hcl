@@ -39,7 +39,7 @@ policy "ec2" {
 
   check "EC2.8" {
     title = "EC2 instances should use IMDSv2"
-    query = file("queries/ec2/not_imdsV2_instances.sql")
+    query = file("queries/ec2/not_imdsv2_instances.sql")
   }
 
   check "EC2.9" {
