@@ -4,7 +4,6 @@ policy "ecs" {
   check "ECS.1" {
     title = "Amazon ECS task definitions should have secure networking modes and user definitions"
     query = file("queries/ecs/task_definitions_secure_networking.sql")
-    doc   = file("foundational_security/docs/ECS.md")
     doc   = file("foundational_security/docs/ECS.1.md")
   }
 
