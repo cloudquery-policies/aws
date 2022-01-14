@@ -28,7 +28,7 @@ policy "elasticsearch" {
   check "Elasticsearch.5" {
     title = "Elasticsearch domains should have audit logging enabled"
     query = file("queries/elasticsearch/elasticsearch_domains_should_have_audit_logging_enabled.sql")
-   doc   = file("foundational_security/docs/Elasticsearch.5.md")
+    doc   = file("foundational_security/docs/Elasticsearch.5.md")
   }
 
   check "Elasticsearch.6" {
