@@ -64,7 +64,6 @@ for controlDoc in perControl:
     if len(header) < 1 or len(header[0]) == 0:
         continue
     ctrl = re.findall('"fsbp\-([^"]*)"', header[0])
-    print(ctrl)
     # print(ctrl[0].upper().replace('-','.')+'.md')
     fileFound = False
     for file in onlyfiles:
