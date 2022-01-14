@@ -56,11 +56,11 @@ cloudquery policy describe aws
 cloudquery policy run aws
 
 # Run specific policy
-cloudquery policy run aws aws/cis_v1.2.0
+cloudquery policy run aws//cis_v1.2.0
 
 # Run specific policy
-cloudquery policy run aws aws/pci_dss_v3.2.1
+cloudquery policy run aws//pci_dss_v3.2.1
 
 # Run specific check
-cloudquery policy run aws aws/cis_v1.2.0/1/1
+cloudquery policy run aws//cis_v1.2.0/1/1
 ```
