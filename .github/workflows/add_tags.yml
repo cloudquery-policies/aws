@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: bcoe/conventional-release-labels@v1
         with:
-          type_labels: '{ "feat": "feat", "fix": "fix", "docs": "docs", "chore": "chore", "enhancement": "enhancement", "ci": "ci", "refactor": "refactor", "test": "test" }'
+          type_labels: '{ "feat": "feat", "fix": "fix", "docs": "docs", "chore": "chore", "enhancement": "enhancement", "ci": "ci", "refactor": "refactor", "test": "test", "breaking": "breaking" }'
