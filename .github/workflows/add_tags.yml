@@ -1,3 +1,4 @@
+# DONT EDIT. This file is synced from https://github.com/cloudquery/.github/.github
 # Warning, do not check out untrusted code with
 # the pull_request_target event.
 # the current workflow IS safe as long as you dont checkout untrusted code
@@ -5,11 +6,11 @@
 on:
   pull_request_target:
     types: [opened, edited]
-name: Add Conventional Commit Labels
+name: conventional-release-labels
 jobs:
   label:
     runs-on: ubuntu-latest
     steps:
       - uses: bcoe/conventional-release-labels@v1
         with:
-          type_labels: '{ "feat": "feat", "fix": "fix", "docs": "docs", "chore": "chore", "enhancement": "enhancement", "ci": "ci", "refactor": "refactor", "test": "test", "breaking": "breaking" }'
+          type_labels: '{ "feat": "feat", "fix": "fix", "docs": "docs", "chore": "chore", "enhancement": "enhancement", "ci": "ci", "refactor": "refactor", "test": "test" }'
