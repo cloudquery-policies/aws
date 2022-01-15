@@ -1,8 +1,12 @@
 name: lint
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
-  Lint-Policies:
+  LintHCL:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Go 1.x
@@ -15,7 +19,7 @@ jobs:
       - name: Lint-Policies
         run: find . -name "*.hcl"  -print0 | xargs -0 $(go env GOPATH)/bin/hclfmt --require-no-change
             
-  Lint-sql-queries:
+  LintSQL:
     runs-on: ubuntu-latest
     steps:
       - uses: "actions/checkout@v2"

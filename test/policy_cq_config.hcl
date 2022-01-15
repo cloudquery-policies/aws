@@ -22,7 +22,3 @@ provider "aws" {
     "*",
   ]
 }
-
-policy "aws-policy-pack" {
-  source = "./"
-}

@@ -10,7 +10,7 @@ policy "s3" {
   check "S3.2" {
     title = "S3 buckets should prohibit public read access"
     query = file("queries/s3/publicly_readable_buckets.sql")
-    doc   = file("foundational_security/docs/S3.2..md")
+    doc   = file("foundational_security/docs/S3.2.md")
   }
 
   check "S3.3" {
@@ -40,6 +40,6 @@ policy "s3" {
   check "S3.8" {
     title = "S3 Block Public Access setting should be enabled at the bucket level"
     query = file("queries/s3/account_level_public_access_blocks.sql")
-    doc   = file("foundational_security/docs/S3.7.md")
+    doc   = file("foundational_security/docs/S3.8.md")
   }
 }
