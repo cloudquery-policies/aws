@@ -5,11 +5,11 @@
 on:
   pull_request_target:
     types: [opened, edited]
-name: Add Conventional Commit Labels
+name: conventional-release-labels
 jobs:
   label:
     runs-on: ubuntu-latest
     steps:
       - uses: bcoe/conventional-release-labels@v1
         with:
-          type_labels: '{ "feat": "feat", "fix": "fix", "docs": "docs", "chore": "chore", "enhancement": "enhancement", "ci": "ci", "refactor": "refactor", "test": "test", "breaking": "breaking" }'
+          type_labels: '{ "feat": "feature", "fix": "fix", "docs": "docs", "chore": "chore", "enhancement": "enhancement", "ci": "ci", "refactor": "refactor", "test": "test" }'
