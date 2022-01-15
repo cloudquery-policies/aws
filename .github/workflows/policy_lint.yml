@@ -1,0 +1,36 @@
+# DONT EDIT. This file is synced from https://github.com/cloudquery/.github/.github
+name: Policy Lint
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  LintHCL:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.16
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
+      - run: go install github.com/hashicorp/hcl/v2/cmd/hclfmt@latest
+      - name: Lint-Policies
+        run: find . -name "*.hcl"  -print0 | xargs -0 $(go env GOPATH)/bin/hclfmt --require-no-change
+            
+  LintSQL:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v2"
+      - uses: "actions/setup-python@v2"
+        with:
+          python-version: "3.9"
+      - name: Install SQLFluff
+        run: "pip install sqlfluff"
+      - name: Lint queries
+        run: "sqlfluff lint ./queries"
+      - name: Fail if queries are changed
+        run: |
+          test "$(git status -s ./queries | wc -l)" -eq 0
