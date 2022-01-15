@@ -8,6 +8,4 @@ WHERE statment ->> 'Effect' = 'Allow'
         statment ->> 'Principal' = '*'
         OR statment -> 'Principal' ->> 'AWS' = '*'
         OR (statment -> 'Principal' ->> 'AWS')::JSONB ? '*'
-    )
-
-GROUP BY arn;
+    );
