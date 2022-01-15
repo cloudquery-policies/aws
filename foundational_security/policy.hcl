@@ -35,7 +35,7 @@ policy "foundational_security" {
   }
 
   policy "config" {
-    source = file("foundational_security/services/awsConfig.hcl")
+    source = file("foundational_security/services/config.hcl")
   }
 
   policy "dms" {
