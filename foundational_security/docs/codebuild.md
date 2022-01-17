@@ -1,3 +1,3 @@
 # Overview 
 
-This section contains recommendations for configuring CodeBuil and the related options.
+This section contains recommendations for configuring CodeBuild and the related options.
