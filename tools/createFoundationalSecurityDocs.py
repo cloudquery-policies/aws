@@ -22,8 +22,10 @@ def load_file(val):
 
 def create_md(key):
     svc = key.split('.')[0]
-    open('../foundational_security/docs/'+svc+".md", 'w').close()
-    open('../foundational_security/docs/'+key+".md", 'w').close()
+    if svc in ['aws_security_group_ingress_rules', 'api_gateway_method_settings']:
+        return
+    open('../foundational_security/docs/'+svc.lower()+".md", 'w').close()
+    open('../foundational_security/docs/'+key.lower()+".md", 'w').close()
 
 
 def as_complex(dct):
@@ -82,11 +84,15 @@ for controlDoc in perControl:
     # print(controlDoc)
 
 
+serviceNames = {'acm': 'ACM', 'apigateway': 'ApiGateway', 'autoscaling': 'AutoScaling', 'cloudfront': 'Cloudfront', 'cloudtrail': 'CloudTrail', 'codebuild': 'CodeBuild', 'config': 'Config', 'dms': 'DMS', 'dynamodb': 'DynamoDB', 'aws_security_group_ingress_rules': 'aws_security_group_ingress_rules', 'ec2': 'EC2', 'ecs': 'ECS', 'efs': 'EFS',
+                'elasticbeanstalk': 'ElasticBeanstalk', 'elb': 'ELB', 'elbv2': 'ELBv2', 'emr': 'EMR', 'elasticsearch': 'Elasticsearch', 'guardduty': 'GuardDuty', 'iam': 'IAM', 'kms': 'KMS', 'lambda': 'Lambda', 'rds': 'RDS', 'redshift': 'Redshift', 's3': 'S3', 'sagemaker': 'SageMaker', 'secretsmanager': 'SecretsManager', 'sns': 'SNS', 'sqs': 'SQS', 'ssm': 'SSM', 'waf': 'WAF'}
+
 for file in onlyfiles:
     if True not in [char.isdigit() for char in file]:
-        if file == '_rawDocs.md':
+        if file in ['_rawdocs.md', 'api_gateway_method_settings.md', 'aws_security_group_ingress_rules.md']:
             continue
-        serviceName = file.strip('.md')
+        fileCleaned = file.replace('.md','')
+        serviceName = serviceNames[fileCleaned]
         with open('../foundational_security/docs/'+file, 'w') as fd:
             fd.write((
                 f"# Overview "
