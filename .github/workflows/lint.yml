@@ -31,6 +31,3 @@ jobs:
         run: "pip install sqlfluff"
       - name: Lint queries
         run: "sqlfluff lint ./queries"
-      - name: Fail if queries are changed
-        run: |
-          test "$(git status -s ./queries | wc -l)" -eq 0
