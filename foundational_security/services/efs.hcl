@@ -11,7 +11,6 @@ policy "efs" {
   check "EFS.2" {
     title = "Amazon EFS volumes should be in backup plans"
     doc   = file("foundational_security/docs/efs.2.md")
-    //todo will be available on provider version v0.10.0
-    query = "select 1;"
+  query = file("queries/efs/efs_filesystems_with_disabled_backups.sql")
   }
 }
