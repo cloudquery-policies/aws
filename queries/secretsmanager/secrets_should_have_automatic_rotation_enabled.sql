@@ -3,5 +3,4 @@ SELECT account_id,
        arn,
        name
 FROM aws_secretsmanager_secrets
-WHERE rotation_enabled IS FALSE
-    AND rotation_enabled IS NULL;
+WHERE rotation_enabled IS DISTINCT FROM TRUE;
