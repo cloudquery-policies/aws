@@ -11,6 +11,6 @@ policy "efs" {
   check "EFS.2" {
     title = "Amazon EFS volumes should be in backup plans"
     doc   = file("foundational_security/docs/efs.2.md")
-  query = file("queries/efs/efs_filesystems_with_disabled_backups.sql")
+    query = file("queries/efs/efs_filesystems_with_disabled_backups.sql")
   }
 }
