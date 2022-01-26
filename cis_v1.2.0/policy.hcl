@@ -3,7 +3,7 @@ policy "cis-v1.20" {
   doc   = file("cis_v1.2.0/README.md")
   configuration {
     provider "aws" {
-      version = "~> 0.9.0"
+      version = "~> 0.10.0"
     }
   }
 
