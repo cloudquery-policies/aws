@@ -1,4 +1,4 @@
-## \[Redshift\.6\] Amazon Redshift should have automatic upgrades to major versions enabled<a name="fsbp-redshift-6"></a>
+## \[Redshift\.6\] Amazon Redshift should have automatic upgrades to major versions enabled
 
 **Category:** Detect > Vulnerability and patch management
 

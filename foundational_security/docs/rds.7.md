@@ -1,4 +1,4 @@
-## \[RDS\.7\] RDS clusters should have deletion protection enabled<a name="fsbp-rds-7"></a>
+## \[RDS\.7\] RDS clusters should have deletion protection enabled
 
 **Category:** Protect > Data protection > Data deletion protection
 

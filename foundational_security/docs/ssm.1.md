@@ -1,4 +1,4 @@
-## \[SSM\.1\] EC2 instances should be managed by AWS Systems Manager<a name="fsbp-ssm-1"></a>
+## \[SSM\.1\] EC2 instances should be managed by AWS Systems Manager
 
 **Category:** Identify > Inventory
 

@@ -1,4 +1,4 @@
-## \[RDS\.6\] Enhanced monitoring should be configured for RDS DB instances and clusters<a name="fsbp-rds-6"></a>
+## \[RDS\.6\] Enhanced monitoring should be configured for RDS DB instances and clusters
 
 **Category:** Detect > Detection services
 

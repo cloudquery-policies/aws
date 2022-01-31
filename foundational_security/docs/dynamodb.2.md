@@ -1,4 +1,4 @@
-## \[DynamoDB\.2\] DynamoDB tables should have point\-in\-time recovery enabled<a name="fsbp-dynamodb-2"></a>
+## \[DynamoDB\.2\] DynamoDB tables should have point\-in\-time recovery enabled
 
 **Category:** Recover > Resilience > Backups enabled
 

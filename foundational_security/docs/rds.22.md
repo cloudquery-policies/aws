@@ -1,4 +1,4 @@
-## \[RDS\.22\] An RDS event notifications subscription should be configured for critical database security group events<a name="fsbp-rds-22"></a>
+## \[RDS\.22\] An RDS event notifications subscription should be configured for critical database security group events
 
 **Category:** Detect > Detection Services > Application monitoring
 

@@ -1,4 +1,4 @@
-## \[EMR\.1\] Amazon EMR cluster master nodes should not have public IP addresses<a name="fsbp-emr-1"></a>
+## \[EMR\.1\] Amazon EMR cluster master nodes should not have public IP addresses
 
 **Category:** Protect > Secure network configuration
 

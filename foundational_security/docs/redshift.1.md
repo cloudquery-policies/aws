@@ -1,4 +1,4 @@
-## \[Redshift\.1\] Amazon Redshift clusters should prohibit public access<a name="fsbp-redshift-1"></a>
+## \[Redshift\.1\] Amazon Redshift clusters should prohibit public access
 
 **Category:** Protect > Secure network configuration > Resources not publicly accessible
 

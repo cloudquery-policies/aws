@@ -1,4 +1,4 @@
-## \[SecretsManager\.1\] Secrets Manager secrets should have automatic rotation enabled<a name="fsbp-secretsmanager-1"></a>
+## \[SecretsManager\.1\] Secrets Manager secrets should have automatic rotation enabled
 
 **Category:** Protect > Secure development
 

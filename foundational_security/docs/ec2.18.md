@@ -1,4 +1,4 @@
-## \[EC2\.18\] Security groups should only allow unrestricted incoming traffic for authorized ports<a name="fsbp-ec2-18"></a>
+## \[EC2\.18\] Security groups should only allow unrestricted incoming traffic for authorized ports
 
 **Category:** Protect > Secure network configuration > Security group configuration
 

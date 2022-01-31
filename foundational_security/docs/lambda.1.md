@@ -1,4 +1,4 @@
-## \[Lambda\.1\] Lambda function policies should prohibit public access<a name="fsbp-lambda-1"></a>
+## \[Lambda\.1\] Lambda function policies should prohibit public access
 
 **Category:** Protect > Secure network configuration
 

@@ -1,4 +1,4 @@
-## \[CloudFront\.3\] CloudFront distributions should require encryption in transit<a name="fsbp-cloudfront-3"></a>
+## \[CloudFront\.3\] CloudFront distributions should require encryption in transit
 
 **Category:** Protect > Data protection > Encryption of data in transit
 

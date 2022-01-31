@@ -1,4 +1,4 @@
-## \[CloudFront\.5\] CloudFront distributions should have logging enabled<a name="fsbp-cloudfront-5"></a>
+## \[CloudFront\.5\] CloudFront distributions should have logging enabled
 
 **Category:** Identify > Logging
 

@@ -1,4 +1,4 @@
-## \[Config\.1\] AWS Config should be enabled<a name="fsbp-config-1"></a>
+## \[Config\.1\] AWS Config should be enabled
 
 **Category:** Identify > Inventory
 

@@ -1,4 +1,4 @@
-## \[AutoScaling\.1\] Auto Scaling groups associated with a load balancer should use load balancer health checks<a name="fsbp-autoscaling-1"></a>
+## \[AutoScaling\.1\] Auto Scaling groups associated with a load balancer should use load balancer health checks
 
 **Category:** Identify > Inventory
 

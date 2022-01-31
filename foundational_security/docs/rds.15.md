@@ -1,4 +1,4 @@
-## \[RDS\.15\] RDS DB clusters should be configured for multiple Availability Zones<a name="fsbp-rds-15"></a>
+## \[RDS\.15\] RDS DB clusters should be configured for multiple Availability Zones
 
 **Category:** Recover > Resilience > High availability
 

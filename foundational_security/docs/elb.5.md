@@ -1,4 +1,4 @@
-## \[ELB\.5\] Application and Classic Load Balancers logging should be enabled<a name="fsbp-elb-5"></a>
+## \[ELB\.5\] Application and Classic Load Balancers logging should be enabled
 
 **Category:** Logging
 

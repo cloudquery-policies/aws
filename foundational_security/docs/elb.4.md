@@ -1,4 +1,4 @@
-## \[ELB\.4\] Application load balancers should be configured to drop HTTP headers<a name="fsbp-elb-4"></a>
+## \[ELB\.4\] Application load balancers should be configured to drop HTTP headers
 
 **Category:** Protect > Network security
 

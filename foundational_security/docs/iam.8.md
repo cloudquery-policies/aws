@@ -1,4 +1,4 @@
-## \[IAM\.8\] Unused IAM user credentials should be removed<a name="fsbp-iam-8"></a>
+## \[IAM\.8\] Unused IAM user credentials should be removed
 
 **Category:** Protect > Secure access management 
 

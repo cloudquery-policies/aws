@@ -1,4 +1,4 @@
-## \[GuardDuty\.1\] GuardDuty should be enabled<a name="fsbp-guardduty-1"></a>
+## \[GuardDuty\.1\] GuardDuty should be enabled
 
 **Category:** Detect > Detection services 
 

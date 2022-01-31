@@ -1,4 +1,4 @@
-## \[RDS\.16\] RDS DB clusters should be configured to copy tags to snapshots<a name="fsbp-rds-16"></a>
+## \[RDS\.16\] RDS DB clusters should be configured to copy tags to snapshots
 
 **Category:** Identify > Inventory
 

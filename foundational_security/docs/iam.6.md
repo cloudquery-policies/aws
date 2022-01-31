@@ -1,4 +1,4 @@
-## \[IAM\.6\] Hardware MFA should be enabled for the root user<a name="fsbp-iam-6"></a>
+## \[IAM\.6\] Hardware MFA should be enabled for the root user
 
 **Category:** Protect > Secure access management
 

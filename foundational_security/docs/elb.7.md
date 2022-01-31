@@ -1,4 +1,4 @@
-## \[ELB\.7\] Classic Load Balancers should have connection draining enabled<a name="fsbp-elb-7"></a>
+## \[ELB\.7\] Classic Load Balancers should have connection draining enabled
 
 **Category:** Recover > Resilience
 

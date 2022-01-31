@@ -1,4 +1,4 @@
-## \[ELBv2\.1\] Application Load Balancer should be configured to redirect all HTTP requests to HTTPS<a name="fsbp-elbv2-1"></a>
+## \[ELBv2\.1\] Application Load Balancer should be configured to redirect all HTTP requests to HTTPS
 
 **Category:** Protect > Data protection > Encryption of data in transit
 

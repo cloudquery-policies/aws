@@ -1,4 +1,4 @@
-## \[CloudFront\.2\] CloudFront distributions should have origin access identity enabled<a name="fsbp-cloudfront-2"></a>
+## \[CloudFront\.2\] CloudFront distributions should have origin access identity enabled
 
 **Category:** Protect > Secure access management > Resource policy configuration
 

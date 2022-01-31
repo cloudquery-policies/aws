@@ -1,4 +1,4 @@
-## \[IAM\.2\] IAM users should not have IAM policies attached<a name="fsbp-iam-2"></a>
+## \[IAM\.2\] IAM users should not have IAM policies attached
 
 **Category:** Protect > Secure access management
 

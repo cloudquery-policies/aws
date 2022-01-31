@@ -1,4 +1,4 @@
-## \[ES\.6\] Elasticsearch domains should have at least three data nodes<a name="fsbp-es-6"></a>
+## \[ES\.6\] Elasticsearch domains should have at least three data nodes
 
 **Category:** Recover > Resilience > High availability
 

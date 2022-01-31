@@ -1,4 +1,4 @@
-## \[EFS\.1\] Amazon EFS should be configured to encrypt file data at rest using AWS KMS<a name="fsbp-efs-1"></a>
+## \[EFS\.1\] Amazon EFS should be configured to encrypt file data at rest using AWS KMS
 
 **Category:** Protect > Data protection > Encryption of data at rest
 

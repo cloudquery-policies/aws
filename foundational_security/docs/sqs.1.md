@@ -1,4 +1,4 @@
-## \[SQS\.1\] Amazon SQS queues should be encrypted at rest<a name="fsbp-sqs-1"></a>
+## \[SQS\.1\] Amazon SQS queues should be encrypted at rest
 
 **Category:** Protect > Data protection > Encryption of data at rest
 

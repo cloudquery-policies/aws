@@ -1,4 +1,4 @@
-## \[RDS\.21\] An RDS event notifications subscription should be configured for critical database parameter group events<a name="fsbp-rds-21"></a>
+## \[RDS\.21\] An RDS event notifications subscription should be configured for critical database parameter group events
 
 **Category:** Detect > Detection services > Application monitoring
 

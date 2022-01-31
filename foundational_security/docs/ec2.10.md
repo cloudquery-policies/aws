@@ -1,4 +1,4 @@
-## \[EC2\.10\] Amazon EC2 should be configured to use VPC endpoints that are created for the Amazon EC2 service<a name="fsbp-ec2-10"></a>
+## \[EC2\.10\] Amazon EC2 should be configured to use VPC endpoints that are created for the Amazon EC2 service
 
 **Category:** Protect \- Secure network configuration > API private access
 

@@ -1,4 +1,4 @@
-## \[KMS\.3\] AWS KMS keys should not be unintentionally deleted<a name="fsbp-kms-3"></a>
+## \[KMS\.3\] AWS KMS keys should not be unintentionally deleted
 
 **Category:** Protect > Data protection > Data deletion protection
 

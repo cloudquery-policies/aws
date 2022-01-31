@@ -1,4 +1,4 @@
-## \[RDS\.19\] An RDS event notifications subscription should be configured for critical cluster events<a name="fsbp-rds-19"></a>
+## \[RDS\.19\] An RDS event notifications subscription should be configured for critical cluster events
 
 **Category:** Detect > Detection services > Application monitoring
 

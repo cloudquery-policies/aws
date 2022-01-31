@@ -1,4 +1,4 @@
-## \[EC2\.8\] EC2 instances should use IMDSv2<a name="fsbp-ec2-8"></a>
+## \[EC2\.8\] EC2 instances should use IMDSv2
 
 **Category:** Protect > Network security
 

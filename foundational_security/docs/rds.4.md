@@ -1,4 +1,4 @@
-## \[RDS\.4\] RDS cluster snapshots and database snapshots should be encrypted at rest<a name="fsbp-rds-4"></a>
+## \[RDS\.4\] RDS cluster snapshots and database snapshots should be encrypted at rest
 
 **Category:** Protect > Data protection > Encryption of data at rest
 

@@ -1,4 +1,4 @@
-## \[ECS\.1\] Amazon ECS task definitions should have secure networking modes and user definitions<a name="fsbp-ecs-1"></a>
+## \[ECS\.1\] Amazon ECS task definitions should have secure networking modes and user definitions
 
 **Category:** Protect > Secure access management
 

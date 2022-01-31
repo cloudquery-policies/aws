@@ -1,4 +1,4 @@
-## \[CloudTrail\.4\] Ensure CloudTrail log file validation is enabled<a name="fsbp-cloudtrail-4"></a>
+## \[CloudTrail\.4\] Ensure CloudTrail log file validation is enabled
 
 **Category:** Data protection > Data integrity
 

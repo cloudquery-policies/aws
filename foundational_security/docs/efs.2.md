@@ -1,4 +1,4 @@
-## \[EFS\.2\] Amazon EFS volumes should be in backup plans<a name="fsbp-efs-2"></a>
+## \[EFS\.2\] Amazon EFS volumes should be in backup plans
 
 **Category:** Recover > Resilience > Backup
 

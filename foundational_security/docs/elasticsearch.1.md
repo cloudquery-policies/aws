@@ -1,4 +1,4 @@
-## \[ES\.1\] Elasticsearch domains should have encryption at rest enabled<a name="fsbp-es-1"></a>
+## \[ES\.1\] Elasticsearch domains should have encryption at rest enabled
 
 **Category:** Protect > Data protection > Encryption of data at rest
 

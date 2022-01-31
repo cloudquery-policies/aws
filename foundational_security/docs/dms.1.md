@@ -1,4 +1,4 @@
-## \[DMS\.1\] AWS Database Migration Service replication instances should not be public<a name="fsbp-dms-1"></a>
+## \[DMS\.1\] AWS Database Migration Service replication instances should not be public
 
 **Category:** Protect > Secure network configuration
 

@@ -1,4 +1,4 @@
-## \[Redshift\.4\] Amazon Redshift clusters should have audit logging enabled<a name="fsbp-redshift-4"></a>
+## \[Redshift\.4\] Amazon Redshift clusters should have audit logging enabled
 
 **Category:** Identify > Logging
 

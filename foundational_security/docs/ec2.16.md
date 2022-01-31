@@ -1,4 +1,4 @@
-## \[EC2\.16\] Unused network access control lists should be removed<a name="fsbp-ec2-16"></a>
+## \[EC2\.16\] Unused network access control lists should be removed
 
 **Category:** Prevent > Network security 
 

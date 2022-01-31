@@ -1,4 +1,4 @@
-## \[ElasticBeanstalk\.2\] Elastic Beanstalk managed platform updates should be enabled<a name="fsbp-elasticbeanstalk-2"></a>
+## \[ElasticBeanstalk\.2\] Elastic Beanstalk managed platform updates should be enabled
 
 **Category:** Detect > Vulnerability, patch, and version management
 

@@ -1,4 +1,4 @@
-## \[IAM\.1\] IAM policies should not allow full "\*" administrative privileges<a name="fsbp-iam-1"></a>
+## \[IAM\.1\] IAM policies should not allow full "\*" administrative privileges
 
 **Category:** Protect > Secure access management
 

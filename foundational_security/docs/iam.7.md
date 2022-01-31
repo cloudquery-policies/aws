@@ -1,4 +1,4 @@
-## \[IAM\.7\] Password policies for IAM users should have strong configurations<a name="fsbp-iam-7"></a>
+## \[IAM\.7\] Password policies for IAM users should have strong configurations
 
 **Category:** Protect > Secure access management
 

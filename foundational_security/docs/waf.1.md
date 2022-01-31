@@ -1,4 +1,4 @@
-## \[WAF\.1\] AWS WAF Classic global web ACL logging should be enabled<a name="fsbp-waf-1"></a>
+## \[WAF\.1\] AWS WAF Classic global web ACL logging should be enabled
 
 **Category:** Identify > Logging
 

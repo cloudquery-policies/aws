@@ -1,4 +1,4 @@
-## \[EC2\.4\] Stopped EC2 instances should be removed after a specified time period<a name="fsbp-ec2-4"></a>
+## \[EC2\.4\] Stopped EC2 instances should be removed after a specified time period
 
 **Category:** Identify > Inventory
 

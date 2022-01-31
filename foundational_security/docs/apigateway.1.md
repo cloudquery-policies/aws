@@ -1,4 +1,4 @@
-## \[APIGateway\.1\] API Gateway REST and WebSocket API logging should be enabled<a name="fsbp-apigateway-1"></a>
+## \[APIGateway\.1\] API Gateway REST and WebSocket API logging should be enabled
 
 **Category:** Identify > Logging
 

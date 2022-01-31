@@ -1,4 +1,4 @@
-## \[ECS\.2\] Amazon ECS services should not have public IP addresses assigned to them automatically<a name="fsbp-ecs-2"></a>
+## \[ECS\.2\] Amazon ECS services should not have public IP addresses assigned to them automatically
 
 **Category:** Protect > Secure network configuration > Resources not publicly accessible
 

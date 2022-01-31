@@ -1,4 +1,4 @@
-## \[RDS\.20\] An RDS event notifications subscription should be configured for critical database instance events<a name="fsbp-rds-20"></a>
+## \[RDS\.20\] An RDS event notifications subscription should be configured for critical database instance events
 
 **Category:** Detect > Detection services > Application monitoring
 

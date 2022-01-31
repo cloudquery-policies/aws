@@ -1,4 +1,4 @@
-## \[EC2\.15\] EC2 subnets should not automatically assign public IP addresses<a name="fsbp-ec2-15"></a>
+## \[EC2\.15\] EC2 subnets should not automatically assign public IP addresses
 
 **Category:** Protect > Network security
 

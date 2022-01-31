@@ -1,4 +1,4 @@
-## \[ACM\.1\] Imported ACM certificates should be renewed after a specified time period<a name="fsbp-acm-1"></a>
+## \[ACM\.1\] Imported ACM certificates should be renewed after a specified time period
 
 **Category:** Protect > Data protection > Encryption of data in transit
 

@@ -1,4 +1,4 @@
-## \[APIGateway\.3\] API Gateway REST API stages should have AWS X\-Ray tracing enabled<a name="fsbp-apigateway-3"></a>
+## \[APIGateway\.3\] API Gateway REST API stages should have AWS X\-Ray tracing enabled
 
 **Category:** Detect > Detection services
 

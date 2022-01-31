@@ -1,4 +1,4 @@
-## \[CloudTrail\.2\] CloudTrail should have encryption at rest enabled<a name="fsbp-cloudtrail-2"></a>
+## \[CloudTrail\.2\] CloudTrail should have encryption at rest enabled
 
 **Category:** Protect > Data protection > Encryption of data at rest
 

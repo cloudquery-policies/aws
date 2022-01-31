@@ -1,4 +1,4 @@
-## \[CodeBuild\.1\] CodeBuild GitHub or Bitbucket source repository URLs should use OAuth<a name="fsbp-codebuild-1"></a>
+## \[CodeBuild\.1\] CodeBuild GitHub or Bitbucket source repository URLs should use OAuth
 
 **Category:** Protect > Secure development
 

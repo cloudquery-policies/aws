@@ -1,4 +1,4 @@
-## \[ES\.4\] Elasticsearch domain error logging to CloudWatch Logs should be enabled<a name="fsbp-es-4"></a>
+## \[ES\.4\] Elasticsearch domain error logging to CloudWatch Logs should be enabled
 
 **Category:** Identify \- Logging
 

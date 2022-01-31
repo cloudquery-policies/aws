@@ -1,4 +1,4 @@
-## \[EC2\.17\] EC2 instances should not use multiple ENIs<a name="fsbp-ec2-17"></a>
+## \[EC2\.17\] EC2 instances should not use multiple ENIs
 
 **Category:** Network security 
 

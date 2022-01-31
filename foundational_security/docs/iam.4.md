@@ -1,4 +1,4 @@
-## \[IAM\.4\] IAM root user access key should not exist<a name="fsbp-iam-4"></a>
+## \[IAM\.4\] IAM root user access key should not exist
 
 **Category:** Protect > Secure access management
 

@@ -1,4 +1,4 @@
-## \[RDS\.10\] IAM authentication should be configured for RDS instances<a name="fsbp-rds-10"></a>
+## \[RDS\.10\] IAM authentication should be configured for RDS instances
 
 **Category:** Protect > Secure access management > Passwordless authentication
 

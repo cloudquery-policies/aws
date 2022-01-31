@@ -1,4 +1,4 @@
-## \[RDS\.12\] IAM authentication should be configured for RDS clusters<a name="fsbp-rds-12"></a>
+## \[RDS\.12\] IAM authentication should be configured for RDS clusters
 
 **Category:** Protect > Secure access management > Passwordless authentication
 

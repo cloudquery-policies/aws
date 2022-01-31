@@ -1,4 +1,4 @@
-## \[IAM\.5\] MFA should be enabled for all IAM users that have a console password<a name="fsbp-iam-5"></a>
+## \[IAM\.5\] MFA should be enabled for all IAM users that have a console password
 
 **Category:** Protect > Secure access management
 

@@ -1,4 +1,4 @@
-## \[Redshift\.2\] Connections to Amazon Redshift clusters should be encrypted in transit<a name="fsbp-redshift-2"></a>
+## \[Redshift\.2\] Connections to Amazon Redshift clusters should be encrypted in transit
 
 **Category:** Protect > Data protection > Encryption of data in transit 
 

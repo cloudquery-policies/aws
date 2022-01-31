@@ -1,4 +1,4 @@
-## \[ELB\.3\] Classic Load Balancer listeners should be configured with HTTPS or TLS termination<a name="fsbp-elb-3"></a>
+## \[ELB\.3\] Classic Load Balancer listeners should be configured with HTTPS or TLS termination
 
 **Category:** Protect > Data protection > Encryption of data in transit 
 
