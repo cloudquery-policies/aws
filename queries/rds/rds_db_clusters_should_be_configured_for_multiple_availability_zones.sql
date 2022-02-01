@@ -1,3 +1,3 @@
-SELECT db_cluster_arn
+SELECT arn
 FROM aws_rds_clusters
 WHERE multi_az IS NOT TRUE

@@ -22,7 +22,7 @@ WITH any_category AS (
     GROUP BY source_id
 )
 SELECT
-    db_cluster_arn
+    arn
 FROM
     aws_rds_clusters
     LEFT OUTER JOIN any_category ON TRUE

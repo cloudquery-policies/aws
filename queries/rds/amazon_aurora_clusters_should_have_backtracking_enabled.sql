@@ -1,4 +1,4 @@
-SELECT db_cluster_arn
+SELECT arn
 FROM aws_rds_clusters
 WHERE
     engine IN ('aurora', 'aurora-mysql', 'mysql')

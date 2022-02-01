@@ -3,7 +3,7 @@ policy "public-ips" {
 
   configuration {
     provider "aws" {
-      version = "~> 0.9.0"
+      version = ">= 0.9.0"
     }
   }
 
