@@ -1,4 +1,4 @@
-## \[CloudFront\.6\] CloudFront distributions should have AWS WAF enabled<a name="fsbp-cloudfront-6"></a>
+## \[CloudFront\.6\] CloudFront distributions should have AWS WAF enabled
 
 **Category:** Protect > Protective services
 

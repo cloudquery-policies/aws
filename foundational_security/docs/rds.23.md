@@ -1,4 +1,4 @@
-## \[RDS\.23\] RDS databases and clusters should not use a database engine default port<a name="fsbp-rds-23"></a>
+## \[RDS\.23\] RDS databases and clusters should not use a database engine default port
 
 **Category:** Protect > Secure network configuration
 

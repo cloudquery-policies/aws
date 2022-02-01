@@ -1,4 +1,4 @@
-## \[EC2\.7\] EBS default encryption should be enabled<a name="fsbp-ec2-7"></a>
+## \[EC2\.7\] EBS default encryption should be enabled
 
 **Category:** Protect > Data protection > Encryption of data at rest 
 

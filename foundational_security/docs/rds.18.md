@@ -1,4 +1,4 @@
-## \[RDS\.18\] RDS instances should be deployed in a VPC<a name="fsbp-rds-18"></a>
+## \[RDS\.18\] RDS instances should be deployed in a VPC
 
 **Category:** Protect > Secure network configuration > Resources within VPC 
 

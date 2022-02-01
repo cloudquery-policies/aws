@@ -25,11 +25,11 @@ WHERE
         WHERE
             principals = '"*"'
             OR (
-                principals :: JSONB ? 'AWS'
+                principals::JSONB ? 'AWS'
                 AND (
                     principals -> 'AWS' = '"*"'
                     OR principals -> 'AWS' @> '"*"'
                 )
             )
-            AND ssl :: BOOL = FALSE
+            AND ssl::BOOL = FALSE
     );

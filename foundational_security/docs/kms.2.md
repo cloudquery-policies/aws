@@ -1,4 +1,4 @@
-## \[KMS\.2\] IAM principals should not have IAM inline policies that allow decryption actions on all KMS keys<a name="fsbp-kms-2"></a>
+## \[KMS\.2\] IAM principals should not have IAM inline policies that allow decryption actions on all KMS keys
 
 **Category:** Protect > Secure access management
 

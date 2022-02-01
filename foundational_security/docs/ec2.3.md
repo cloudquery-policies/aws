@@ -1,4 +1,4 @@
-## \[EC2\.3\] Attached EBS volumes should be encrypted at rest<a name="fsbp-ec2-3"></a>
+## \[EC2\.3\] Attached EBS volumes should be encrypted at rest
 
 **Category:** Protect > Data protection > Encryption of data at rest
 

@@ -1,4 +1,4 @@
-## \[ElasticBeanstalk\.1\] Elastic Beanstalk environments should have enhanced health reporting enabled<a name="fsbp-elasticbeanstalk-1"></a>
+## \[ElasticBeanstalk\.1\] Elastic Beanstalk environments should have enhanced health reporting enabled
 
 **Category:** Detect > Detection services > Application monitoring
 

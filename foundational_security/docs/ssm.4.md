@@ -1,4 +1,4 @@
-## \[SSM\.4\] SSM documents should not be public<a name="fsbp-ssm-4"></a>
+## \[SSM\.4\] SSM documents should not be public
 
 **Category:** Protect > Secure network configuration > Resources not publicly accessible
 

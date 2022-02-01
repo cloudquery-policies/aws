@@ -1,4 +1,4 @@
-## \[ES\.8\] Connections to Elasticsearch domains should be encrypted using TLS 1\.2<a name="fsbp-es-8"></a>
+## \[ES\.8\] Connections to Elasticsearch domains should be encrypted using TLS 1\.2
 
 **Category:** Protect > Data protection > Encryption of data in transit
 

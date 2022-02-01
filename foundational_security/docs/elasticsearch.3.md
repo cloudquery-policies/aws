@@ -1,4 +1,4 @@
-## \[ES\.3\] Elasticsearch domains should encrypt data sent between nodes<a name="fsbp-es-3"></a>
+## \[ES\.3\] Elasticsearch domains should encrypt data sent between nodes
 
 **Category:** Protect > Data protection > Encryption of data in transit 
 

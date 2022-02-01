@@ -1,4 +1,4 @@
-## \[SageMaker\.1\] SageMaker notebook instances should not have direct internet access<a name="fsbp-sagemaker-1"></a>
+## \[SageMaker\.1\] SageMaker notebook instances should not have direct internet access
 
 **Category:** Protect > Secure network configuration
 

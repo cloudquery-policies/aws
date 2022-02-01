@@ -1,4 +1,4 @@
-## \[DynamoDB\.3\] DynamoDB Accelerator \(DAX\) clusters should be encrypted at rest<a name="fsbp-dynamodb-3"></a>
+## \[DynamoDB\.3\] DynamoDB Accelerator \(DAX\) clusters should be encrypted at rest
 
 **Category:** Protect > Data protection > Encryption of data at rest 
 

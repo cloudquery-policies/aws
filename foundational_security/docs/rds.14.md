@@ -1,4 +1,4 @@
-## \[RDS\.14\] Amazon Aurora clusters should have backtracking enabled<a name="fsbp-rds-14"></a>
+## \[RDS\.14\] Amazon Aurora clusters should have backtracking enabled
 
 **Category:** Recover > Resilience > Backups enabled 
 

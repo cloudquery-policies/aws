@@ -68,7 +68,6 @@ for controlDoc in perControl:
     if len(header) < 1 or len(header[0]) == 0:
         continue
     ctrl = re.findall('"fsbp\-([^"]*)"', header[0])
-    # print(ctrl[0].upper().replace('-','.')+'.md')
     fileFound = False
     for file in onlyfiles:
         if ctrl[0].startswith('es-'):
@@ -76,6 +75,7 @@ for controlDoc in perControl:
         if file.upper() == ctrl[0].upper().replace('-', '.')+'.MD':
             with open('../foundational_security/docs/'+file, 'w') as file:
                 controlDoc = '## \[' + controlDoc
+                controlDoc = re.sub('<a name="fsbp-.*</a>', '', controlDoc)
                 file.write(controlDoc)
                 fileFound = True
 

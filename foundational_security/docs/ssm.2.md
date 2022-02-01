@@ -1,4 +1,4 @@
-## \[SSM\.2\] All EC2 instances managed by Systems Manager should be compliant with patching requirements<a name="fsbp-ssm-2"></a>
+## \[SSM\.2\] All EC2 instances managed by Systems Manager should be compliant with patching requirements
 
 **Category:** Detect > Detection services 
 

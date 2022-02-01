@@ -1,4 +1,4 @@
-## \[Lambda\.2\] Lambda functions should use supported runtimes<a name="fsbp-lambda-2"></a>
+## \[Lambda\.2\] Lambda functions should use supported runtimes
 
 **Category:** Protect > Secure development
 

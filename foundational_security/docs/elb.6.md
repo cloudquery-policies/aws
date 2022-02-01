@@ -1,4 +1,4 @@
-## \[ELB\.6\] Application Load Balancer deletion protection should be enabled<a name="fsbp-elb-6"></a>
+## \[ELB\.6\] Application Load Balancer deletion protection should be enabled
 
 **Category:** Recover > Resilience > High availability
 

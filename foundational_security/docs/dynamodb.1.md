@@ -1,4 +1,4 @@
-## \[DynamoDB\.1\] DynamoDB tables should automatically scale capacity with demand<a name="fsbp-dynamodb-1"></a>
+## \[DynamoDB\.1\] DynamoDB tables should automatically scale capacity with demand
 
 **Category:** Recover > Resilience > High availability
 

@@ -1,4 +1,4 @@
-## \[CloudTrail\.5\] Ensure CloudTrail trails are integrated with Amazon CloudWatch Logs<a name="fsbp-cloudtrail-5"></a>
+## \[CloudTrail\.5\] Ensure CloudTrail trails are integrated with Amazon CloudWatch Logs
 
 **Category:** Identify > Logging
 

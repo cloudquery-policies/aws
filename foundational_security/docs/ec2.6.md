@@ -1,4 +1,4 @@
-## \[EC2\.6\] VPC flow logging should be enabled in all VPCs<a name="fsbp-ec2-6"></a>
+## \[EC2\.6\] VPC flow logging should be enabled in all VPCs
 
 **Category:** Identify > Logging
 

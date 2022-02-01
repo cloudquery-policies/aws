@@ -1,4 +1,4 @@
-## \[Redshift\.3\] Amazon Redshift clusters should have automatic snapshots enabled<a name="fsbp-redshift-3"></a>
+## \[Redshift\.3\] Amazon Redshift clusters should have automatic snapshots enabled
 
 **Category:** Recover > Resilience > Backups enabled 
 

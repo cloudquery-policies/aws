@@ -1,4 +1,4 @@
-## \[CloudTrail\.1\] CloudTrail should be enabled and configured with at least one multi\-Region trail<a name="fsbp-cloudtrail-1"></a>
+## \[CloudTrail\.1\] CloudTrail should be enabled and configured with at least one multi\-Region trail
 
 **Category:** Identify > Logging
 

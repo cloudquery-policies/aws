@@ -1,4 +1,4 @@
-## \[ELB\.8\] Classic Load Balancers with HTTPS/SSL listeners should use a predefined security policy that has strong configuration<a name="fsbp-elb-8"></a>
+## \[ELB\.8\] Classic Load Balancers with HTTPS/SSL listeners should use a predefined security policy that has strong configuration
 
 **Category:** Protect > Encryption of data in transit 
 

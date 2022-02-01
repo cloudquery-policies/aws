@@ -1,4 +1,4 @@
-## \[SNS\.1\] SNS topics should be encrypted at rest using AWS KMS<a name="fsbp-sns-1"></a>
+## \[SNS\.1\] SNS topics should be encrypted at rest using AWS KMS
 
 **Category:** Protect > Data protection > Encryption of data at rest 
 

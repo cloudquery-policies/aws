@@ -29,7 +29,7 @@ FROM
         WHERE
             principals = '"*"'
             OR (
-                principals :: JSONB ? 'AWS'
+                principals::JSONB ? 'AWS'
                 AND (
                     principals -> 'AWS' = '"*"'
                     OR principals -> 'AWS' @> '"*"'

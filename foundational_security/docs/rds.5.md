@@ -1,4 +1,4 @@
-## \[RDS\.5\] RDS DB instances should be configured with multiple Availability Zones<a name="fsbp-rds-5"></a>
+## \[RDS\.5\] RDS DB instances should be configured with multiple Availability Zones
 
 **Category:** Recover > Resilience > High availability
 

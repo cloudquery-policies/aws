@@ -1,4 +1,4 @@
-## \[EC2\.2\] The VPC default security group should not allow inbound and outbound traffic<a name="fsbp-ec2-2"></a>
+## \[EC2\.2\] The VPC default security group should not allow inbound and outbound traffic
 
 **Category:** Protect > Secure network configuration
 

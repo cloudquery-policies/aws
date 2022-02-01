@@ -1,4 +1,4 @@
-## \[RDS\.13\] RDS automatic minor version upgrades should be enabled<a name="fsbp-rds-13"></a>
+## \[RDS\.13\] RDS automatic minor version upgrades should be enabled
 
 **Category:** Detect > Vulnerability and patch management 
 

@@ -1,4 +1,4 @@
-## \[SecretsManager\.3\] Remove unused Secrets Manager secrets<a name="fsbp-secretsmanager-3"></a>
+## \[SecretsManager\.3\] Remove unused Secrets Manager secrets
 
 **Category:** Protect > Secure access management
 

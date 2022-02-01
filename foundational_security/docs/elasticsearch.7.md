@@ -1,4 +1,4 @@
-## \[ES\.7\] Elasticsearch domains should be configured with at least three dedicated master nodes<a name="fsbp-es-7"></a>
+## \[ES\.7\] Elasticsearch domains should be configured with at least three dedicated master nodes
 
 **Category:** Recover > Resilience > High availability
 

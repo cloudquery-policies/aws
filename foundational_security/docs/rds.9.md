@@ -1,4 +1,4 @@
-## \[RDS\.9\] Database logging should be enabled<a name="fsbp-rds-9"></a>
+## \[RDS\.9\] Database logging should be enabled
 
 **Category:** Identify > Logging
 

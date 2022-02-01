@@ -1,4 +1,4 @@
-## \[ES\.5\] Elasticsearch domains should have audit logging enabled<a name="fsbp-es-5"></a>
+## \[ES\.5\] Elasticsearch domains should have audit logging enabled
 
 **Category:** Identify > Logging
 

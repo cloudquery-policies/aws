@@ -1,4 +1,4 @@
-## \[EC2\.19\] Security groups should not allow unrestricted access to ports with high risk<a name="fsbp-ec2-19"></a>
+## \[EC2\.19\] Security groups should not allow unrestricted access to ports with high risk
 
 **Category:** Protect > Restricted network access
 

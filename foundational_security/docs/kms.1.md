@@ -1,4 +1,4 @@
-## \[KMS\.1\] IAM customer managed policies should not allow decryption actions on all KMS keys<a name="fsbp-kms-1"></a>
+## \[KMS\.1\] IAM customer managed policies should not allow decryption actions on all KMS keys
 
 **Category:** Protect > Secure access management
 

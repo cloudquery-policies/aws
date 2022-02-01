@@ -1,4 +1,4 @@
-## \[APIGateway\.4\] API Gateway should be associated with an AWS WAF web ACL<a name="fsbp-apigateway-4"></a>
+## \[APIGateway\.4\] API Gateway should be associated with an AWS WAF web ACL
 
 **Category:** Protect > Protective services
 

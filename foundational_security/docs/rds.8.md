@@ -1,4 +1,4 @@
-## \[RDS\.8\] RDS DB instances should have deletion protection enabled<a name="fsbp-rds-8"></a>
+## \[RDS\.8\] RDS DB instances should have deletion protection enabled
 
 **Category: **Protect > Data protection > Data deletion protection
 

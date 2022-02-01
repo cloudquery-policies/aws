@@ -1,4 +1,4 @@
-## \[RDS\.3\] RDS DB instances should have encryption at rest enabled<a name="fsbp-rds-3"></a>
+## \[RDS\.3\] RDS DB instances should have encryption at rest enabled
 
 **Category:** Protect > Data protection > Encryption of data at rest
 

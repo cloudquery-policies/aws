@@ -1,4 +1,4 @@
-## \[CloudFront\.1\] CloudFront distributions should have a default root object configured<a name="fsbp-cloudfront-1"></a>
+## \[CloudFront\.1\] CloudFront distributions should have a default root object configured
 
 **Category:** Protect > Secure access management > Resources not publicly accessible
 

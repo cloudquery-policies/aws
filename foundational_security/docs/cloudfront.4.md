@@ -1,4 +1,4 @@
-## \[CloudFront\.4\] CloudFront distributions should have origin failover configured<a name="fsbp-cloudfront-4"></a>
+## \[CloudFront\.4\] CloudFront distributions should have origin failover configured
 
 **Category:** Recover > Resilience > High availability
 

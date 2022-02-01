@@ -1,4 +1,4 @@
-## \[APIGateway\.5\] API Gateway REST API cache data should be encrypted at rest<a name="fsbp-apigateway-5"></a>
+## \[APIGateway\.5\] API Gateway REST API cache data should be encrypted at rest
 
 **Category:** Protect > Data protection > Encryption of data at rest
 

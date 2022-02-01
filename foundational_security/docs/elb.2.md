@@ -1,4 +1,4 @@
-## \[ELB\.2\] Classic Load Balancers with SSL/HTTPS listeners should use a certificate provided by AWS Certificate Manager<a name="fsbp-elb-2"></a>
+## \[ELB\.2\] Classic Load Balancers with SSL/HTTPS listeners should use a certificate provided by AWS Certificate Manager
 
 **Category:** Protect > Encryption of data in transit
 

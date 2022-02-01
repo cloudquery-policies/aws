@@ -1,4 +1,4 @@
-## \[SecretsManager\.4\] Secrets Manager secrets should be rotated within a specified number of days<a name="fsbp-secretsmanager-4"></a>
+## \[SecretsManager\.4\] Secrets Manager secrets should be rotated within a specified number of days
 
 **Category:** Protect > Secure access management
 

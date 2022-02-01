@@ -1,4 +1,4 @@
-## \[SSM\.3\] Instances managed by Systems Manager should have an association compliance status of COMPLIANT<a name="fsbp-ssm-3"></a>
+## \[SSM\.3\] Instances managed by Systems Manager should have an association compliance status of COMPLIANT
 
 **Category:** Detect > Detection services
 

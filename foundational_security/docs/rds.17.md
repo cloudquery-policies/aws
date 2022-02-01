@@ -1,4 +1,4 @@
-## \[RDS\.17\] RDS DB instances should be configured to copy tags to snapshots<a name="fsbp-rds-17"></a>
+## \[RDS\.17\] RDS DB instances should be configured to copy tags to snapshots
 
 **Category:** Identify > Inventory
 

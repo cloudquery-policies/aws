@@ -1,4 +1,4 @@
-## \[RDS\.2\] RDS DB instances should prohibit public access, determined by the PubliclyAccessible configuration<a name="fsbp-rds-2"></a>
+## \[RDS\.2\] RDS DB instances should prohibit public access, determined by the PubliclyAccessible configuration
 
 **Category:** Protect > Secure network configuration
 

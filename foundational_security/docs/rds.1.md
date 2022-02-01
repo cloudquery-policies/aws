@@ -1,4 +1,4 @@
-## \[RDS\.1\] RDS snapshots should be private<a name="fsbp-rds-1"></a>
+## \[RDS\.1\] RDS snapshots should be private
 
 **Category:** Protect > Secure network configuration
 

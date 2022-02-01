@@ -1,4 +1,4 @@
-## \[APIGateway\.2\] API Gateway REST API stages should be configured to use SSL certificates for backend authentication<a name="fsbp-apigateway-2"></a>
+## \[APIGateway\.2\] API Gateway REST API stages should be configured to use SSL certificates for backend authentication
 
 **Category:** Protect > Data protection
 

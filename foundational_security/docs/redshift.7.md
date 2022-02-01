@@ -1,4 +1,4 @@
-## \[Redshift\.7\] Amazon Redshift clusters should use enhanced VPC routing<a name="fsbp-redshift-7"></a>
+## \[Redshift\.7\] Amazon Redshift clusters should use enhanced VPC routing
 
 **Category:** Protect > Secure network configuration > API private access
 

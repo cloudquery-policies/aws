@@ -1,4 +1,4 @@
-## \[IAM\.3\] IAM users' access keys should be rotated every 90 days or less<a name="fsbp-iam-3"></a>
+## \[IAM\.3\] IAM users' access keys should be rotated every 90 days or less
 
 **Category:** Protect > Secure access management
 

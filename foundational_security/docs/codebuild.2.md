@@ -1,4 +1,4 @@
-## \[CodeBuild\.2\] CodeBuild project environment variables should not contain clear text credentials<a name="fsbp-codebuild-2"></a>
+## \[CodeBuild\.2\] CodeBuild project environment variables should not contain clear text credentials
 
 **Category:** Protect > Secure development
 

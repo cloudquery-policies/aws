@@ -1,4 +1,4 @@
-## \[EC2\.1\] Amazon EBS snapshots should not be public, determined by the ability to be restorable by anyone<a name="fsbp-ec2-1"></a>
+## \[EC2\.1\] Amazon EBS snapshots should not be public, determined by the ability to be restorable by anyone
 
 **Category:** Protect > Secure network configuration
 

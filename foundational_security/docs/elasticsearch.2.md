@@ -1,4 +1,4 @@
-## \[ES\.2\] Elasticsearch domains should be in a VPC<a name="fsbp-es-2"></a>
+## \[ES\.2\] Elasticsearch domains should be in a VPC
 
 **Category:** Protect > Secure network configuration > Resources within VPC 
 

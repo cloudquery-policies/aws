@@ -1,4 +1,4 @@
-## \[EC2\.9\] EC2 instances should not have a public IP address<a name="fsbp-ec2-9"></a>
+## \[EC2\.9\] EC2 instances should not have a public IP address
 
 **Category:** Protect > Secure network configuration > Public IP addresses
 
