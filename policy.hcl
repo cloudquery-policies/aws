@@ -31,4 +31,9 @@ policy "aws" {
     title  = "Find all resources with public IPs"
     source = file("publicly_available/policy.hcl")
   }
+
+  policy "other" {
+    title  = "Other, uncategorized queries"
+    source = file("other/policy.hcl")
+  }
 }
