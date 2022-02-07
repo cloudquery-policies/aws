@@ -13,6 +13,12 @@ policy "other" {
     query = file("queries/ec2/ebs_snapshot_shared.sql")
   }
 
+  check "ec2-ebs-snapshots-shared-externally" {
+    type  = "manual"
+    title = "Find all ec2 ebs snapshots that are shared with external accounts."
+    query = file("queries/ec2/ebs_snapshot_shared_external_acc.sql")
+  }
+
   check "rds-cluster-snapshots-shared" {
     type  = "manual"
     title = "Find all rds cluster snapshots that are shared publicly and/or with other accounts."
@@ -23,5 +29,11 @@ policy "other" {
     type  = "manual"
     title = "Find all rds db snapshots that are shared publicly and/or with other accounts."
     query = file("queries/rds/rds_db_snapshot_shared.sql")
+  }
+
+  check "rds-db-snapshots-shared-externally" {
+    type = "manual"
+    title = "Find all rds db snapshots that are shared with external accounts."
+    query = file("queries/rds/rds_db_snapshot_shared_external_acc.sql")
   }
 }
