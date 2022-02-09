@@ -32,7 +32,7 @@ policy "other" {
   }
 
   check "rds-db-snapshots-shared-externally" {
-    type = "manual"
+    type  = "manual"
     title = "Find all rds db snapshots that are shared with external accounts."
     query = file("queries/rds/rds_db_snapshot_shared_external_acc.sql")
   }
