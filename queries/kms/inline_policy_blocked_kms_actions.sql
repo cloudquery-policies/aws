@@ -25,7 +25,7 @@ FROM
                 CASE JSONB_TYPEOF(policy_document -> 'Statement')
                     WHEN 'string' THEN JSONB_BUILD_ARRAY(policy_document ->> 'Statement')
                     WHEN 'array' THEN policy_document -> 'Statement' END
-             ) AS statement
+                ) AS statement
             JOIN aws_iam_roles ON aws_iam_roles.cq_id = aws_iam_role_policies.role_cq_id
         WHERE LOWER(arn) NOT LIKE 'arn:aws:iam::%:role/aws-service-role/%'
         UNION
@@ -49,7 +49,7 @@ WHERE
         'arn:aws:kms:*:' || account_id || ':key/*'
         'arn:aws:kms:*:*:alias/*',
         'arn:aws:kms:*:' || account_id || ':alias/*'
-	]
+    ]
 
     AND LOWER(statement::TEXT)::JSONB -> 'action' ?| ARRAY[
         '*',
