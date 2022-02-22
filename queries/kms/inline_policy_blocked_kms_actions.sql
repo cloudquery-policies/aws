@@ -49,7 +49,7 @@ WHERE
         'arn:aws:kms:*:' || account_id || ':key/*'
         'arn:aws:kms:*:*:alias/*',
         'arn:aws:kms:*:' || account_id || ':alias/*'
-	] --noqa
+	]
 
     AND LOWER(statement::TEXT)::JSONB -> 'action' ?| ARRAY[
         '*',
