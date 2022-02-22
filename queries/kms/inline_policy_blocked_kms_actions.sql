@@ -8,7 +8,11 @@ FROM
 			arn,
 			aws_iam_users.cq_id
 		FROM aws_iam_user_policies
-		 CROSS JOIN LATERAL jsonb_array_elements(aws_iam_user_policies.policy_document -> 'Statement') as statement
+		CROSS JOIN LATERAL jsonb_array_elements(
+            CASE JSONB_TYPEOF(policy_document -> 'Statement')
+                WHEN 'string' THEN JSONB_BUILD_ARRAY(policy_document ->> 'Statement')
+                WHEN 'array' THEN policy_document -> 'Statement' END
+        ) as statement
 		JOIN aws_iam_users ON aws_iam_users.cq_id = aws_iam_user_policies.user_cq_id
 		UNION 
         -- select all role policies
@@ -17,7 +21,11 @@ FROM
 			arn,
 			aws_iam_roles.cq_id
 		FROM aws_iam_role_policies
-	 		 CROSS JOIN LATERAL jsonb_array_elements(aws_iam_role_policies.policy_document -> 'Statement') as statement
+	 	CROSS JOIN LATERAL jsonb_array_elements(
+            CASE JSONB_TYPEOF(policy_document -> 'Statement')
+                WHEN 'string' THEN JSONB_BUILD_ARRAY(policy_document ->> 'Statement')
+                WHEN 'array' THEN policy_document -> 'Statement' END
+        ) as statement
 		JOIN aws_iam_roles ON aws_iam_roles.cq_id = aws_iam_role_policies.role_cq_id
 		WHERE LOWER(arn) NOT LIKE 'arn:aws:iam::%:role/aws-service-role/%'
 		UNION 
@@ -27,7 +35,11 @@ FROM
 			arn,
 			aws_iam_groups.cq_id
 		FROM aws_iam_group_policies
-	 	 		 CROSS JOIN LATERAL jsonb_array_elements(aws_iam_group_policies.policy_document -> 'Statement') as statement
+	 	CROSS JOIN LATERAL jsonb_array_elements(
+            CASE JSONB_TYPEOF(policy_document -> 'Statement')
+                WHEN 'string' THEN JSONB_BUILD_ARRAY(policy_document ->> 'Statement')
+                WHEN 'array' THEN policy_document -> 'Statement' END
+        ) as statement
 		JOIN aws_iam_groups ON aws_iam_groups.cq_id = aws_iam_group_policies.group_cq_id) T
 WHERE 
 	statement ->> 'Effect' = 'Allow'
