@@ -2,7 +2,7 @@
 cloudquery {
 
   provider "aws" {
-    source  = "cloudquery/cq-provider-aws"
+    source  = "cloudquery/aws"
     version = "latest"
   }
 
