@@ -16,7 +16,6 @@ sensitive authentication data (SAD).
 
 ## Running
 
-
 ```
 cloudquery policy run aws//pci_dss_v3.2.1
 ```
