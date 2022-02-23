@@ -6,7 +6,7 @@ WITH policy_statements AS (
                 WHEN 'string' THEN JSONB_BUILD_ARRAY(v.document ->> 'Statement')
                 WHEN 'array' THEN v.document -> 'Statement'
             END
-        ) AS statement,
+        ) AS statement
     FROM
         aws_iam_policies p
         LEFT JOIN aws_iam_policy_versions v
