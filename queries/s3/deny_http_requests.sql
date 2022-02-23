@@ -15,7 +15,12 @@ WHERE
                     statements
                 FROM
                     aws_s3_buckets,
-                    jsonb_array_elements(policy -> 'Statement') AS statements
+                    jsonb_array_elements(
+                        CASE JSONB_TYPEOF(policy -> 'Statement')
+                            WHEN 'string' THEN JSONB_BUILD_ARRAY(policy ->> 'Statement')
+                            WHEN 'array' THEN policy -> 'Statement'
+                        END
+                    ) AS statements 
                 WHERE
                     statements -> 'Effect' = '"Deny"'
             ) AS foo,
