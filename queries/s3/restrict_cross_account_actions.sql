@@ -25,7 +25,12 @@ FROM (
                 JSONB_TYPEOF(statements -> 'Action') = 'array' THEN
                 statements -> 'Action' END AS actions
     FROM aws_s3_buckets,
-        JSONB_ARRAY_ELEMENTS(policy -> 'Statement') AS statements
+        jsonb_array_elements(
+            CASE JSONB_TYPEOF(policy -> 'Statement')
+                WHEN 'string' THEN JSONB_BUILD_ARRAY(policy ->> 'Statement')
+                WHEN 'array' THEN policy -> 'Statement'
+            END
+        ) AS statements 
     WHERE statements -> 'Effect' = '"Allow"') AS flatten_statements,
     JSONB_ARRAY_ELEMENTS(TO_JSONB(actions)) AS a,
     JSONB_ARRAY_ELEMENTS(TO_JSONB(principals)) AS p
