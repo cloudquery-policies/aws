@@ -8,9 +8,9 @@ FROM aws_lambda_functions,
             WHEN 'array' THEN policy_document -> 'Statement'
         END
     ) AS statement
-WHERE statment ->> 'Effect' = 'Allow'
+WHERE statement ->> 'Effect' = 'Allow'
     AND (
-        statment ->> 'Principal' = '*'
-        OR statment -> 'Principal' ->> 'AWS' = '*'
-        OR (statment -> 'Principal' ->> 'AWS')::JSONB ? '*'
+        statement ->> 'Principal' = '*'
+        OR statement -> 'Principal' ->> 'AWS' = '*'
+        OR (statement -> 'Principal' ->> 'AWS')::JSONB ? '*'
     );
