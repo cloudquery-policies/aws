@@ -2,7 +2,12 @@ WITH violations AS (
     SELECT policy_cq_id,
            COUNT(*) AS violations
     FROM aws_iam_policy_versions,
-        JSONB_ARRAY_ELEMENTS(document -> 'Statement') AS statement,
+        JSONB_ARRAY_ELEMENTS(
+            CASE JSONB_TYPEOF(policy_document -> 'Statement')
+                WHEN 'string' THEN JSONB_BUILD_ARRAY(policy_document ->> 'Statement')
+                WHEN 'array' THEN policy_document -> 'Statement'
+            END
+        ) AS statement,
         JSONB_ARRAY_ELEMENTS_TEXT(
             CASE JSONB_TYPEOF(statement -> 'Resource')
                 WHEN 'string' THEN JSONB_BUILD_ARRAY(statement ->> 'Resource')
