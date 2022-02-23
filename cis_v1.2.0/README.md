@@ -9,5 +9,5 @@ See latest AWS CIS guides on https://www.cisecurity.org/benchmark/amazon_web_ser
 ## Running
 
 ```
-cloudquery policy run aws aws/cis_v1.2.0
+cloudquery policy run aws//cis_v1.2.0
 ```
