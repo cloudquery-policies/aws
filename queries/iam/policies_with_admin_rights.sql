@@ -4,7 +4,7 @@ WITH policy_statements AS (
         JSONB_ARRAY_ELEMENTS(
             CASE JSONB_TYPEOF(v.document -> 'Statement')
                 WHEN 'string' THEN JSONB_BUILD_ARRAY(v.document ->> 'Statement')
-                WHEN 'array' THEN v.document -> 'Statement' END    
+                WHEN 'array' THEN v.document -> 'Statement' END
         ) AS statement
     FROM
         aws_iam_policies p

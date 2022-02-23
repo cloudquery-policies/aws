@@ -27,7 +27,7 @@ FROM
                             WHEN 'string' THEN JSONB_BUILD_ARRAY(policy ->> 'Statement')
                             WHEN 'array' THEN policy -> 'Statement'
                         END
-                    ) AS statements 
+                    ) AS statements
                 WHERE
                     statements -> 'Effect' = '"Allow"'
             ) AS foo
