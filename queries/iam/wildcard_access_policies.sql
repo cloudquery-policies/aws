@@ -1,7 +1,12 @@
 WITH policy_statements AS (
     SELECT
         p.cq_id AS cq_id,
-        JSONB_ARRAY_ELEMENTS(v.document -> 'Statement') AS statement
+        JSONB_ARRAY_ELEMENTS(
+            CASE JSONB_TYPEOF(v.document -> 'Statement')
+                WHEN 'string' THEN JSONB_BUILD_ARRAY(v.document ->> 'Statement')
+                WHEN 'array' THEN v.document -> 'Statement'
+            END
+        ) AS statement,
     FROM
         aws_iam_policies p
         LEFT JOIN aws_iam_policy_versions v
