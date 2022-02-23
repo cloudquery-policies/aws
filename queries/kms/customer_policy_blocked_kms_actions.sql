@@ -9,7 +9,12 @@ WITH iam_policies AS (
 violations AS (
     SELECT DISTINCT cq_id
     FROM iam_policies,
-        jsonb_array_elements(document -> 'Statement') AS statement
+        jsonb_array_elements(
+            CASE JSONB_TYPEOF(document -> 'Statement')
+                WHEN 'string' THEN JSONB_BUILD_ARRAY(document ->> 'Statement')
+                WHEN 'array' THEN document -> 'Statement'
+            END
+        ) AS statement
     WHERE
         NOT(arn LIKE 'arn:aws:iam::aws:policy%' OR arn LIKE 'arn:aws-us-gov:iam::aws:policy%')
         AND statement ->> 'Effect' = 'Allow'
