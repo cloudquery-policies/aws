@@ -3,9 +3,9 @@ WITH violations AS (
            COUNT(*) AS violations
     FROM aws_iam_policy_versions,
         JSONB_ARRAY_ELEMENTS(
-            CASE JSONB_TYPEOF(policy_document -> 'Statement')
-                WHEN 'string' THEN JSONB_BUILD_ARRAY(policy_document ->> 'Statement')
-                WHEN 'array' THEN policy_document -> 'Statement'
+            CASE JSONB_TYPEOF(document -> 'Statement')
+                WHEN 'string' THEN JSONB_BUILD_ARRAY(document ->> 'Statement')
+                WHEN 'array' THEN document -> 'Statement'
             END
         ) AS statement,
         JSONB_ARRAY_ELEMENTS_TEXT(
