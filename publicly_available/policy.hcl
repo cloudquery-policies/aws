@@ -65,7 +65,7 @@ policy "public-ips" {
       type  = "manual"
 
       query = <<EOF
-      SELECT distinct id, endpoint_address, account_id, region FROM aws_redshift_clusters WHERE publicly_accessible IS NOT NULL
+      SELECT distinct id, endpoint_address, account_id, region FROM aws_redshift_clusters WHERE publicly_accessible IS NOT FALSE
   EOF
     }
 
@@ -74,7 +74,7 @@ policy "public-ips" {
       type  = "manual"
 
       query = <<EOF
-      SELECT DISTINCT id, endpoint_address, account_id, region FROM aws_rds_instances WHERE publicly_accessible IS NOT NULL
+      SELECT DISTINCT id, endpoint_address, account_id, region FROM aws_rds_instances WHERE publicly_accessible IS NOT FALSE
   EOF
     }
   }
