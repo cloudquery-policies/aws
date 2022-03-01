@@ -57,37 +57,37 @@ policy "1" {
   }
 
   check "1.10" {
-    title = "1.10 Ensure IAM password policy prevents password reuse"
+    title = "Ensure IAM password policy prevents password reuse"
     doc   = file("cis_v1.2.0/docs/1.10.md")
     query = file("queries/iam/password_policy_prevent_reuse.sql")
   }
 
   check "1.11" {
-    title = "1.11 Ensure IAM password policy expires passwords within 90 days or less"
+    title = "Ensure IAM password policy expires passwords within 90 days or less"
     doc   = file("cis_v1.2.0/docs/1.11.md")
     query = file("queries/iam/password_policy_prevent_reuse.sql")
   }
 
   check "1.12" {
-    title = "1.12  Ensure no root account access key exists (Scored)"
+    title = " Ensure no root account access key exists (Scored)"
     doc   = file("cis_v1.2.0/docs/1.12.md")
     query = file("queries/iam/root_user_no_access_keys.sql")
   }
 
   check "1.13" {
-    title = "1.13 Ensure MFA is enabled for the 'root' account"
+    title = "Ensure MFA is enabled for the 'root' account"
     doc   = file("cis_v1.2.0/docs/1.13.md")
     query = file("queries/iam/mfa_enabled_for_root.sql")
   }
 
   check "1.14" {
-    title = "1.14 Ensure hardware MFA is enabled for the 'root' account (Scored)"
+    title = "Ensure hardware MFA is enabled for the 'root' account (Scored)"
     doc   = file("cis_v1.2.0/docs/1.14.md")
     query = file("queries/iam/hardware_mfa_enabled_for_root.sql")
   }
 
   check "1.16" {
-    title = "1.16 Ensure IAM policies are attached only to groups or roles (Scored)"
+    title = "Ensure IAM policies are attached only to groups or roles (Scored)"
     doc   = file("cis_v1.2.0/docs/1.16.md")
     query = file("queries/iam/policies_attached_to_groups_roles.sql")
   }
