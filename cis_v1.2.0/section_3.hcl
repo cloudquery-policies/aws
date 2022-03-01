@@ -3,63 +3,63 @@ policy "3" {
   doc   = file("cis_v1.2.0/docs/3.md")
 
   check "3.1" {
-    title         = "3.1 Ensure a log metric filter and alarm exist for unauthorized API calls (Scored)"
+    title         = "Ensure a log metric filter and alarm exist for unauthorized API calls (Scored)"
     doc           = file("cis_v1.2.0/docs/3.1.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_unauthorized_api.sql")
   }
 
   check "3.2" {
-    title         = "3.2 Ensure a log metric filter and alarm exist for Management Console sign-in without MFA (Scored)"
+    title         = "Ensure a log metric filter and alarm exist for Management Console sign-in without MFA (Scored)"
     doc           = file("cis_v1.2.0/docs/3.2.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_unauthorized_api.sql")
   }
 
   check "3.3" {
-    title         = "3.3  Ensure a log metric filter and alarm exist for usage of 'root' account (Score)"
+    title         = " Ensure a log metric filter and alarm exist for usage of 'root' account (Score)"
     doc           = file("cis_v1.2.0/docs/3.3.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_root_account.sql")
   }
 
   check "3.4" {
-    title         = "3.4 Ensure a log metric filter and alarm exist for IAM policy changes (Score)"
+    title         = "Ensure a log metric filter and alarm exist for IAM policy changes (Score)"
     doc           = file("cis_v1.2.0/docs/3.4.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_iam_policy_change.sql")
   }
 
   check "3.5" {
-    title         = "3.5 Ensure a log metric filter and alarm exist for CloudTrail configuration changes (Scored)"
+    title         = "Ensure a log metric filter and alarm exist for CloudTrail configuration changes (Scored)"
     doc           = file("cis_v1.2.0/docs/3.5.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_cloudtrail_config_changes.sql")
   }
 
   check "3.6" {
-    title         = "3.6 Ensure a log metric filter and alarm exist for AWS Management Console authentication failures (Scored)"
+    title         = "Ensure a log metric filter and alarm exist for AWS Management Console authentication failures (Scored)"
     doc           = file("cis_v1.2.0/docs/3.6.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_console_auth_failure.sql")
   }
 
   check "3.7" {
-    title         = "3.7 Ensure a log metric filter and alarm exist for disabling or scheduled deletion of customer created CMKs (Scored)"
+    title         = "Ensure a log metric filter and alarm exist for disabling or scheduled deletion of customer created CMKs (Scored)"
     doc           = file("cis_v1.2.0/docs/3.7.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_delete_customer_cmk.sql")
   }
 
   check "3.8" {
-    title         = "3.8 Ensure a log metric filter and alarm exist for S3 bucket policy changes (Scored)"
+    title         = "Ensure a log metric filter and alarm exist for S3 bucket policy changes (Scored)"
     doc           = file("cis_v1.2.0/docs/3.8.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_s3_bucket_policy_change.sql")
   }
 
   check "3.9" {
-    title         = "3.9 Ensure a log metric filter and alarm exist for AWS Config configuration changes (Scored)"
+    title         = "Ensure a log metric filter and alarm exist for AWS Config configuration changes (Scored)"
     doc           = file("cis_v1.2.0/docs/3.9.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_aws_config_changes.sql")
