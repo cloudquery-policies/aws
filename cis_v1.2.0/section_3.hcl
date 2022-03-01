@@ -66,35 +66,35 @@ policy "3" {
   }
 
   check "3.10" {
-    title         = "3.10 Ensure a log metric filter and alarm exist for security group changes (Scored)"
+    title         = "Ensure a log metric filter and alarm exist for security group changes (Scored)"
     doc           = file("cis_v1.2.0/docs/3.10.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_security_group_changes.sql")
   }
 
   check "3.11" {
-    title         = "3.11 Ensure a log metric filter and alarm exist for changes to Network Access Control Lists (NACL) (Scored)"
+    title         = "Ensure a log metric filter and alarm exist for changes to Network Access Control Lists (NACL) (Scored)"
     doc           = file("cis_v1.2.0/docs/3.11.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_nacl_changes.sql")
   }
 
   check "3.12" {
-    title         = "3.12 Ensure a log metric filter and alarm exist for changes to network gateways (Scored)"
+    title         = "Ensure a log metric filter and alarm exist for changes to network gateways (Scored)"
     doc           = file("cis_v1.2.0/docs/3.12.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_network_gateways.sql")
   }
 
   check "3.13" {
-    title         = "3.13 Ensure a log metric filter and alarm exist for route table changes (Scored)"
+    title         = "Ensure a log metric filter and alarm exist for route table changes (Scored)"
     doc           = file("cis_v1.2.0/docs/3.13.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_route_table_changes.sql")
   }
 
   check "3.14" {
-    title         = "3.14 Ensure a log metric filter and alarm exist for VPC changes (Scored)"
+    title         = "Ensure a log metric filter and alarm exist for VPC changes (Scored)"
     doc           = file("cis_v1.2.0/docs/3.14.md")
     expect_output = true
     query         = file("queries/cloudwatch/alarm_vpc_changes.sql")
