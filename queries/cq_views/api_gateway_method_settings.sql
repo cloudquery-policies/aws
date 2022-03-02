@@ -1,6 +1,7 @@
 SELECT cq_id,
        stage_name,
        rest_api_cq_id,
+       arn,
        tracing_enabled AS stage_data_trace_enabled,
        cache_cluster_enabled AS stage_caching_enabled,
        web_acl_arn AS waf,

@@ -2,6 +2,7 @@ SELECT
     cq_id::TEXT,
     stage_name,
     rest_api_cq_id::TEXT,
+    arn,
     stage_data_trace_enabled,
     stage_caching_enabled,
     waf,
@@ -14,4 +15,6 @@ SELECT
 FROM
     api_gateway_method_settings
 WHERE
-    stage_data_trace_enabled IS NOT NULL
+    cert IS NULL
+ 
+
