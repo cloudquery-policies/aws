@@ -6,10 +6,7 @@ policy "foundational_security" {
     }
   }
 
-  view "api_gateway_method_settings" {
-    title = "AWS API Gateway Method Settings"
-    query = file("queries/cq_views/api_gateway_method_settings.sql")
-  }
+
   policy "acm" {
     source = file("foundational_security/services/acm.hcl")
   }
