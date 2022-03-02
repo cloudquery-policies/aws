@@ -16,5 +16,3 @@ FROM
     api_gateway_method_settings
 WHERE
     cert IS NULL
- 
-
