@@ -6,7 +6,6 @@ policy "foundational_security" {
     }
   }
 
-
   policy "acm" {
     source = file("foundational_security/services/acm.hcl")
   }
