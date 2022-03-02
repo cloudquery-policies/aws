@@ -1,0 +1,2 @@
+cq_id|stage_name|rest_api_cq_id|arn|stage_data_trace_enabled|stage_caching_enabled|waf|cert|method|data_trace_enabled|caching_enabled|cache_data_encrypted|logging_level
+64ef30e2-5b26-4cc0-ae5e-0f3af5916eaf|apigwv1-stage2-cq-testingintegration|a861bdca-1760-5b53-88f4-2fbec99e55be|arn:aws:apigateway::000000000000:/restapis/lts45y3n6e/stages/apigwv1-stage2-cq-testingintegration|f|f|||*/*|f|f|t|null
