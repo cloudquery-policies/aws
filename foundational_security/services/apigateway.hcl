@@ -1,6 +1,12 @@
 policy "apigateway" {
   title = "apigateway controls"
   doc   = file("foundational_security/docs/apigateway.md")
+
+  view "api_gateway_method_settings" {
+    title = "AWS API Gateway Method Settings"
+    query = file("queries/cq_views/api_gateway_method_settings.sql")
+  }
+
   check "ApiGateway.1" {
     title = "API Gateway REST and WebSocket API logging should be enabled"
     query = file("queries/apigateway/api_gw_execution_logging_enabled.sql")
