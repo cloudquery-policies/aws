@@ -1,0 +1,3 @@
+cq_id|stage_name|rest_api_cq_id|arn|stage_data_trace_enabled|stage_caching_enabled|waf|cert|method|data_trace_enabled|caching_enabled|cache_data_encrypted|logging_level
+ae8485d1-f8dc-425a-944e-227872c29314|prod|0d951610-41bd-50e1-a8fd-decfc2c55708|arn:aws:apigateway::000000000000:/restapis/6k8zkimivi/stages/prod|f|f|||*/*|f|f|f|null
+e86b8b36-7cec-40d6-8ae7-942d1b0fb188|apigwv1-stage2-cq-testingintegration|a861bdca-1760-5b53-88f4-2fbec99e55be|arn:aws:apigateway::000000000000:/restapis/lts45y3n6e/stages/apigwv1-stage2-cq-testingintegration|f|f|||*/*|f|f|t|null
