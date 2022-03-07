@@ -1,5 +1,9 @@
 package main
 
+// This tool searches the ./test/snapshot-data directory looking for any AWS Account IDs
+// Helping to ensure we don't leak any potentially sensitive information
+// For the record AWS doesn't consider Account IDs to be sensitive but that is not a view that is universal
+
 import (
 	"fmt"
 	"log"
@@ -46,6 +50,7 @@ func validateMatches(matches []string, fileName string) ([]string, error) {
 }
 
 func checkFile(filePath string) ([]string, error) {
+	// regex finds all 12 digit strings. This is a way of searching for AWS account IDs
 	var re = regexp.MustCompile(`(?m)\d{12}`)
 	dat, err := os.ReadFile(filePath)
 	if err != nil {
