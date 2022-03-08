@@ -45,6 +45,6 @@ jobs:
 
       - name: Run Snapshot Tests
         run: |
-          ./cloudquery policy test ../aws test/snapshot-data
+          ./cloudquery policy test ../aws test/snapshot-data --config ./test/policy_cq_config.hcl --enable-console-log
         env:
           CQ_NO_TELEMETRY: 1
