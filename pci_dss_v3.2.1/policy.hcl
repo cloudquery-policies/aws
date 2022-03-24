@@ -6,17 +6,6 @@ policy "pci-dss-v3.2.1" {
     }
   }
 
-  view "aws_log_metric_filter_and_alarm" {
-    title = "AWS Log Metric Filter and Alarm"
-    query = file("queries/cloudwatch/log_metric_filter_and_alarm_view.sql")
-  }
-
-
-  view "aws_security_group_ingress_rules" {
-    title = "Aggregates rules of security groups with ports and IPs including ipv6"
-    query = file("queries/cq_views/aws_security_group_ingress_rules.sql")
-  }
-
   policy "autoscaling" {
     title = "checks for autoscaling"
     check "1" {
@@ -76,6 +65,11 @@ policy "pci-dss-v3.2.1" {
   }
 
   policy "cloudwatch" {
+    view "aws_log_metric_filter_and_alarm" {
+      title = "AWS Log Metric Filter and Alarm"
+      query = file("queries/cloudwatch/log_metric_filter_and_alarm_view.sql")
+    }
+
     check "1" {
       title = "A log metric filter and alarm should exist for usage of the 'root' user"
       query = file("queries/cloudwatch/alarm_root_account.sql")

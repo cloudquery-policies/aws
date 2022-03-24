@@ -2,6 +2,11 @@ policy "3" {
   title = "Section 3: Monitoring"
   doc   = file("cis_v1.2.0/docs/3.md")
 
+  view "aws_log_metric_filter_and_alarm" {
+    title = "AWS Log Metric Filter and Alarm"
+    query = file("queries/cloudwatch/log_metric_filter_and_alarm_view.sql")
+  }
+
   check "3.1" {
     title         = "Ensure a log metric filter and alarm exist for unauthorized API calls (Scored)"
     doc           = file("cis_v1.2.0/docs/3.1.md")

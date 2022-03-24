@@ -1,6 +1,7 @@
 policy "ec2" {
   title = "EC2 controls"
   doc   = file("foundational_security/docs/ec2.md")
+
   view "aws_security_group_ingress_rules" {
     title = "Aggregates rules of security groups with ports and IPs including ipv6"
     query = file("queries/cq_views/aws_security_group_ingress_rules.sql")

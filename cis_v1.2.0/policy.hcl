@@ -7,11 +7,6 @@ policy "cis-v1.20" {
     }
   }
 
-  view "aws_log_metric_filter_and_alarm" {
-    title = "AWS Log Metric Filter and Alarm"
-    query = file("queries/cloudwatch/log_metric_filter_and_alarm_view.sql")
-  }
-
   policy "1" {
     source = file("cis_v1.2.0/section_1.hcl")
   }
