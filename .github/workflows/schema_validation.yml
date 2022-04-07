@@ -46,6 +46,6 @@ jobs:
 
       - name: Policy Run
         run: |
-          ./cloudquery policy run . --config ./test/policy_cq_config.hcl --enable-console-log
+          ./cloudquery policy run . --config ./test/policy_cq_config.hcl --enable-console-log --disable-fetch-check
         env:
           CQ_NO_TELEMETRY: 1
