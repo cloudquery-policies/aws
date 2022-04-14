@@ -14,11 +14,13 @@ FROM
     LEFT JOIN (
         SELECT
             arn,
+            bucket_cq_id,
             count(*) AS statement_count
         FROM
             (
                 SELECT
                     aws_s3_buckets.arn,
+                    aws_s3_buckets.cq_id as bucket_cq_id,
                     statements -> 'Principal' AS principals
                 FROM
                     aws_s3_buckets,
@@ -41,9 +43,9 @@ FROM
                 )
             )
         GROUP BY
-            arn
+            arn, bucket_cq_id
     ) AS policy_allow_public ON
-        aws_s3_buckets.cq_id = aws_s3_bucket_grants.bucket_cq_id
+        aws_s3_buckets.cq_id = policy_allow_public.bucket_cq_id
 WHERE
     (
         aws_s3_buckets.block_public_acls != TRUE
