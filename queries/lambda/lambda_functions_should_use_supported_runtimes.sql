@@ -4,4 +4,4 @@ SELECT account_id,
        runtime
 FROM aws_lambda_functions
 WHERE runtime NOT IN (SELECT name FROM aws_lambda_runtimes) 
-    AND code_repository_type <> 'ECR'
+    AND package_type <> 'Image'
