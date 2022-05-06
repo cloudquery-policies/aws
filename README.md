@@ -1,6 +1,7 @@
 # AWS Security & Compliance CloudQuery policy pack
 
 Official AWS security & compliance policy pack for CloudQuery.
+EXAMPLE DO NOT SUBMIT.
 
 ## What is CloudQuery
 
