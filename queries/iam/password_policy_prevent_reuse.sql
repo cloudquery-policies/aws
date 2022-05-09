@@ -1,5 +1,6 @@
 SELECT
-    account_id AS resource_identifier
+    account_id,
+    'Password perevention reuse is not set' as cq_reason
 FROM
     aws_iam_password_policies
 WHERE

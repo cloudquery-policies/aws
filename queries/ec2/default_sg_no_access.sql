@@ -1,5 +1,7 @@
 SELECT
-    arn
+    account_id,
+    arn,
+    region
 FROM
     aws_ec2_security_groups
     JOIN

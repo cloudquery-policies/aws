@@ -5,7 +5,8 @@ SELECT
     user_name,
     access_key_id,
     last_used,
-    last_rotated
+    last_rotated,
+    format('Key was not roatated for the last %s', user_name, date_trunc('day', now() - last_rotated)) as cq_reason
 FROM aws_iam_users
     JOIN
         aws_iam_user_access_keys ON

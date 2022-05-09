@@ -2,6 +2,7 @@
 SELECT account_id,
        region,
        group_name,
+       arn,
        id,
        from_port,
        to_port,

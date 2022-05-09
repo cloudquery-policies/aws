@@ -1,5 +1,6 @@
 SELECT
-    aiu.account_id, arn, max(password_last_used) AS password_last_used
+    aiu.account_id, arn, max(password_last_used) AS password_last_used,
+    'Hardware MFA not enabled for root account' as cq_reason
 FROM aws_iam_users AS aiu
     LEFT JOIN
         aws_iam_virtual_mfa_devices ON

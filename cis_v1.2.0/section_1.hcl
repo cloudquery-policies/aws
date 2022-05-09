@@ -1,4 +1,5 @@
 policy "1" {
+  identifiers = ["account_id"]
   title = "Section 1: Identity and Access Management"
   doc   = file("cis_v1.2.0/docs/1.md")
 
@@ -6,6 +7,7 @@ policy "1" {
     title = "Avoid the use of 'root' account. Show used in last 30 days (Scored)"
     doc   = file("cis_v1.2.0/docs/1.1.md")
     query = file("queries/iam/avoid_root_usage.sql")
+    reason = "'root' account was last used {{.password_last_used}}"
   }
 
   check "1.2" {
@@ -65,7 +67,7 @@ policy "1" {
   check "1.11" {
     title = "Ensure IAM password policy expires passwords within 90 days or less"
     doc   = file("cis_v1.2.0/docs/1.11.md")
-    query = file("queries/iam/password_policy_prevent_reuse.sql")
+    query = file("queries/iam/password_policy_expire_old_passwords.sql")
   }
 
   check "1.12" {
