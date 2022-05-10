@@ -7,6 +7,10 @@ on:
       - main
   pull_request:
 
+env: 
+  CGO_ENABLED: 0
+  CQ_NO_TELEMETRY: 1
+
 jobs:
   SchemaValidation:
     strategy:
@@ -41,11 +45,7 @@ jobs:
       - name: Build Schema
         run: |
           ./cloudquery provider build-schema --config ./test/policy_cq_config.hcl --enable-console-log
-        env:
-          CQ_NO_TELEMETRY: 1
 
       - name: Policy Run
         run: |
           ./cloudquery policy run . --config ./test/policy_cq_config.hcl --enable-console-log --disable-fetch-check
-        env:
-          CQ_NO_TELEMETRY: 1
