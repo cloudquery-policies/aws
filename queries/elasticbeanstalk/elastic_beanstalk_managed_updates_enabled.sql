@@ -1,6 +1,7 @@
 SELECT application_arn,
     option_name,
-    value
+    value, 
+    'ManagedActionsEnabled should be enabled' as cq_reason
 FROM aws_elasticbeanstalk_configuration_setting_options
     LEFT JOIN
         aws_elasticbeanstalk_configuration_settings ON

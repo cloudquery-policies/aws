@@ -1,4 +1,6 @@
-SELECT c.arn
+SELECT 
+    c.arn,
+    'EMR clusters should not have public ip addresses' as cq_reason
 FROM
     aws_emr_clusters c
     LEFT OUTER JOIN aws_ec2_subnets s
