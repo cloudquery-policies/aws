@@ -1,6 +1,6 @@
 WITH violations AS (
     SELECT policy_cq_id,
-           COUNT(*) AS violations
+           COUNT(*) AS violations,
     FROM aws_iam_policy_versions,
         JSONB_ARRAY_ELEMENTS(
             CASE JSONB_TYPEOF(document -> 'Statement')
@@ -26,6 +26,7 @@ SELECT account_id,
        arn,
        id,
        name,
-       violations
+       violations,
+       format('policy %s has "*" star statements', arn) as cq_reason
 FROM aws_iam_policies
      JOIN violations ON violations.policy_cq_id = aws_iam_policies.cq_id

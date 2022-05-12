@@ -22,6 +22,7 @@ violations AS (
         AND statement -> 'Action' ?| array['*', 'kms:*', 'kms:decrypt', 'kms:reencryptfrom', 'kms:reencrypt*'] -- noqa
 )
 SELECT arn,
-       account_id
+       account_id,
+       format('policy %s blocks kms actions', name) as cq_reason
 FROM aws_iam_policies
      JOIN violations ON violations.cq_id = aws_iam_policies.cq_id;

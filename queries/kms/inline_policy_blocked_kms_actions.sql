@@ -1,11 +1,13 @@
 SELECT arn,
-       account_id
+       account_id,
+       format('inline policy %s blocks kms actions', policy_name) as cq_reason
 FROM
     (
         -- select all user policies
         SELECT statement,
             aws_iam_users.account_id,
             arn,
+            policy_name,
             aws_iam_users.cq_id
         FROM aws_iam_user_policies
             CROSS JOIN LATERAL jsonb_array_elements(
@@ -19,6 +21,7 @@ FROM
         SELECT statement,
             aws_iam_roles.account_id,
             arn,
+            policy_name,
             aws_iam_roles.cq_id
         FROM aws_iam_role_policies
              CROSS JOIN LATERAL jsonb_array_elements(
@@ -33,6 +36,7 @@ FROM
         SELECT statement,
             aws_iam_groups.account_id,
             arn,
+            policy_name,
             aws_iam_groups.cq_id
         FROM aws_iam_group_policies
             CROSS JOIN LATERAL jsonb_array_elements(

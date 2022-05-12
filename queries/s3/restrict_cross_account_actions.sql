@@ -1,7 +1,9 @@
-SELECT arn,
-       account_id,
+SELECT aws_s3_buckets.arn,
+       aws_s3_buckets.account_id,
        a.value::TEXT AS ACTION,
-       p.value::TEXT AS USER --noqa
+       p.value::TEXT AS USER, --noqa
+       aws_s3_buckets.region,
+       format('bucket %s allows cross account actions', aws_s3_buckets.name) as cq_reason
 FROM (
     SELECT aws_s3_buckets.arn,
         account_id,

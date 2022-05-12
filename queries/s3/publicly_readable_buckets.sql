@@ -1,5 +1,8 @@
 SELECT
-    aws_s3_buckets.arn
+    aws_s3_buckets.account_id,
+    aws_s3_buckets.arn,
+    aws_s3_buckets.region,
+    format('bucket %s is publicaly readable', aws_s3_buckets.name) as cq_reason
 FROM
     -- Find and join all bucket ACLS that givea public write access
     aws_s3_buckets

@@ -25,7 +25,7 @@ allow_all_statements AS (
     GROUP BY
         cq_id
 )
-SELECT p.account_id, p.name, p.arn
+SELECT p.account_id, p.name, p.arn,  format('policy %s has wildcard "*" statements', arn) as cq_reason
 FROM aws_iam_policies p
      LEFT JOIN allow_all_statements s ON p.cq_id = s.cq_id
 WHERE statements_count > 0;

@@ -7,7 +7,6 @@ policy "1" {
     title = "Avoid the use of 'root' account. Show used in last 30 days (Scored)"
     doc   = file("cis_v1.2.0/docs/1.1.md")
     query = file("queries/iam/avoid_root_usage.sql")
-    reason = "'root' account was last used {{.password_last_used}}"
   }
 
   check "1.2" {

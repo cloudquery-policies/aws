@@ -1,5 +1,8 @@
 SELECT
-    arn
+    account_id,
+    region,
+    arn,
+    'bucket has non SSL requested enabled' as cq_reason
 FROM
     aws_s3_buckets
 WHERE
