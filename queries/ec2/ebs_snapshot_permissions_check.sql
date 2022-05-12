@@ -7,7 +7,12 @@ WITH snapshot_access_groups AS (
     FROM aws_ec2_ebs_snapshots
 )
 
-SELECT DISTINCT *
+SELECT DISTINCT account_id,
+           region,
+           snapshot_id,
+           "group",
+           user_id,
+        'update your EBS snapshot to make it private instead of public' as cq_reason
 FROM snapshot_access_groups
 WHERE "group" = 'all'
    -- this is under question because

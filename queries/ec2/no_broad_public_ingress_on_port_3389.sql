@@ -7,7 +7,8 @@ SELECT account_id,
        from_port,
        to_port,
        ip_protocol,
-       ip
+       ip,
+       'instance should not allow access to port 3389 from the entire internet' as cq_reason
 FROM aws_security_group_ingress_rules
 WHERE (ip = '0.0.0.0/0' OR ip = '::/0')
     AND (from_port IS NULL AND to_port IS NULL) -- all prots

@@ -1,5 +1,6 @@
 SELECT
-    arn
+    arn,
+    'security group is not currently in use so it should be deleted' as cq_reason
 FROM
     aws_ec2_security_groups
     LEFT JOIN
