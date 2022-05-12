@@ -1,5 +1,6 @@
 SELECT arn,
-       account_id
+       account_id,
+       'ensure at least 2 origins are specified in order to increase availability' as cq_reason
 FROM aws_cloudfront_distribution_origin_groups
      JOIN
         aws_cloudfront_distributions ON
