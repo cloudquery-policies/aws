@@ -1,2 +1,1 @@
-# read about codeowners - https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
-* @cq-policy-team
+*       @cloudquery-policies/cq-policy-team
