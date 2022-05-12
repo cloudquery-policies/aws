@@ -3,7 +3,8 @@ SELECT t.account_id,
        t.id,
        t.name,
        t.arn,
-       pr.type
+       pr.type,
+       'table should have automatic scaling enabled via an autoscaling policy or have pay-per-request enabled' as cq_reason
 FROM aws_dynamodb_tables t
     LEFT JOIN aws_dynamodb_table_replica_auto_scalings s ON s.table_cq_id = t.cq_id
     LEFT JOIN aws_applicationautoscaling_policies pr ON (pr.namespace = 'dynamodb'
