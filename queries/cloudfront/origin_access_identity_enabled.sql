@@ -1,5 +1,6 @@
 SELECT arn,
-       account_id
+       account_id,
+       'enable Origin Access Identity to ensure users cannot bypass distribution to access data directly' as cq_reason
 FROM aws_cloudfront_distribution_origins
      JOIN
         aws_cloudfront_distributions ON

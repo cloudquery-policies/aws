@@ -4,13 +4,15 @@ WITH enabled_detector_regions AS (
     WHERE status = 'ENABLED'
 )
 
-SELECT account_id, region, 'GuardDuty not enabled in region' AS id
+SELECT account_id, region, 'n/a' AS id,
+   format('GuardDuty not enabled in %s', region) as cq_reason
+
 FROM aws_regions
 WHERE enabled = TRUE
       AND region NOT IN (SELECT region FROM enabled_detector_regions)
 UNION
 -- Add any detector that is enabled but all data sources are disabled
-SELECT account_id, region, id FROM aws_guardduty_detectors
+SELECT account_id, region, id, 'no detectors are enabled' as cq_reason FROM aws_guardduty_detectors
 WHERE
     status = 'ENABLED'
     AND (

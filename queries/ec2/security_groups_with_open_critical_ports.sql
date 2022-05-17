@@ -6,7 +6,8 @@ SELECT account_id,
        from_port,
        to_port,
        ip_protocol,
-       ip
+       ip,
+       'adjust rules so that the internet only has access to ports 80 and 443' as cq_reason
 FROM aws_security_group_ingress_rules
 WHERE (ip = '0.0.0.0/0' OR ip = '::/0')
     AND (from_port IS NULL AND to_port IS NULL) -- all prots

@@ -8,7 +8,8 @@ WITH endpoints AS (
 )
 SELECT account_id,
     region,
-    id
+    id,
+    'create an interface VPC endpoint to Amazon EC2 for this VPC' as cq_reason
 FROM aws_ec2_vpcs v
     LEFT JOIN endpoints e
         ON v.id = e.vpc_id

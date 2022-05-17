@@ -1,7 +1,8 @@
 SELECT
     account_id,
     arn,
-    region
+    region,
+    'the default security group should grant no access' as cq_reason
 FROM
     aws_ec2_security_groups
     JOIN
