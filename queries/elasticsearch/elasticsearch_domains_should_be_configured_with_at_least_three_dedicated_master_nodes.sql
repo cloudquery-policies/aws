@@ -1,4 +1,4 @@
-SELECT account_id, region, arn
+SELECT account_id, region, arn,
 CASE
     WHEN  cluster_dedicated_master_enabled IS NOT TRUE THEN 'cluster should have dedicated master node enabled'
     WHEN  cluster_dedicated_master_count IS NULL THEN 'cluster should have at least 3 master nodes'
