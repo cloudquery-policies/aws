@@ -1,7 +1,7 @@
 policy "1" {
   identifiers = ["account_id"]
-  title = "Section 1: Identity and Access Management"
-  doc   = file("cis_v1.2.0/docs/1.md")
+  title       = "Section 1: Identity and Access Management"
+  doc         = file("cis_v1.2.0/docs/1.md")
 
   check "1.1" {
     title = "Avoid the use of 'root' account. Show used in last 30 days (Scored)"
