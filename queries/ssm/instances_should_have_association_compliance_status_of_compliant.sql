@@ -1,4 +1,4 @@
-SELECT .account_id, i.arn, i.region, c.title, 
+SELECT account_id, i.arn, i.region, c.title, 
 format('SSM instances should have association compliance status of complaint have %s instead', c.status) as cq_reason
 FROM
     aws_ssm_instances i JOIN aws_ssm_instance_compliance_items c
