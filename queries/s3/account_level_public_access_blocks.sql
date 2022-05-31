@@ -1,5 +1,5 @@
 SELECT
-    account_id,
+    aws_accounts.account_id,
 	CONCAT('s3 public block not configured correctly:', 
 		   CASE WHEN config_exists IS NOT TRUE THEN ' configuration does not exist' ELSE '' END,
 		   CASE WHEN block_public_acls IS NOT TRUE THEN ',  not blocking public acls' ELSE '' END,
@@ -9,17 +9,10 @@ SELECT
 		  ) as cq_reason
 FROM
     aws_accounts
+LEFT JOIN aws_s3_account_config on aws_accounts.account_id = aws_s3_account_config.account_id
 WHERE
-    account_id NOT IN (
-        -- Find all accounts that do not have a s3 public block (either not configured or allows public access)
-        SELECT
-            account_id
-        FROM
-            aws_s3_account_config
-        WHERE
-            config_exists = TRUE
-            AND block_public_acls = TRUE
-            AND block_public_policy = TRUE
-            AND ignore_public_acls = TRUE
-            AND restrict_public_buckets = TRUE
-    )
+	config_exists IS NOT TRUE
+		OR block_public_acls IS NOT TRUE
+		OR block_public_policy IS NOT TRUE
+		OR ignore_public_acls IS NOT TRUE
+		OR restrict_public_buckets IS NOT TRUE
