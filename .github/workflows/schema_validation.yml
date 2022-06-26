@@ -44,7 +44,7 @@ jobs:
           chmod a+x cloudquery
       - name: Build Schema
         run: |
-          ./cloudquery provider build-schema --config ./test/policy_cq_config.hcl --enable-console-log
+          ./cloudquery provider sync --config ./test/policy_cq_config.hcl --enable-console-log
 
       - name: Policy Run
         run: |
