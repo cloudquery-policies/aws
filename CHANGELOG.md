@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.16](https://github.com/cloudquery-policies/aws/compare/v0.1.15...v0.1.16) (2022-07-22)
+
+
+### Features
+
+* Move to cq-pprovider-aws ([2f9fb16](https://github.com/cloudquery-policies/aws/commit/2f9fb16ac8f7a1dbbf9ddffbb7bc6c8d0e0033dc))
+
 ## [0.1.15](https://github.com/cloudquery-policies/aws/compare/v0.1.14...v0.1.15) (2022-06-27)
 
 
